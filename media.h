@@ -15,7 +15,6 @@ public:
 	virtual void display() const = 0;
 	virtual void displayHeader() const= 0;
 	virtual string getItem() const = 0;
-	void setMaxCopies(const int);
 	void increaseCopies();
 	void decreaseCopies();
 	int getAmountIn();
@@ -26,7 +25,6 @@ public:
 	virtual Media* doTransaction() = 0;
 
 private:
-	int maxCopies;
 	int numberOfCopies;
 };
 

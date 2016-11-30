@@ -19,8 +19,7 @@ Return::~Return()
 {}
 
 
-bool Return::setData(string media, Media* newMovie,
-   Customer* theCustomer)
+bool Return::setData(string media, Media* newMovie, Customer* theCustomer)
 {
    if(newMovie != NULL)
    {

@@ -1,7 +1,7 @@
 #include "media.h"
 
 Media::Media() :
-		numberOfCopies(-1), maxCopies(0)
+		numberOfCopies(-1)
 {
 }
 
@@ -14,7 +14,6 @@ void Media::decreaseCopies() {
 }
 
 void Media::increaseCopies() {
-	if (numberOfCopies != maxCopies)
 		numberOfCopies = numberOfCopies + 1;
 }
 
@@ -26,9 +25,4 @@ int Media::getAmountOut() {
 	return maxCopies - numberOfCopies;
 }
 
-void Media::setMaxCopies(const int amountIn) {
-	maxCopies = amountIn;
 
-	if (numberOfCopies < 0)
-		numberOfCopies = maxCopies;
-}
