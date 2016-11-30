@@ -1,0 +1,20 @@
+
+#ifndef BORROW_H
+#define BORROW_H
+#include <iostream>
+
+#include "media.h"
+#include "transaction.h"
+using namespace std;
+class Customer;
+class Borrow : public Transaction
+{
+public:
+   Borrow();
+   Borrow(const Borrow&);
+   virtual ~Borrow();
+   virtual bool setData(string, Media*, Customer*);
+   virtual void display() const;
+   virtual Transaction* doTransaction();
+};
+#endif
