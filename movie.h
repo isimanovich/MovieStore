@@ -10,9 +10,10 @@
 
 using namespace std;
 
-class Movie: public NodeData, public Media {
+class Movie: public NodeData {
 public:
-
+     Movie();
+    ~Movie();
 
 	virtual bool operator<() const;
 	virtual bool operator==() const;
