@@ -10,14 +10,15 @@
 
 using namespace std;
 
-class Movie: public NodeData {
+class Movie {
 public:
+
 	virtual bool operator<() const;
 	virtual bool operator==() const;
 	virtual void setData();
 	virtual bool display() const;
-	void borrow();
-	void returN();
+	void borrowMovie();
+	void returnMovie();
 
 protected:
 	string dirFirstName;

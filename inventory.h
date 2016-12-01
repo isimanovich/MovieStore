@@ -7,6 +7,13 @@ class Inventory : public Transaction {
 public:
 
 
+
+
+
+private:
+	int numberInStock;
+
+
 };
 
 
