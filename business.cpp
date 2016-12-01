@@ -38,8 +38,15 @@ Business::~Business(){
 
 
 //SHOULD ACCEPT INFILE, FIX THAT
-void Business::buildMovies(){
-	//logic for reading file and adding stuff to the tree
+void Business::buildMovies(ifstream& movFile){
+
+
+
+
+
+
+
+
 }
 
 //SHOULD ACCEPT INFILE, FIX THAT

@@ -19,7 +19,7 @@ class Business{
 public:
 	Business();						//constructor
 	~Business();					//destructor
-	void buildMovies();				//add infile
+	void buildMovies(ifstream&);				//add infile
 	void buildCustomers();			//add infile
 	void processTransactions();		//add infile
 
