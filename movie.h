@@ -12,8 +12,8 @@ using namespace std;
 
 class Movie: public NodeData {
 public:
-     Movie();
-    ~Movie();
+    Movie();
+    virtual ~Movie();
 
 	virtual bool operator<() const;
 	virtual bool operator==() const;
@@ -30,6 +30,9 @@ public:
 	virtual bool display() const;
 	void borrow();
 	void returN();
+
+	int getAmountIn();
+	int getAmountOut();
 
 protected:
 	string dirFirstName;
