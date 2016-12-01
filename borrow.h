@@ -3,7 +3,7 @@
 #define BORROW_H
 #include <iostream>
 
-#include "media.h"
+#include "movie.h"
 #include "transaction.h"
 using namespace std;
 class Customer;
@@ -13,7 +13,7 @@ public:
    Borrow();
    Borrow(const Borrow&);
    virtual ~Borrow();
-   virtual bool setData(string, Media*, Customer*);
+   virtual bool setData(string, Movie*, Customer*);
    virtual void display() const;
    virtual Transaction* create();
 };

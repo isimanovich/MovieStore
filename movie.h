@@ -13,10 +13,9 @@ using namespace std;
 class Movie: public NodeData {
 public:
     Movie();
+    Movie(const Movie&);
     virtual ~Movie();
 
-	virtual bool operator<() const;
-	virtual bool operator==() const;
 
 	virtual bool operator<(const Movie& ) const;
 	virtual bool operator==(const Movie& ) const;

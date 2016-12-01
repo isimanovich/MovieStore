@@ -1,7 +1,7 @@
 
 #ifndef RETURN_H
 #define RETURN_H
-#include "media.h"
+#include "movie.h"
 #include "transaction.h"
 using namespace std;
 
@@ -13,7 +13,7 @@ public:
 	Return();
 	Return(const Return&);
 	virtual ~Return();
-	virtual bool setData(string, Media*, Customer*);
+	virtual bool setData(string, Movie*, Customer*);
 	virtual void display() const;
 	virtual Transaction* create();
 };

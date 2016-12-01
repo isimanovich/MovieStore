@@ -4,7 +4,7 @@
 #define HISTORY_H
 #include <iostream>
 
-#include "media.h"
+#include "movie.h"
 #include "transaction.h"
 using namespace std;
 
@@ -15,7 +15,7 @@ public:
    History();
    History(const History&);
    virtual ~History();
-   virtual bool setData(string, Media*, Customer*);
+   virtual bool setData(string, Movie*, Customer*);
    virtual Transaction* create();
 };
 #endif

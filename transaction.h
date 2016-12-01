@@ -12,17 +12,17 @@ public:
 	Transaction();
 	Transaction(const Transaction&);
 	virtual ~Transaction();
-	virtual bool setData(string, Media*, Customer*);
+	virtual bool setData(string, Movie*, Customer*);
 	virtual void display() const;
 	virtual Transaction* create();
 
 	string getMediaTye();
 	string getTransType();
-	Media* getItem() const;
+	Movie* getItem() const;
 
 protected:
 	string transactiontype;
 	string mediaType;
-	Media* item;
+	Movie* item;
 };
 #endif

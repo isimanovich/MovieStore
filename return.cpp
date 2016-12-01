@@ -19,7 +19,7 @@ Return::~Return()
 {}
 
 
-bool Return::setData(string media, Media* newMovie, Customer* theCustomer)
+bool Return::setData(string media, Movie* newMovie, Customer* theCustomer)
 {
    if(newMovie != NULL)
    {
@@ -27,7 +27,7 @@ bool Return::setData(string media, Media* newMovie, Customer* theCustomer)
       item = newMovie;
 
       if (mediaType != "")
-         item->increaseCopies();
+         item->returN();
    }
    return true;
 }
