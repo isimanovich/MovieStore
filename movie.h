@@ -14,7 +14,10 @@ class Movie: public NodeData {
 public:
 	virtual bool operator<(const Movie& ) const;
 	virtual bool operator==(const Movie& ) const;
-	virtual void setData();
+
+	//consider passing line and decompose inside or full file,
+	//but that probably should be in business
+	virtual void setData(int, string, string, string, int);
 	virtual bool display() const;
 	void borrow();
 	void returN();
