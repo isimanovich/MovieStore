@@ -11,10 +11,15 @@
 using namespace std;
 
 class Drama: public Movie{
+
+public:
 	bool operator<() const;
 	bool operator==() const;
 	void setData();
 	bool display() const;
+
+private:
+
 };
 
 
