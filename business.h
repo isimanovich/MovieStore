@@ -22,6 +22,8 @@ public:
 	void buildMovies(ifstream&);				//add infile
 	void buildCustomers();			//add infile
 	void processTransactions();		//add infile
+	void buildCustomers(ifstream&);			//add infile
+	void processTransactions(ifstream&);		//add infile
 
 private:
 	BinTree* allComedies;
