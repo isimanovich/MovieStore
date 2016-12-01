@@ -12,15 +12,20 @@ using namespace std;
 
 class Movie: public NodeData, public Media {
 public:
-//<<<<<<< HEAD
+
 
 	virtual bool operator<() const;
 	virtual bool operator==() const;
-//=======
+
 	virtual bool operator<(const Movie& ) const;
 	virtual bool operator==(const Movie& ) const;
-//>>>>>>> origin/master
 	virtual void setData();
+
+
+	//consider passing line and decompose inside or full file,
+	//but that probably should be in business
+	virtual void setData(int, string, string, string, int);
+
 	virtual bool display() const;
 	void borrow();
 	void returN();

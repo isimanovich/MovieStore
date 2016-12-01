@@ -22,3 +22,13 @@ bool Movie::operator==(const Movie& rhs)const{
 	else
 		return false;
 }
+
+//consider passing line and decompose inside or full file,
+//but that probably should be in business
+void Movie::setData(int quantity, string dirFirst, string dirLast, string title, int year){
+	this->instock = quantity;
+	this->dirFirstName = dirFirst;
+	this->dirLastName = dirLast;
+	this->title = title;
+	this->year = year;
+}

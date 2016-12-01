@@ -8,13 +8,18 @@
 #ifndef BUSINESS_H_
 #define BUSINESS_H_
 
+#include "bintree.h"
+#include "transaction.h"
+
 using namespace std;
 
 class Business{
 public:
-	void buildMovies();
-	void buildCustomers();
-	void processTrans();
+	Business();						//constructor
+	~Business();					//destructor
+	void buildMovies();				//add infile
+	void buildCustomers();			//add infile
+	void processTransactions();		//add infile
 
 private:
 	BinTree* allComedies;
