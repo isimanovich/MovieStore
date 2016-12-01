@@ -8,6 +8,8 @@
 #ifndef BUSINESS_H_
 #define BUSINESS_H_
 
+#include <fstream>
+#include <iostream>
 #include "bintree.h"
 #include "transaction.h"
 
