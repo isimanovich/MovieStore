@@ -12,13 +12,18 @@ using namespace std;
 
 class Movie: public NodeData, public Media {
 public:
+//<<<<<<< HEAD
 
 	virtual bool operator<() const;
 	virtual bool operator==() const;
+//=======
+	virtual bool operator<(const Movie& ) const;
+	virtual bool operator==(const Movie& ) const;
+//>>>>>>> origin/master
 	virtual void setData();
 	virtual bool display() const;
-	void borrowMovie();
-	void returnMovie();
+	void borrow();
+	void returN();
 
 protected:
 	string dirFirstName;

@@ -38,7 +38,7 @@ void Return::display() const
    cout << mediaType << " " << transactiontype << " ";
 }
 
-Transaction* Return::doTransaction()
+Transaction* Return::create()
 {
-   return new Return();
+   return new Return(); //create return obj
 }
