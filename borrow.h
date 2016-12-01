@@ -15,6 +15,6 @@ public:
    virtual ~Borrow();
    virtual bool setData(string, Media*, Customer*);
    virtual void display() const;
-   virtual Transaction* doTransaction();
+   virtual Transaction* create();
 };
 #endif

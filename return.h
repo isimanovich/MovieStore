@@ -7,13 +7,14 @@ using namespace std;
 
 
 class Customer;
-class Return: public Transaction {
+class Return: public Transaction
+{
 public:
 	Return();
 	Return(const Return&);
 	virtual ~Return();
 	virtual bool setData(string, Media*, Customer*);
 	virtual void display() const;
-	virtual Transaction* doTransaction();
+	virtual Transaction* create();
 };
 #endif

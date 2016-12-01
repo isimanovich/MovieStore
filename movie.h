@@ -10,7 +10,7 @@
 
 using namespace std;
 
-class Movie {
+class Movie: public NodeData, public Media {
 public:
 
 	virtual bool operator<() const;
@@ -25,6 +25,7 @@ protected:
 	string dirLastName;
 	int year;
 	int instock;
+	int borrowedCount;
 	string title;
 	string media;
 };

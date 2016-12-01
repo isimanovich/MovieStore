@@ -14,7 +14,7 @@ public:
 	virtual ~Transaction();
 	virtual bool setData(string, Media*, Customer*);
 	virtual void display() const;
-	virtual Transaction* doTransaction();
+	virtual Transaction* create();
 
 	string getMediaTye();
 	string getTransType();

@@ -16,6 +16,6 @@ public:
    History(const History&);
    virtual ~History();
    virtual bool setData(string, Media*, Customer*);
-   virtual Transaction* doTransaction();
+   virtual Transaction* create();
 };
 #endif
