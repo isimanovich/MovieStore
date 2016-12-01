@@ -8,6 +8,8 @@
 #ifndef MOVIE_H_
 #define MOVIE_H_
 
+#include "nodedata.h"
+
 using namespace std;
 
 class Movie: public NodeData {

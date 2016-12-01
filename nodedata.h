@@ -27,7 +27,7 @@ public:
 	//----------------------------for asssignment 4---------------------------------
 	virtual void setData();
 	virtual bool operator<(const NodeData &) const;
-	virtual void display()const;
+	void display()const;
 
 
 	//----------------------------end asssignment 4---------------------------------
