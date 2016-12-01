@@ -38,7 +38,6 @@ Business::~Business(){
 
 
 //SHOULD ACCEPT INFILE, FIX THAT
-<<<<<<< HEAD
 void Business::buildMovies(ifstream& movFile){
 
 
@@ -47,11 +46,6 @@ void Business::buildMovies(ifstream& movFile){
 
 
 
-
-=======
-void Business::buildMovies(ifstream& movieFile){
-	//logic for reading file and adding stuff to the tree
->>>>>>> origin/master
 }
 
 //SHOULD ACCEPT INFILE, FIX THAT
