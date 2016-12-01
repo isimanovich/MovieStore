@@ -38,18 +38,20 @@ Business::~Business(){
 
 
 //SHOULD ACCEPT INFILE, FIX THAT
-void Business::buildMovies(istream& movieFile){
+void Business::buildMovies(ifstream& movieFile){
 	//logic for reading file and adding stuff to the tree
 }
 
 //SHOULD ACCEPT INFILE, FIX THAT
-void Business::buildCustomers(istream& customerFile){
+void Business::buildCustomers(ifstream& customerFile){
 	//logic for reading file and adding stuff to the tree
 }
 
 //SHOULD ACCEPT INFILE, FIX THAT
-void Business::processTransactions(istream& transactionsFile){
+void Business::processTransactions(ifstream& transactionsFile){
 	//logic for reading file and adding stuff to the tree
+
+
 }
 
 

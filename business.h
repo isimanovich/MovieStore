@@ -19,9 +19,9 @@ class Business{
 public:
 	Business();						//constructor
 	~Business();					//destructor
-	void buildMovies(istream&);				//add infile
-	void buildCustomers(istream&);			//add infile
-	void processTransactions(istream&);		//add infile
+	void buildMovies(ifstream&);				//add infile
+	void buildCustomers(ifstream&);			//add infile
+	void processTransactions(ifstream&);		//add infile
 
 private:
 	BinTree* allComedies;
