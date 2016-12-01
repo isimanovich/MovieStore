@@ -17,7 +17,7 @@ Business::Business(){
 
 
 	//not sure about this one
-	currentTransaction = new Transaction();
+	currentTransaction = NULL;
 }
 
 //destructor

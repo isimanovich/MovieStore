@@ -12,7 +12,7 @@ class Return: public Transaction
 public:
 	Return();
 	Return(const Return&);
-	virtual ~Return();
+	~Return();
 	virtual bool setData(string, Movie*, Customer*);
 	virtual void display() const;
 	virtual Transaction* create();

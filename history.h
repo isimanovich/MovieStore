@@ -14,7 +14,7 @@ class History : public Transaction
 public: 
    History();
    History(const History&);
-   virtual ~History();
+   ~History();
    virtual bool setData(string, Movie*, Customer*);
    virtual Transaction* create();
 };

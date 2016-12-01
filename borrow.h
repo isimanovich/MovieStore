@@ -12,7 +12,7 @@ class Borrow : public Transaction
 public:
    Borrow();
    Borrow(const Borrow&);
-   virtual ~Borrow();
+   ~Borrow();
    virtual bool setData(string, Movie*, Customer*);
    virtual void display() const;
    virtual Transaction* create();
