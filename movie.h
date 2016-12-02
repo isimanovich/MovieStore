@@ -10,7 +10,7 @@
 
 //#include "nodedata.h"
 #include <iostream>
-
+#include <string>
 
 using namespace std;
 
@@ -19,9 +19,14 @@ using namespace std;
 class Movie{
 public:
     Movie();				//default constructor
+<<<<<<< HEAD
 //    Movie(const Movie&);
     virtual ~Movie();
 
+=======
+    Movie(const Movie&);
+    virtual ~Movie();
+>>>>>>> origin/master
 
 	virtual bool operator<(const Movie& ) const;
 	virtual bool operator==(const Movie& ) const;
@@ -31,7 +36,11 @@ public:
 	//but that probably should be in business
 	virtual void setData(string);
 
+<<<<<<< HEAD
 	virtual bool display() const;
+=======
+    bool display() const;
+>>>>>>> origin/master
 	void borrow();
 	void returN();
 
