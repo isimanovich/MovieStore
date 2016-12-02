@@ -7,6 +7,7 @@
 
 #include "business.h"
 
+
 //constructor
 Business::Business(){
 
@@ -37,8 +38,11 @@ Business::~Business(){
 }
 
 
-//SHOULD ACCEPT INFILE, FIX THAT
 void Business::buildMovies(ifstream& movFile){
+
+	string test = ", 10, Barry Levinson, Good Morning Vietnam, 1988 /n";
+	Movie* d = new Movie();
+	d->setData(test);
 
 
 

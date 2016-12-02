@@ -12,6 +12,8 @@
 #include <iostream>
 #include "bintree.h"
 #include "transaction.h"
+#include "movie.h"
+
 
 using namespace std;
 

@@ -8,27 +8,26 @@
 #ifndef MOVIE_H_
 #define MOVIE_H_
 
-#include "nodedata.h"
-
+//#include "nodedata.h"
+#include <iostream>
 using namespace std;
 
-class Movie: public NodeData {
+class Movie{
 public:
-    Movie();
+    Movie();				//default constructor
     Movie(const Movie&);
-    virtual ~Movie();
+    ~Movie();
 
 
 	virtual bool operator<(const Movie& ) const;
 	virtual bool operator==(const Movie& ) const;
-	virtual void setData();
 
 
 	//consider passing line and decompose inside or full file,
 	//but that probably should be in business
-	virtual void setData(int, string, string, string, int);
+	virtual void setData(string);
 
-	virtual bool display() const;
+	bool display() const;
 	void borrow();
 	void returN();
 
