@@ -8,13 +8,14 @@
 #ifndef CLASSIC_H_
 #define CLASSIC_H_
 
+#include "movie.h"
 using namespace std;
 
 class Classic: public Movie{
 public:
 	bool operator<(const Classic&) const;
 	bool operator==(const Classic&) const;
-	void setData();
+	void setData(string);
 	bool display() const;
 private:
 	string actorFirst;

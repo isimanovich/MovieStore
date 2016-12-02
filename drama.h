@@ -5,17 +5,16 @@
  *      Author: MacBook
  */
 
-#include <string>
 
 #ifndef DRAMA_H_
 #define DRAMA_H_
 
+#include "movie.h"
 using namespace std;
 
 class Drama: public Movie{
 
 public:
-
 
 	Drama();
 	~Drama();
