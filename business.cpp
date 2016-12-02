@@ -40,15 +40,35 @@ Business::~Business(){
 
 void Business::buildMovies(ifstream& movFile){
 
-	string test = ", 10, Barry Levinson, Good Morning Vietnam, 1988 /n";
+	/*string test = ", 10, Barry Levinson, Good Morning Vietnam, 1988 /n";
 	Movie* d = new Movie();
-	d->setData(test);
+	d->setData(test);*/
 
+	char type = 'z';
+	string restOfLine;
 
+	while(!movFile.eof()){
+		movFile >> type;
+		getline(movFile,restOfLine);
+		switch(type){
 
+		case 'F':
+			Movie* movie = new Comedy();
+			break;
+		case 'D':
+			Movie* movie = new Drama();
+			break;
+		case 'C':
+			Movie* movie = new Classic();
+			break;
+		default:
+			cout << "invalid input" << endl;
+			break;
+		}
+	}
 
-
-
+    cout << type << endl;
+    cout << restOfLine << endl;
 
 }
 

@@ -12,8 +12,8 @@ using namespace std;
 
 class Classic: public Movie{
 public:
-	bool operator<() const;
-	bool operator==() const;
+	bool operator<(const Classic&) const;
+	bool operator==(const Classic&) const;
 	void setData();
 	bool display() const;
 private:
