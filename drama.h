@@ -5,6 +5,8 @@
  *      Author: MacBook
  */
 
+#include <string>
+
 #ifndef DRAMA_H_
 #define DRAMA_H_
 

@@ -53,13 +53,13 @@ void Business::buildMovies(ifstream& movFile){
 		switch(type){
 
 		case 'F':
-			Movie* movie1 = new Comedy();
+			//Movie* movie1 = new Comedy();
 			break;
 		case 'D':
-			Movie* movie2 = new Drama();
+			//Movie* movie2 = new Drama();
 			break;
 		case 'C':
-			Movie* movie3 = new Classic();
+			//Movie* movie3 = new Classic();
 			break;
 		default:
 			cout << "invalid input" << endl;
