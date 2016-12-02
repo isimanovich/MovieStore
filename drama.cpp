@@ -22,3 +22,6 @@ void Drama::setData(string data){
 
 }
 
+bool Drama::display()const{
+	return false;
+}

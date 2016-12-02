@@ -14,11 +14,13 @@
 
 using namespace std;
 
+
+
 class Movie{
 public:
     Movie();				//default constructor
-    Movie(const Movie&);
-    ~Movie();
+//    Movie(const Movie&);
+    virtual ~Movie();
 
 
 	virtual bool operator<(const Movie& ) const;
@@ -29,7 +31,7 @@ public:
 	//but that probably should be in business
 	virtual void setData(string);
 
-	bool display() const;
+	virtual bool display() const;
 	void borrow();
 	void returN();
 

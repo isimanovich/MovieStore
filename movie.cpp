@@ -15,6 +15,10 @@ Movie::Movie() {
 	year = 0;
 }
 
+Movie::~Movie(){
+
+}
+
 //still need destructor
 
 void Movie::borrow() {
@@ -80,4 +84,8 @@ void Movie::setData(string data) {
 	//getting a year of the movie
 	dataStream >> year;
 	cout << year << endl;
+}
+
+bool Movie::display()const{
+	return false;
 }

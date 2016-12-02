@@ -14,3 +14,14 @@ Comedy::Comedy(){
 
 }
 
+Comedy::~Comedy(){
+
+}
+
+bool Comedy::display()const{
+	return false;
+}
+
+void Comedy::setData(string data){
+
+}
