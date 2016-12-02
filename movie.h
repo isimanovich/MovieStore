@@ -8,7 +8,7 @@
 #ifndef MOVIE_H_
 #define MOVIE_H_
 
-//#include "nodedata.h"
+#include "nodedata.h"
 #include <iostream>
 #include <string>
 
@@ -16,7 +16,7 @@
 using namespace std;
 
 
-class Movie{
+class Movie: public NodeData{
 public:
     Movie();				//default constructor
 //    Movie(const Movie&);
@@ -28,7 +28,7 @@ public:
 
 	//consider passing line and decompose inside or full file,
 	//but that probably should be in business
-	virtual void setData(string);
+	void setData(string);
     bool display() const;
 
 	void borrow();

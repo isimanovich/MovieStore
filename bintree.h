@@ -14,7 +14,7 @@
 #define BINTREE_H_
 
 #include <iostream>
-#include "nodedata.h"
+#include "NodeData.h"
 
 using namespace std;
 

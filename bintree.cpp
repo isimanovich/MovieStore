@@ -125,8 +125,8 @@ BinTree& BinTree::operator =(const BinTree& rhs) {
 void BinTree::traverseToCopy(const Node* rhs) {
 	//if pointer is not pointing at NULL, execute following
 	if (rhs != NULL) {
-		NodeData* nData = new NodeData(*rhs->data);	//creating new NodeData object with value from rhs tree
-		insert(nData);					//inserting NodeData object in lhs tree
+		NodeData* ndata = new NodeData(*rhs->data);	//creating new NodeData object with value from rhs tree
+		insert(ndata);					//inserting NodeData object in lhs tree
 		traverseToCopy(rhs->left);					//traverse to left
 		traverseToCopy(rhs->right);					//traverse to right
 	}
@@ -237,7 +237,7 @@ int BinTree::heightHelper(int count, Node* &location) const {
 }
 
 // ------------------------------------------------ bstreeToArray ---------------------------------------------------
-// Description: Function to fill an array of Nodedata* by using an inorder traversal of the tree.
+// Description: Function to fill an array of NodeData* by using an inorder traversal of the tree.
 //				It leaves the tree empty
 // Parameter is pointer to NodeData array
 // Notes:
@@ -263,7 +263,7 @@ void BinTree::toArray(NodeData** storage, Node* &curr, int* &count) {
 	//if nowhere to go, just end recursion
 	if (curr != NULL) {
 		toArray(storage, curr->left, count);		//traverse to the left first
-		NodeData* data = new NodeData(*curr->data);	//create new DataNode object with data from the tree
+		NodeData* data = new NodeData(*curr->data);	//create new dataNode object with data from the tree
 		(*count)++;									//increment count
 		storage[*count] = data;						//adding data to storage
 		toArray(storage, curr->right, count);		//traverse to the right

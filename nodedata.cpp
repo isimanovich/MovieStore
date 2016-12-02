@@ -46,7 +46,7 @@ bool NodeData::operator>=(const NodeData& rhs) const {
 //------------------------------ setData -------------------------------------
 // returns true if the data is set, false when bad data, i.e., is eof
 
-void NodeData::setData() {
+void NodeData::setData(string data) {
 
 
 }

@@ -13,7 +13,7 @@ class NodeData {
 
 public:
 	NodeData();          // default constructor, data is set to an empty string
-	~NodeData();
+	virtual ~NodeData();
 	NodeData(const string &);      // data is set equal to parameter
 	NodeData(const NodeData &);    // copy constructor
 	NodeData& operator=(const NodeData &);
@@ -25,7 +25,7 @@ public:
 
 
 	//----------------------------for asssignment 4---------------------------------
-	virtual void setData();
+	virtual void setData(string data);
 	virtual bool operator<(const NodeData &) const;
 	void display()const;
 

@@ -54,9 +54,12 @@ void Business::buildMovies(ifstream& movFile){
 		switch(type){
 		case 'F':
 			movie = new Comedy();
+			movie->setData(restOfLine);
+			allComedies->insert(movie);
 			break;
 		case 'D':
 			movie = new Drama();
+			movie->setData(restOfLine);
 			break;
 		case 'C':
 			movie = new Classic();
