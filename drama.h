@@ -5,7 +5,6 @@
  *      Author: MacBook
  */
 
-
 #ifndef DRAMA_H_
 #define DRAMA_H_
 
@@ -18,10 +17,10 @@ public:
 
 	Drama();
 	~Drama();
-	bool operator<(Drama&) const;
-	bool operator==(Drama& ) const;
-	void setData(string);
-	bool display() const;
+	 bool operator<(Drama&) const;
+	 bool operator==(Drama& ) const;
+     void setData(string);
+	 bool display() const;
 
 private:
 
