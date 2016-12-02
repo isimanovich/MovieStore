@@ -48,18 +48,18 @@ void Business::buildMovies(ifstream& movFile){
 	string restOfLine;
 
 	while(!movFile.eof()){
+		Movie* movie = NULL;
 		movFile >> type;
 		getline(movFile,restOfLine);
 		switch(type){
-
 		case 'F':
-			//Movie* movie1 = new Comedy();
+			movie = new Comedy();
 			break;
 		case 'D':
-			//Movie* movie2 = new Drama();
+			movie = new Drama();
 			break;
 		case 'C':
-			//Movie* movie3 = new Classic();
+			movie = new Classic();
 			break;
 		default:
 			cout << "invalid input" << endl;

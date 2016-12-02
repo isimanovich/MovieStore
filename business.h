@@ -13,6 +13,12 @@
 #include "bintree.h"
 #include "transaction.h"
 #include "movie.h"
+#include "comedy.h"
+#include "classic.h"
+#include "drama.h"
+
+//DON'T FORGET TO ADD BORROW RETURN ETC .h FILES
+
 
 
 using namespace std;
