@@ -1,24 +1,16 @@
 /*
- * drama.cpp
+ * comedy.cpp
  *
  *  Created on: Dec 1, 2016
  *      Author: MacBook
  */
 
 #include <iostream>
-#include "drama.h"
+#include "comedy.h"
 
 using namespace std;
 
-Drama::Drama(){
-
-}
-
-Drama::~Drama(){
-
-}
-
-void Drama::setData(string data){
+Comedy::Comedy(){
 
 }
 
