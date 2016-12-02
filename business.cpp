@@ -53,7 +53,6 @@ void Business::buildMovies(ifstream& movFile){
 		getline(movFile,restOfLine);
 		switch(type){
 		case 'F':
-
 			movie = new Comedy();
 			break;
 		case 'D':
