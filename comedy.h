@@ -7,10 +7,7 @@
 
 #ifndef COMEDY_H_
 #define COMEDY_H_
-<<<<<<< HEAD
-=======
 
->>>>>>> origin/master
 #include "movie.h"
 using namespace std;
 

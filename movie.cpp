@@ -1,5 +1,7 @@
 #include "movie.h"
 #include <sstream>
+#include <iostream>
+#include <string>
 
 using namespace std;
 

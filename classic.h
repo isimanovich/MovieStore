@@ -9,11 +9,7 @@
 
 #ifndef CLASSIC_H_
 #define CLASSIC_H_
-<<<<<<< HEAD
-#include <iostream>
-=======
 
->>>>>>> origin/master
 #include "movie.h"
 using namespace std;
 
