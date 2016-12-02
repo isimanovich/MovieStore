@@ -55,7 +55,9 @@ void Business::buildMovies(ifstream& movFile){
 		case 'F':
 			movie = new Comedy();
 			movie->setData(restOfLine);
+//			movie->display();
 			allComedies->insert(movie);
+
 			break;
 		case 'D':
 			movie = new Drama();
@@ -70,8 +72,8 @@ void Business::buildMovies(ifstream& movFile){
 		}
 	}
 
-    cout << type << endl;
-    cout << restOfLine << endl;
+	cout << *allComedies << endl;
+//	allComedies->displaySideways();
 
 }
 

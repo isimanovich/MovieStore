@@ -45,6 +45,7 @@ protected:
 	int borrowedCount;
 	string title;
 	string media;
+
 };
 
 #endif /* MOVIE_H_ */

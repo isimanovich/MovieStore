@@ -39,7 +39,7 @@ public:
 	bool operator<=(const NodeData &) const;
 	bool operator>=(const NodeData &) const;
 
-private:
+protected:
 	string data;
 };
 

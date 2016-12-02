@@ -46,7 +46,7 @@ BinTree::~BinTree() {
 ostream &operator<<(ostream& out, const BinTree& tree) {
 	//calling private helper function to traverse the tree recursively
 	tree.inOrder(out, tree.root);
-	out << endl;		//add end of line to the output
+//	out << endl;		//add end of line to the output
 	return out;			//return ostream object
 }
 
@@ -59,7 +59,7 @@ void BinTree::inOrder(ostream& out, Node* curr) const {
 	//if pointer is not pointing at NULL, execute following
 	if (curr != NULL) {
 		inOrder(out, curr->left);		//recursive call to traverse to the left
-		out << *curr->data << " ";		//add data to the ostream
+		out << *curr->data << endl;		//add data to the ostream
 		inOrder(out, curr->right);	//recursive call to traverse to the right
 	}
 }
