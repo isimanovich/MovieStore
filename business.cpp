@@ -64,10 +64,11 @@ void Business::buildMovies(ifstream& movFile){
 			break;
 		case 'C':
 			movie = new Classic();
-
+			movie->setData(restOfLine);
+			allClassics->insert(movie);
 
 			//classic movies are processed differently
-			//have to process differently from Drama and Comedy here
+			//have to modify set data in Classic
 
 
 			break;
@@ -79,9 +80,14 @@ void Business::buildMovies(ifstream& movFile){
 
 	//testing what's inside of trees
 
+	cout << "comedies: " << endl;
 	cout << *allComedies << endl;
 	cout << endl;
+	cout << "dramas: " << endl;
 	cout << *allDramas << endl;
+	cout << endl;
+	cout << "classics: " << endl;
+	cout << *allClassics << endl;
 //	allComedies->displaySideways();
 
 }
