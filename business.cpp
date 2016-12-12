@@ -55,16 +55,21 @@ void Business::buildMovies(ifstream& movFile){
 		case 'F':
 			movie = new Comedy();
 			movie->setData(restOfLine);
-//			movie->display();
 			allComedies->insert(movie);
-
 			break;
 		case 'D':
 			movie = new Drama();
 			movie->setData(restOfLine);
+			allDramas->insert(movie);
 			break;
 		case 'C':
 			movie = new Classic();
+
+
+			//classic movies are processed differently
+			//have to process differently from Drama and Comedy here
+
+
 			break;
 		default:
 			cout << "invalid input" << endl;
@@ -72,7 +77,11 @@ void Business::buildMovies(ifstream& movFile){
 		}
 	}
 
+	//testing what's inside of trees
+
 	cout << *allComedies << endl;
+	cout << endl;
+	cout << *allDramas << endl;
 //	allComedies->displaySideways();
 
 }
