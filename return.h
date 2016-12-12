@@ -1,20 +1,17 @@
 
 #ifndef RETURN_H
 #define RETURN_H
-#include "movie.h"
 #include "transaction.h"
 using namespace std;
 
-
-class Customer;
 class Return: public Transaction
 {
 public:
 	Return();
-	Return(const Return&);
+//	Return(const Return&);
 	~Return();
-	virtual bool setData(string, Movie*, Customer*);
+	virtual void setData(string);
 	virtual void display() const;
-	virtual Transaction* create();
+//	virtual Transaction* create();
 };
 #endif

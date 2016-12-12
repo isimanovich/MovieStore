@@ -37,6 +37,12 @@ public:
 	int getAmountIn();
 	int getAmountOut();
 
+	string getTitle();
+	int getYear();
+	string getDirFirstName();
+	string getDirLastName();
+
+
 protected:
 	string dirFirstName;
 	string dirLastName;

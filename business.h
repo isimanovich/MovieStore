@@ -12,10 +12,15 @@
 #include <iostream>
 #include "bintree.h"
 #include "transaction.h"
+#include "borrow.h"
+//#include "return.h"
+//#include "history.h"
+//need to add inventory.h
 #include "movie.h"
 #include "comedy.h"
 #include "classic.h"
 #include "drama.h"
+
 
 //DON'T FORGET TO ADD BORROW RETURN ETC .h FILES
 
@@ -29,7 +34,6 @@ public:
 	~Business();					//destructor
 	void buildMovies(ifstream&);				//add infile
 	void buildCustomers();			//add infile
-	void processTransactions();		//add infile
 	void buildCustomers(ifstream&);			//add infile
 	void processTransactions(ifstream&);		//add infile
 
@@ -38,7 +42,7 @@ private:
 	BinTree* allDramas;
 	BinTree* allClassics;
 	//HashTable* allCustomers;
-	Transaction* currentTransaction;
+//	Transaction* currentTransaction;
 
 };
 

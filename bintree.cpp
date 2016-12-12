@@ -59,7 +59,10 @@ void BinTree::inOrder(ostream& out, Node* curr) const {
 	//if pointer is not pointing at NULL, execute following
 	if (curr != NULL) {
 		inOrder(out, curr->left);		//recursive call to traverse to the left
-		out << *curr->data << endl;		//add data to the ostream
+//		out << *curr->data << endl;		//add data to the ostream
+		string title = curr->Data->getTitle();
+		int year = curr->Data->getYear();
+		out << title << " " << year << endl;
 		inOrder(out, curr->right);	//recursive call to traverse to the right
 	}
 }
@@ -94,6 +97,8 @@ bool BinTree::retrieveHelper(const NodeData& target, NodeData* &result,
 	}
 	return false;	//if object not found
 }
+
+
 
 // ------------------------------------------------ = operator ------------------------------------------------------
 // Description: Operator that assigns one BinTree object to another

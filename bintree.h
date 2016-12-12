@@ -15,6 +15,7 @@
 
 #include <iostream>
 #include "NodeData.h"
+#include "comedy.h"
 
 using namespace std;
 
@@ -25,8 +26,7 @@ class BinTree {
 	friend ostream &operator<<(ostream& ouT, const BinTree&);
 
 public:
-
-														//constructors and destructor
+												//constructors and destructor
 	BinTree();
 	BinTree(const BinTree&);
 	~BinTree();
@@ -45,6 +45,7 @@ public:
 private:
 	struct Node {
 		NodeData* data;									// pointer to data object
+		Movie* Data;
 		Node* left;										// left subtree pointer
 		Node* right;									// right subtree pointer
 	};

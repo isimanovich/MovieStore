@@ -41,6 +41,19 @@ public:
 
 protected:
 	string data;
+//	struct Data{
+//		string dirFirstName;
+//		string dirLastName;
+//		int year;
+//		int instock;
+//		int borrowedCount;
+//		string title;
+//		string media;
+//
+//		string actorFirst;
+//		string actorLast;
+//		int month;
+//	};
 };
 
 #endif

@@ -61,6 +61,9 @@ void Comedy::setData(string data){
 	}
 //	cout << title << endl;
 	this->data = title;			//setting data to title name, so node can be stored in the tree
+
+
+
 	//getting a year of the movie
 	dataStream >> year;
 //	cout << year << endl;

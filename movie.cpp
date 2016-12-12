@@ -92,3 +92,20 @@ bool Movie::display()const{
 	cout << this->title << endl;
 	return false;
 }
+
+string Movie::getTitle(){
+	return title;
+}
+
+int Movie::getYear(){
+	return year;
+}
+
+string Movie::getDirFirstName() {
+	return dirFirstName;
+}
+
+string Movie::getDirLastName() {
+	return dirLastName;
+}
+

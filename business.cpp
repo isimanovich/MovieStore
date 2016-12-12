@@ -7,22 +7,20 @@
 
 #include "business.h"
 
-
 //constructor
-Business::Business(){
+Business::Business() {
 
 	//creating pointers for every type of movies
 	allComedies = new BinTree();
 	allDramas = new BinTree();
 	allClassics = new BinTree();
 
-
 	//not sure about this one
-	currentTransaction = NULL;
+//	currentTransaction = NULL;
 }
 
 //destructor
-Business::~Business(){
+Business::~Business() {
 	allComedies->makeEmpty();	//making tree empty
 	delete allComedies;			//deleting pointer SET TO NULL? MAYBE NOT NEEDED
 	allDramas->makeEmpty();		//making tree empty
@@ -37,21 +35,16 @@ Business::~Business(){
 
 }
 
-
-void Business::buildMovies(ifstream& movFile){
-
-	/*string test = ", 10, Barry Levinson, Good Morning Vietnam, 1988 /n";
-	Movie* d = new Movie();
-	d->setData(test);*/
+void Business::buildMovies(ifstream& movFile) {
 
 	char type = 'z';
 	string restOfLine;
 
-	while(!movFile.eof()){
+	while (!movFile.eof()) {
 		Movie* movie = NULL;
 		movFile >> type;
-		getline(movFile,restOfLine);
-		switch(type){
+		getline(movFile, restOfLine);
+		switch (type) {
 		case 'F':
 			movie = new Comedy();
 			movie->setData(restOfLine);
@@ -70,10 +63,9 @@ void Business::buildMovies(ifstream& movFile){
 			//classic movies are processed differently
 			//have to modify set data in Classic
 
-
 			break;
 		default:
-			cout << "invalid input" << endl;
+			cout << "invalid movie type" << endl;
 			break;
 		}
 	}
@@ -92,17 +84,60 @@ void Business::buildMovies(ifstream& movFile){
 
 }
 
-//SHOULD ACCEPT INFILE, FIX THAT
-void Business::buildCustomers(ifstream& customerFile){
+void Business::buildCustomers(ifstream& customerFile) {
 	//logic for reading file and adding stuff to the tree
 }
 
 //SHOULD ACCEPT INFILE, FIX THAT
-void Business::processTransactions(ifstream& transactionsFile){
+void Business::processTransactions(ifstream& transactionsFile) {
 	//logic for reading file and adding stuff to the tree
+	char type = 'z';
+	string restOfLine;
 
+
+
+	while (!transactionsFile.eof()) {
+		Transaction* tran = NULL;
+		transactionsFile >> type;
+		int custID = 0;
+
+		switch (type) {
+		case 'B':
+
+			transactionsFile >> custID;
+			getline(transactionsFile, restOfLine);
+			tran = new Borrow();
+			tran->setData(restOfLine);
+
+			break;
+//		case 'R':
+//			movie = new Drama();
+//			movie->setData(restOfLine);
+//			allDramas->insert(movie);
+//			break;
+//		case 'I':
+//			movie = new Classic();
+//			movie->setData(restOfLine);
+//			allClassics->insert(movie);
+//
+//			//classic movies are processed differently
+//			//have to modify set data in Classic
+//
+//			break;
+//		case 'H':
+//			movie = new Classic();
+//			movie->setData(restOfLine);
+//			allClassics->insert(movie);
+//
+//			//classic movies are processed differently
+//			//have to modify set data in Classic
+//
+//			break;
+		default:
+			cout << "invalid transaction type" << endl;
+			break;
+		}
+	}
 
 }
-
-
 
