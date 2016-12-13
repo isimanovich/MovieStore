@@ -85,6 +85,7 @@ bool BinTree::retrieveHelper(Movie& target, Movie* &result,
 		Node* &curr) {
 	//if found object - put it in target and return true
 	if (target == *curr->data) {
+		cerr << "target title: " << target.getTitle() << " " << "curr title: " <<curr->data->getTitle()<< endl;
 		result = curr->data;
 		return true;
 	} else if (target < *curr->data && curr->left != NULL) {//left recursive call

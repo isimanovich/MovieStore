@@ -1,0 +1,10 @@
+
+
+
+
+BinTree retrieve function uses for comparison operator== from Movie
+ instead of using it from derived classes
+ 
+ 
+ 
+ 

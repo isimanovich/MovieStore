@@ -80,13 +80,6 @@ void Business::buildMovies(ifstream& movFile) {
 	cout << endl;
 	cout << "classics: " << endl;
 	cout << *allClassics << endl;
-//	cout << endl;
-//	cout << endl;
-//	cout << endl;
-//	cout << endl;
-//	cout << "test: "<< endl;
-//	cout << ("Sleepless in Seattle" < "Annie Hall") << endl;
-//	allComedies->displaySideways();
 
 }
 

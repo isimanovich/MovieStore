@@ -47,7 +47,7 @@ void Borrow::setData(BinTree& tree, string data, char movieType) {
 		dataStream >> year;
 
 		Movie* result = NULL;
-		Movie* target = new Comedy(title, year);
+		Comedy* target = new Comedy(title, year);
 		if (tree.retrieve(*target, result)) {
 			if (result->borrow() == false) {
 				cout << "ERROR: THIS MOVIE IS OUT OF STOCK" << endl;
@@ -102,7 +102,7 @@ void Borrow::setData(BinTree& tree, string data, char movieType) {
 		}
 
 		Movie* result = NULL;
-		Movie* target = new Drama(director, title);
+		Drama* target = new Drama(director, title);
 
 		if (tree.retrieve(*target, result)) {
 			if (result->borrow() == false) {
@@ -126,7 +126,7 @@ void Borrow::setData(BinTree& tree, string data, char movieType) {
 		actor = first + " " + last;
 
 		Movie* result = NULL;
-		Movie* target = new Classic(month, year, actor);
+		Classic* target = new Classic(month, year, actor);
 		cerr << "result before: " << result << endl;
 		if (tree.retrieve(*target, result)) {
 			if (result->borrow() == false) {
