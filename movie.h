@@ -31,7 +31,7 @@ public:
 	virtual void setData(string);
     bool display() const;
 
-	void borrow();
+	bool borrow();
 	void returN();
 
 

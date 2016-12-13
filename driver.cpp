@@ -30,6 +30,8 @@ int main() {
 
 	store.buildMovies(movieFile);
 
+	store.processTransactions(comFile);
+
 
 
 	return 0;

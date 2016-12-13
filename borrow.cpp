@@ -51,9 +51,12 @@ void Borrow::setData(BinTree& tree, string data) {
 		Movie* result = NULL;
 		Movie* target = new Comedy(title, year);
 		if(tree.retrieve(*target, result)) {
-			//update stock
+			if(!result->borrow()){
+				cout << "ERROR: THIS MOVIE IS OUT OF STOCK" << endl;
+			}
+
 		} else {
-			//not found
+			cout << "ERROR: MOVIE IS NOT IN THE STORE" << endl;
 		}
 
 		//DON"T FORGET TO DESTROY TEMPORARY OBJECTS

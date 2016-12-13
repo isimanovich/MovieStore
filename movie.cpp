@@ -22,8 +22,14 @@ Movie::~Movie(){
 
 //still need destructor
 
-void Movie::borrow() {
-	this->instock--;
+bool Movie::borrow() {
+	if(instock > 0){
+		this->instock--;
+		return true;
+	}else{
+		return false;
+	}
+
 }
 
 void Movie::returN() {

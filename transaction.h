@@ -3,7 +3,11 @@
 #include <iostream>
 #include "movie.h"
 #include "bintree.h"
-#include "business.h"
+#include "comedy.h"
+#include "classic.h"
+#include "drama.h"
+
+
 using namespace std;
 
 class Transaction{
@@ -11,7 +15,7 @@ class Transaction{
 public:
 
 	Transaction();
-	Transaction(const Transaction&);
+//	Transaction(const Transaction&);
 	virtual ~Transaction();
 	virtual void setData(BinTree&, string);
 	virtual void display() const;
