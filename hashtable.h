@@ -12,7 +12,10 @@ public:
 
 
 private:
+	struct Customer {
+		int id;
 
+	};
 
 };
 
