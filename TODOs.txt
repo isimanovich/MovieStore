@@ -1,10 +1,8 @@
-
-
-
-
-BinTree retrieve function uses for comparison operator== from Movie
- instead of using it from derived classes
+Make sure that borrow and return uses correct objects to adjust stock
  
+What if actor has 3 words in name
+
+What if duplicate movies? don't forget to increment stock
  
  
  

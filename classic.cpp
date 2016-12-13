@@ -89,8 +89,12 @@ void Classic::setData(string data) {
 
 }
 
-bool Classic::display() const {
-	return false;
+void Classic::display() const {
+
+	cout << "Movie genre: Classic; Title: " << title << "; Release date: " << month << " "
+			<<  year << "; Director: " << director << "; Major actor: " << actor
+			<< "; Qty in stock: " << instock << "; Qty borrowed: "<< borrowedCount <<  endl;
+
 }
 
 bool Classic::operator<(const Movie &rhs) const {

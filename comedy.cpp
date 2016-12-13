@@ -25,9 +25,12 @@ Comedy::~Comedy(){
 
 }
 
-bool Comedy::display()const{
-	cout << this->title << endl;
-	return false;
+void Comedy::display()const{
+
+	cout << "Movie genre: Comedy; Title: " << title << "; Release year: " <<  year
+				<< "; Director: " << director << "; Qty in stock: " << instock
+				<< "; Qty borrowed: "<< borrowedCount <<  endl;
+
 }
 
 void Comedy::setData(string data){

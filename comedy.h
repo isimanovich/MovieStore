@@ -25,7 +25,7 @@ public:
 	bool operator==(const Comedy&) const;
 
 	void setData(string);
-	bool display() const;
+	void display() const;
 
 private:
 

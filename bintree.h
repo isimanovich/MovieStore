@@ -30,7 +30,7 @@ public:
 	BinTree(const BinTree&);
 	~BinTree();
 
-	//first Movie here must be constant
+	void printData()const;								//prints all movies in the tree
 	bool retrieve(Movie &, Movie* &);		//retrieves requested object from the tree
 	BinTree& operator=(const BinTree& );				//assignment operator
 	bool isEmpty() const;								//checks if tree is empty
@@ -47,6 +47,7 @@ private:
 	Node* root = NULL;									// root of the tree
 
 	void inOrder(ostream&, Node*)const;					//output operator helper function
+	void printDataHelper(Node*)const;
 
 	//first Movie here must be constant, fix it
 	bool retrieveHelper(Movie&, Movie* &, Node*&);//retrieve helper function

@@ -24,7 +24,7 @@ public:
 	bool operator==(const Movie& ) const;
 
 	void setData(string);
-	bool display() const;
+	void display() const;
 
 private:
 

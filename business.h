@@ -42,6 +42,9 @@ private:
 	BinTree* allComedies;
 	BinTree* allDramas;
 	BinTree* allClassics;
+
+	//Stack* history;
+
 	//HashTable* allCustomers;
 //	Transaction* currentTransaction;
 

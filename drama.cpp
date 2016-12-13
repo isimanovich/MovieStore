@@ -81,8 +81,12 @@ void Drama::setData(string data){
 //	cout << year << endl;
 }
 
-bool Drama::display()const{
-	return false;
+void Drama::display()const{
+
+	cout << "Movie genre: Drama; Title: " << title << "; Release year: " <<  year
+			<< "; Director: " << director << "; Qty in stock: " << instock
+			<< "; Qty borrowed: "<< borrowedCount <<  endl;
+
 }
 
 bool Drama::operator<(const Movie &rhs) const {

@@ -64,6 +64,27 @@ void BinTree::inOrder(ostream& out, Node* curr) const {
 	}
 }
 
+
+
+
+
+void BinTree::printData()const{
+	//calling private helper function to traverse the tree recursively
+	printDataHelper(this->root);
+}
+
+void BinTree::printDataHelper(Node* curr) const {
+	//if pointer is not pointing at NULL, execute following
+	if (curr != NULL) {
+		printDataHelper(curr->left);		//recursive call to traverse to the left
+		curr->data->display();		//add data to the ostream
+		printDataHelper(curr->right);	//recursive call to traverse to the right
+	}
+}
+
+
+
+
 // -------------------------------------------------- retrieve ------------------------------------------------------
 // Description: function to get the Movie* of a given object in the tree (via pass-by-reference
 // parameter) and to report whether the object is found (tree or false).

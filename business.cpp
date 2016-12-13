@@ -6,6 +6,7 @@
  */
 
 #include "business.h"
+#include <string.h>
 
 //constructor
 Business::Business() {
@@ -38,7 +39,7 @@ Business::~Business() {
 void Business::buildMovies(ifstream& movFile) {
 
 	char type = 'z';
-	string restOfLine;
+	string restOfLine, getNewLine;
 
 	while (!movFile.eof()) {
 		Movie* movie = NULL;
@@ -67,15 +68,15 @@ void Business::buildMovies(ifstream& movFile) {
 	}
 
 	//testing what's inside of trees
-
-	cout << "comedies: " << endl;
-	cout << *allComedies << endl;
-	cout << endl;
-	cout << "dramas: " << endl;
-	cout << *allDramas << endl;
-	cout << endl;
-	cout << "classics: " << endl;
-	cout << *allClassics << endl;
+//
+//	cout << "comedies: " << endl;
+//	cout << *allComedies << endl;
+//	cout << endl;
+//	cout << "dramas: " << endl;
+//	cout << *allDramas << endl;
+//	cout << endl;
+//	cout << "classics: " << endl;
+//	cout << *allClassics << endl;
 
 }
 
@@ -87,12 +88,12 @@ void Business::buildCustomers(ifstream& customerFile) {
 	string lastName;
 	string temp;
 
-	while(!customerFile.eof()){
+	while (!customerFile.eof()) {
 		customerFile >> customerId;
 
 		customerFile >> firstName;
 		customerFile >> lastName;
-		getline(customerFile,temp);
+		getline(customerFile, temp);
 		cout << customerId << endl;
 		cout << firstName << " ";
 		cout << lastName << endl;
@@ -107,18 +108,18 @@ void Business::processTransactions(ifstream& transactionsFile) {
 	int custID = 0;
 	char mediaType = 'z';
 	char movieType = 'z';
-	string restOfLine;
+	string restOfLine, toGetNewLine;
 
 	while (!transactionsFile.eof()) {
 		Transaction* tran = NULL;
 		transactionsFile >> type;
-		transactionsFile >> custID;
-		transactionsFile >> mediaType;
-		transactionsFile >> movieType;
-		getline(transactionsFile, restOfLine);
 
 		switch (type) {
 		case 'B': {
+			transactionsFile >> custID;
+			transactionsFile >> mediaType;
+			transactionsFile >> movieType;
+			getline(transactionsFile, restOfLine);
 
 			tran = new Borrow();
 
@@ -133,7 +134,7 @@ void Business::processTransactions(ifstream& transactionsFile) {
 				tran->setData(*allClassics, restOfLine, movieType);
 				break;
 			default:
-				cout << "INVALID MOVIE TYPE" << endl;
+				cout << "INVALID MOVIE TYPE, CAN'T BORROW" << endl;
 				break;
 
 			}
@@ -147,9 +148,13 @@ void Business::processTransactions(ifstream& transactionsFile) {
 
 			break;
 		}
-		case 'R':
-			tran = new Return();
+		case 'R': {
+			transactionsFile >> custID;
+			transactionsFile >> mediaType;
+			transactionsFile >> movieType;
+			getline(transactionsFile, restOfLine);
 
+			tran = new Return();
 
 			/*
 			 * NEED TO CHECK IF CUSTOMER BORROWED THIS MOVIE,
@@ -167,7 +172,7 @@ void Business::processTransactions(ifstream& transactionsFile) {
 				tran->setData(*allClassics, restOfLine, movieType);
 				break;
 			default:
-				cout << "INVALID MOVIE TYPE" << endl;
+				cout << "INVALID MOVIE TYPE, CAN'T RETURN" << endl;
 				break;
 
 			}
@@ -180,28 +185,57 @@ void Business::processTransactions(ifstream& transactionsFile) {
 			 */
 
 			break;
-//		case 'I':
-//			movie = new Classic();
-//			movie->setData(restOfLine);
-//			allClassics->insert(movie);
-//
-//			//classic movies are processed differently
-//			//have to modify set data in Classic
-//
-//			break;
-//		case 'H':
-//			movie = new Classic();
-//			movie->setData(restOfLine);
-//			allClassics->insert(movie);
-//
-//			//classic movies are processed differently
-//			//have to modify set data in Classic
-//
-//			break;
-		default:
-			cout << "invalid transaction type" << endl;
+		}
+		case 'I': {
+			getline(transactionsFile, toGetNewLine);
+			/*
+			 * 1. output allComedies
+			 * 		- sorting criteria
+			 * 		- inorder traversal
+			 * 		-call display function on each object in the tree
+			 * 2. output allDramas
+			 * 		- sorting criteria
+			 * 		- inorder traversal
+			 * 		- call display function on each object in the tree
+			 * 3. output allClassics
+			 * 		- sorting criteria
+			 * 		- inorder traversal
+			 * 		- call display function on each object in the tree
+			 */
+			cout << "ALL COMEDIES IN STORE: " << endl;
+			allComedies->printData();
+			cout << endl;
+			cout << "ALL DRAMAS IN STORE: " << endl;
+			allDramas->printData();
+			cout << endl;
+			cout << "ALL CLASSICS IN STORE: " << endl;
+			allClassics->printData();
 			break;
 		}
+
+		/*
+		 * should probably use that in HISTORY
+		 * getline(transactionsFile, toGetNewLine);
+		 *
+		 */
+
+		case 'H':{
+		/*
+		 * 1. read ID
+		 * 2. go to HashTable and find customer
+		 * 3. customer->printHisotry();
+		 *
+		 *
+		 */
+			break;
+		}
+		default:
+			cout << "ERROR: INVALID TRANSACTION TYPE" << endl;
+			break;
+		}
+
+
+
 	}
 
 }

@@ -24,7 +24,8 @@ Movie::~Movie(){
 
 bool Movie::borrow() {
 	if(instock > 0){
-		this->instock--;
+		instock--;
+		borrowedCount++;
 		return true;
 	}else{
 		return false;
@@ -33,7 +34,9 @@ bool Movie::borrow() {
 }
 
 void Movie::returN() {
-	this->instock++;
+	instock++;
+	borrowedCount--;
+
 }
 
 bool Movie::operator<(const Movie &rhs) const {
@@ -114,9 +117,12 @@ void Movie::increaseStock(int value){
 }
 
 
-bool Movie::display()const{
-	cout << this->title << endl;
-	return false;
+void Movie::display()const{
+
+	cout << "Movie genre: General Movie; Title: " << title << "; Release year: " <<  year
+					<< "; Director: " << director << "; Qty in stock: " << instock
+					<< "; Qty borrowed: "<< borrowedCount <<  endl;
+
 }
 
 string Movie::getTitle(){

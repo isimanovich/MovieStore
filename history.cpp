@@ -9,7 +9,7 @@ History::~History(){
 }
 
 
-void History::setData(BinTree& tree, string data){
+void History::setData(BinTree& tree, string data, char movieType){
 
 }
 

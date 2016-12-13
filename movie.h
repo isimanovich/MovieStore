@@ -28,7 +28,7 @@ public:
 	//consider passing line and decompose inside or full file,
 	//but that probably should be in business
 	virtual void setData(string);
-    bool display() const;
+    virtual void display() const;
 
 	bool borrow();
 	void returN();
