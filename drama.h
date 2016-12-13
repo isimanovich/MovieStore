@@ -18,9 +18,10 @@ public:
 	Drama();
 	virtual ~Drama();
 	Drama(string, string);
-	bool operator>(const Drama&) const;
+	bool operator<(const Movie&) const;
 	bool operator<(const Drama&) const;
 	bool operator==(const Drama& ) const;
+	bool operator==(const Movie& ) const;
 
 	void setData(string);
 	bool display() const;

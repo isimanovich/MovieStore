@@ -10,21 +10,21 @@
 
 using namespace std;
 
-Classic::Classic(){
+Classic::Classic() {
 	month = 0;
 }
 
-Classic::Classic(int month, int year, string actor){
+Classic::Classic(int month, int year, string actor) {
 	this->actor = actor;
 	this->month = month;
 	this->year = year;
 }
 
-Classic::~Classic(){
+Classic::~Classic() {
 
 }
 
-void Classic::setData(string data){
+void Classic::setData(string data) {
 
 //	cout << "this is what i get for classic: " << endl;
 //	cout << data << endl;
@@ -41,22 +41,22 @@ void Classic::setData(string data){
 	dataStream >> temp;
 
 	for (;;) {
-			//no comma case, adding words to title
-			if (temp.find(',') == -1) {
-				director += temp;
-				director += " ";
-				dataStream >> temp;
-			}
-
-			//comma case, removing comma and adding to title then break
-			else {
-
-				temp = temp.substr(0, temp.size() - 1);
-				director += temp;
-				break;
-
-			}
+		//no comma case, adding words to title
+		if (temp.find(',') == -1) {
+			director += temp;
+			director += " ";
+			dataStream >> temp;
 		}
+
+		//comma case, removing comma and adding to title then break
+		else {
+
+			temp = temp.substr(0, temp.size() - 1);
+			director += temp;
+			break;
+
+		}
+	}
 
 	//reading title
 	dataStream >> temp;
@@ -80,51 +80,57 @@ void Classic::setData(string data){
 
 	//WHAT IF ACTOR NAME IS OUT OF 3 WORDS??????????????????????????????????
 
-	string actorFirst,actorLast;
+	string actorFirst, actorLast;
 	dataStream >> actorFirst;
 	dataStream >> actorLast;
 	actor = actorFirst + " " + actorLast;
 	dataStream >> month;
 	dataStream >> year;
-	cout << month << " " << year << endl;
-
 
 }
 
-bool Classic::display()const{
+bool Classic::display() const {
 	return false;
 }
 
+bool Classic::operator<(const Movie &rhs) const {
+
+	const Classic& rhS = static_cast<const Classic&>(rhs);
+
+	if (year < rhS.year)
+		return true;
+	else if (year == rhS.year && month < rhS.month)
+		return true;
+	else if (year == rhS.year && month == rhS.month && actor < rhS.actor) {
+		return true;
+	} else
+		return false;
+}
+
 bool Classic::operator<(const Classic &rhs) const {
-	if (this->year < rhs.year)
+	if (year < rhs.year)
 		return true;
-	else if (this->year == rhs.year && this->month < rhs.month)
+	else if (year == rhs.year && month < rhs.month)
 		return true;
-	else if (this->year == rhs.year && this->month == rhs.month
-			&& actor < rhs.actor) {
-		return true;
-	} else
-		return false;
-}
-
-bool Classic::operator>(const Classic &rhs) const {
-	if (this->year > rhs.year)
-		return true;
-	else if (this->year == rhs.year && this->month > rhs.month)
-		return true;
-	else if (this->year == rhs.year && this->month == rhs.month
-			&& actor > rhs.actor) {
+	else if (year == rhs.year && month == rhs.month && actor < rhs.actor) {
 		return true;
 	} else
 		return false;
 }
 
-bool Classic::operator==(const Classic& rhs) const {
-	if (this->month == rhs.month && this->year == rhs.year
-			&& this->actor == rhs.actor)
+bool Classic::operator==(const Movie& rhs) const {
+	const Classic& rhS = static_cast<const Classic&>(rhs);
+
+	if (month == rhS.month && year == rhS.year && actor == rhS.actor)
 		return true;
 	else
 		return false;
 }
 
+bool Classic::operator==(const Classic& rhs) const {
+	if (month == rhs.month && year == rhs.year && actor == rhs.actor)
+		return true;
+	else
+		return false;
+}
 

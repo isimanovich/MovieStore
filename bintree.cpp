@@ -81,22 +81,17 @@ bool BinTree::retrieve(Movie & target, Movie* &result) {
 // Parameters are Movie, Movie pointer and Node pointer objects
 // Private function
 // ------------------------------------------------------------------------------------------------------------------
-bool BinTree::retrieveHelper(Movie& target, Movie* &result,
-		Node* &curr) {
+bool BinTree::retrieveHelper(Movie& target, Movie* &result, Node* &curr) {
 	//if found object - put it in target and return true
 	if (target == *curr->data) {
-		cerr << "target title: " << target.getTitle() << " " << "curr title: " <<curr->data->getTitle()<< endl;
 		result = curr->data;
 		return true;
-	} else if (target < *curr->data && curr->left != NULL) {//left recursive call
+	} else if (target < *curr->data && curr->left != NULL)//left recursive call
 		return retrieveHelper(target, result, curr->left);
-	} else if (target > *curr->data && curr->right != NULL) {//right recursive call
+	else	//right recursive call
 		return retrieveHelper(target, result, curr->right);
-	}
 	return false;	//if object not found
 }
-
-
 
 // ------------------------------------------------ = operator ------------------------------------------------------
 // Description: Operator that assigns one BinTree object to another
@@ -128,14 +123,12 @@ BinTree& BinTree::operator =(const BinTree& rhs) {
 void BinTree::traverseToCopy(const Node* rhs) {
 	//if pointer is not pointing at NULL, execute following
 	if (rhs != NULL) {
-		Movie* ndata = new Movie(*rhs->data);	//creating new Movie object with value from rhs tree
+		Movie* ndata = new Movie(*rhs->data);//creating new Movie object with value from rhs tree
 		insert(ndata);					//inserting Movie object in lhs tree
 		traverseToCopy(rhs->left);					//traverse to left
 		traverseToCopy(rhs->right);					//traverse to right
 	}
 }
-
-
 
 // -------------------------------------------------- isEmpty ------------------------------------------------------
 // Description: function that checks whether tree is empty or not
@@ -193,10 +186,10 @@ bool BinTree::insert(Movie* data, Node* &curr) {
 
 	/*
 
-	POSSIBLE MEMORY LEAK!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+	 POSSIBLE MEMORY LEAK!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 
 
-	*/
+	 */
 //	if(data == curr->data){
 //		curr->data->increaseStock(data->getAmountIn());
 ////		data->~Movie();

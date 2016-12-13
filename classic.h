@@ -18,9 +18,10 @@ public:
 	Classic();
 	virtual ~Classic();
 	Classic(int, int, string);
+	bool operator<(const Movie&) const;
 	bool operator<(const Classic&) const;
-	bool operator>(const Classic&) const;
 	bool operator==(const Classic&) const;
+	bool operator==(const Movie&) const;
 
 	void setData(string);
 	bool display() const;

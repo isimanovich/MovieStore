@@ -85,27 +85,37 @@ void Comedy::setData(string data){
 //	cout << year << endl;
 }
 
-bool Comedy::operator<(const Comedy &rhs) const {
-	if (this->title < rhs.title)
+bool Comedy::operator<(const Movie &rhs) const {
+	const Comedy& rhS = static_cast<const Comedy&>(rhs);
+
+	if (title < rhS.title)
 		return true;
-	else if(this->title == rhs.title && this->year < rhs.year)
+	else if(title == rhS.title && year < rhS.year)
 		return true;
 	else
 		return false;
 }
 
-bool Comedy::operator>(const Comedy &rhs) const {
-
-	if(this->title > rhs.title)
+bool Comedy::operator<(const Comedy &rhs) const {
+	if (title < rhs.title)
 		return true;
-	else if(this->title == rhs.title && this->year > rhs.year)
-			return true;
+	else if(title == rhs.title && year < rhs.year)
+		return true;
+	else
+		return false;
+}
+
+
+bool Comedy::operator==(const Movie& rhs) const {
+	const Comedy& rhS = static_cast<const Comedy&>(rhs);
+	if (title == rhS.title && year == rhS.year)
+		return true;
 	else
 		return false;
 }
 
 bool Comedy::operator==(const Comedy& rhs) const {
-	if (this->title == rhs.title && this->year == rhs.year)
+	if (title == rhs.title && year == rhs.year)
 		return true;
 	else
 		return false;

@@ -59,10 +59,6 @@ void Business::buildMovies(ifstream& movFile) {
 			movie = new Classic();
 			movie->setData(restOfLine);
 			allClassics->insert(movie);
-
-			//classic movies are processed differently
-			//have to modify set data in Classic
-
 			break;
 		default:
 			cout << "invalid movie type" << endl;
@@ -91,21 +87,22 @@ void Business::buildCustomers(ifstream& customerFile) {
 void Business::processTransactions(ifstream& transactionsFile) {
 	//logic for reading file and adding stuff to the tree
 	char type = 'z';
+	int custID = 0;
+	char mediaType = 'z';
+	char movieType = 'z';
 	string restOfLine;
 
 	while (!transactionsFile.eof()) {
 		Transaction* tran = NULL;
 		transactionsFile >> type;
-		int custID = 0;
-		char mediaType = 'z';
-		char movieType = 'z';
+		transactionsFile >> custID;
+		transactionsFile >> mediaType;
+		transactionsFile >> movieType;
+		getline(transactionsFile, restOfLine);
 
 		switch (type) {
 		case 'B': {
-			transactionsFile >> custID;
-			transactionsFile >> mediaType;
-			transactionsFile >> movieType;
-			getline(transactionsFile, restOfLine);
+
 			tran = new Borrow();
 
 			switch (movieType) {
@@ -123,13 +120,43 @@ void Business::processTransactions(ifstream& transactionsFile) {
 				break;
 
 			}
+
+			/*
+			 *
+			 * INSERT TRANSACTION POINTER INTO THE STORAGE!
+			 *
+			 *
+			 */
+
 			break;
 		}
-//		case 'R':
-//			movie = new Drama();
-//			movie->setData(restOfLine);
-//			allDramas->insert(movie);
-//			break;
+		case 'R':
+			tran = new Return();
+
+			switch (movieType) {
+			case 'F':
+				tran->setData(*allComedies, restOfLine, movieType);
+				break;
+			case 'D':
+				tran->setData(*allDramas, restOfLine, movieType);
+				break;
+			case 'C':
+				tran->setData(*allClassics, restOfLine, movieType);
+				break;
+			default:
+				cout << "INVALID MOVIE TYPE" << endl;
+				break;
+
+			}
+
+			/*
+			 *
+			 * INSERT TRANSACTION POINTER INTO THE STORAGE!
+			 *
+			 *
+			 */
+
+			break;
 //		case 'I':
 //			movie = new Classic();
 //			movie->setData(restOfLine);

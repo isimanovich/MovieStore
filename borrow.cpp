@@ -14,15 +14,10 @@ Borrow::~Borrow() {
 
 void Borrow::setData(BinTree& tree, string data, char movieType) {
 
-//	char mediaType = 'z';
-//		char movieType = 'z';
 	string title = "", temp = "";
-	string director = "";
+	string director;
 
 	istringstream dataStream(data);		//opening stream
-
-//	dataStream >> mediaType;
-//	dataStream >> movieType;
 
 	switch (movieType) {
 	case 'F': {
@@ -63,6 +58,7 @@ void Borrow::setData(BinTree& tree, string data, char movieType) {
 	}
 	case 'D': {
 		//reading director
+		dataStream >> temp;
 		for (;;) {
 			//no comma case, adding words to title
 			if (temp.find(',') == -1) {
@@ -80,7 +76,6 @@ void Borrow::setData(BinTree& tree, string data, char movieType) {
 
 			}
 		}
-
 		//reading title
 		dataStream >> temp;
 		for (;;) {
@@ -127,13 +122,11 @@ void Borrow::setData(BinTree& tree, string data, char movieType) {
 
 		Movie* result = NULL;
 		Classic* target = new Classic(month, year, actor);
-		cerr << "result before: " << result << endl;
 		if (tree.retrieve(*target, result)) {
 			if (result->borrow() == false) {
 				cout << "ERROR: THIS MOVIE IS OUT OF STOCK" << endl;
 			}
 		} else {
-			cerr<< "result after: " << result << endl;
 			cout << "ERROR: MOVIE IS NOT FOUND IN COLLECTION OF CLASSICS" << endl;
 		}
 

@@ -19,8 +19,9 @@ public:
 	Comedy();
 	Comedy(string, int);
 	virtual ~Comedy();
+	bool operator<(const Movie&) const;
 	bool operator<(const Comedy&) const;
-	bool operator>(const Comedy&) const;
+	bool operator==(const Movie&) const;
 	bool operator==(const Comedy&) const;
 
 	void setData(string);

@@ -85,27 +85,40 @@ bool Drama::display()const{
 	return false;
 }
 
+bool Drama::operator<(const Movie &rhs) const {
 
-bool Drama::operator<(const Drama &rhs) const {
-	if (this->director < rhs.director)
+	const Drama& rhS = static_cast<const Drama&>(rhs);
+
+	if (director < rhS.director)
 		return true;
-	else if (this->director == rhs.director && this->title < rhs.title)
+	else if (director == rhS.director && title < rhS.title)
 		return true;
 	else
 		return false;
 }
 
-bool Drama::operator >(const Drama &rhs) const {
-	if (this->director > rhs.director)
+bool Drama::operator<(const Drama &rhs) const {
+	if (director < rhs.director)
 		return true;
-	else if (this->director == rhs.director && this->title > rhs.title)
+	else if (director == rhs.director && title < rhs.title)
+		return true;
+	else
+		return false;
+}
+
+
+bool Drama::operator==(const Movie& rhs) const {
+
+	const Drama& rhS = static_cast<const Drama&>(rhs);
+	if(director == rhS.director && title == rhS.title)
 		return true;
 	else
 		return false;
 }
 
 bool Drama::operator==(const Drama& rhs) const {
-	if (this->director == rhs.director && this->title == rhs.title)
+
+	if (director == rhs.director && title == rhs.title)
 		return true;
 	else
 		return false;

@@ -21,7 +21,6 @@ public:
 //    Movie(const Movie&);
     virtual ~Movie();
 
-    virtual bool operator>(const Movie &) const;
     virtual bool operator<(const Movie &) const;
     virtual bool operator==(const Movie &) const;
 
