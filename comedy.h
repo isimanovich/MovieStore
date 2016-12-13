@@ -19,7 +19,9 @@ public:
 	Comedy();
 	virtual ~Comedy();
 	bool operator<(const Comedy&) const;
+	bool operator>(const Comedy&) const;
 	bool operator==(const Comedy&) const;
+
 	void setData(string);
 	bool display() const;
 

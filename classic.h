@@ -19,12 +19,13 @@ public:
 	virtual ~Classic();
 
 	bool operator<(const Classic&) const;
+	bool operator>(const Classic&) const;
 	bool operator==(const Classic&) const;
+
 	void setData(string);
 	bool display() const;
 private:
-	string actorFirst;
-	string actorLast;
+	string actor;
 	int month;
 };
 

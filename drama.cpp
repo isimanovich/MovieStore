@@ -27,15 +27,29 @@ void Drama::setData(string data){
 	dataStream >> instock;				//getting quantity in stock
 //	cout << instock << endl;
 	dataStream.ignore(256, ',');		//ignoring comma after number
-	dataStream >> dirFirstName;			//reading first name
-	dataStream >> dirLastName;			//reading last name
+	//reading director
+	string temp;
+	dataStream >> temp;
 
-	dirLastName = dirLastName.substr(0, dirLastName.size() - 1);//removing comma after last name
-//	cout << dirFirstName << endl;
-//	cout << dirLastName << endl;
+	for (;;) {
+			//no comma case, adding words to title
+			if (temp.find(',') == -1) {
+				director += temp;
+				director += " ";
+				dataStream >> temp;
+			}
+
+			//comma case, removing comma and adding to title then break
+			else {
+
+				temp = temp.substr(0, temp.size() - 1);
+				director += temp;
+				break;
+
+			}
+		}
 
 	//reading title
-	string temp;
 	dataStream >> temp;
 	for (;;) {
 		//no comma case, adding words to title
@@ -54,8 +68,7 @@ void Drama::setData(string data){
 
 		}
 	}
-//	cout << title << endl;
-	this->data = title;			//setting data to title name, so node can be stored in the tree
+
 	//getting a year of the movie
 	dataStream >> year;
 //	cout << year << endl;
@@ -64,3 +77,30 @@ void Drama::setData(string data){
 bool Drama::display()const{
 	return false;
 }
+
+
+bool Drama::operator<(const Drama &rhs) const {
+	if (this->director < rhs.director)
+		return true;
+	else if (this->director == rhs.director && this->title < rhs.title)
+		return true;
+	else
+		return false;
+}
+
+bool Drama::operator >(const Drama &rhs) const {
+	if (this->director > rhs.director)
+		return true;
+	else if (this->director == rhs.director && this->title > rhs.title)
+		return true;
+	else
+		return false;
+}
+
+bool Drama::operator==(const Drama& rhs) const {
+	if (this->director == rhs.director && this->title == rhs.title)
+		return true;
+	else
+		return false;
+}
+
