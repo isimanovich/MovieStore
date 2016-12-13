@@ -20,6 +20,7 @@
 #include "comedy.h"
 #include "classic.h"
 #include "drama.h"
+#include "customer.h"
 
 
 //DON'T FORGET TO ADD BORROW RETURN ETC .h FILES

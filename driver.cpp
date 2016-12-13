@@ -29,7 +29,7 @@ int main() {
 	Business store;
 
 	store.buildMovies(movieFile);
-
+	//store.buildCustomers(custFile);
 	store.processTransactions(comFile);
 
 
