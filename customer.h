@@ -8,7 +8,7 @@ class Customer {
 
 public:
 
-	Customer();
+	Customer(string first, string last, int customerId);
 	~Customer();
 	int getID() const;
 	void setCustomer(string firstName, string lastName, int customerId);

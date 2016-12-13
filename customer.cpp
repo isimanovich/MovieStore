@@ -1,9 +1,10 @@
 #include "customer.h"
 using namespace std;
 
-Customer::Customer(){
-
-
+Customer::Customer(string first, string last, int customerId){
+	firstName = first;
+	lastName = last;
+	id = customerId;
 }
 
 Customer::~Customer(){
