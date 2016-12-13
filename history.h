@@ -1,5 +1,3 @@
-
-
 #ifndef HISTORY_H
 #define HISTORY_H
 
@@ -12,7 +10,8 @@ public:
    History();
 //   History(const History&);
    ~History();
-   virtual void setData(string);
+   virtual void setData(BinTree&, string);
+   void display() const;
 //   virtual Transaction* create();
 };
 #endif

@@ -9,7 +9,7 @@ Return::~Return(){
 
 }
 
-void Return::setData(string data){
+void Return::setData(BinTree& tree, string data){
 
 }
 

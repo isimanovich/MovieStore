@@ -28,7 +28,7 @@ void Borrow::setData(BinTree& tree, string data) {
 
 	switch (movieType) {
 	case 'F':
-
+	{
 		//reading title
 		dataStream >> temp;
 		for (;;) {
@@ -48,7 +48,7 @@ void Borrow::setData(BinTree& tree, string data) {
 		}
 		dataStream >> year;
 
-		Comedy* result = NULL;
+		Movie* result = NULL;
 		Movie* target = new Comedy(title, year);
 		if(tree.retrieve(*target, result)) {
 			//update stock
@@ -59,6 +59,7 @@ void Borrow::setData(BinTree& tree, string data) {
 		//DON"T FORGET TO DESTROY TEMPORARY OBJECTS
 
 		break;
+	}
 	case 'D':
 
 		dataStream >> dirFirstName;			//reading first name

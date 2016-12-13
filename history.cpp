@@ -9,7 +9,11 @@ History::~History(){
 }
 
 
-void History::setData(string data){
+void History::setData(BinTree& tree, string data){
 
 }
 
+
+void History::display() const {
+
+}

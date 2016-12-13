@@ -111,7 +111,7 @@ void Business::processTransactions(ifstream& transactionsFile) {
 			transactionsFile >> custID;
 			getline(transactionsFile, restOfLine);
 			tran = new Borrow();
-			tran->setData(allComedies, restOfLine);
+			tran->setData(*allComedies, restOfLine);
 
 			break;
 //		case 'R':
