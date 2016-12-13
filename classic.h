@@ -17,14 +17,14 @@ class Classic: public Movie{
 public:
 	Classic();
 	virtual ~Classic();
-
+	Classic(int, int, string);
 	bool operator<(const Classic&) const;
 	bool operator>(const Classic&) const;
 	bool operator==(const Classic&) const;
 
 	void setData(string);
 	bool display() const;
-private:
+protected:
 	string actor;
 	int month;
 };

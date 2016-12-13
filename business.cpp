@@ -104,16 +104,34 @@ void Business::processTransactions(ifstream& transactionsFile) {
 		Transaction* tran = NULL;
 		transactionsFile >> type;
 		int custID = 0;
+		char mediaType = 'z';
+		char movieType = 'z';
 
 		switch (type) {
-		case 'B':
-
+		case 'B': {
 			transactionsFile >> custID;
+			transactionsFile >> mediaType;
+			transactionsFile >> movieType;
 			getline(transactionsFile, restOfLine);
 			tran = new Borrow();
-			tran->setData(*allComedies, restOfLine);
 
+			switch (movieType) {
+			case 'F':
+				tran->setData(*allComedies, restOfLine, movieType);
+				break;
+			case 'D':
+				tran->setData(*allDramas, restOfLine, movieType);
+				break;
+			case 'C':
+				tran->setData(*allClassics, restOfLine, movieType);
+				break;
+			default:
+				cout << "INVALID MOVIE TYPE" << endl;
+				break;
+
+			}
 			break;
+		}
 //		case 'R':
 //			movie = new Drama();
 //			movie->setData(restOfLine);

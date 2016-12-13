@@ -17,7 +17,7 @@ public:
 	Transaction();
 //	Transaction(const Transaction&);
 	virtual ~Transaction();
-	virtual void setData(BinTree&, string);
+	virtual void setData(BinTree&, string, char);
 	virtual void display() const;
 //	virtual Transaction* create();
 

@@ -14,6 +14,12 @@ Classic::Classic(){
 	month = 0;
 }
 
+Classic::Classic(int month, int year, string actor){
+	this->actor = actor;
+	this->month = month;
+	this->year = year;
+}
+
 Classic::~Classic(){
 
 }
@@ -29,6 +35,7 @@ void Classic::setData(string data){
 	dataStream >> instock;				//getting quantity in stock
 //	cout << instock << endl;
 	dataStream.ignore(256, ',');		//ignoring comma after number
+
 	//reading director
 	string temp;
 	dataStream >> temp;
@@ -70,12 +77,8 @@ void Classic::setData(string data){
 
 		}
 	}
-//	this->data = title;			//setting data to title name, so node can be stored in the tree
-	//getting a year of the movie
-
 
 	//WHAT IF ACTOR NAME IS OUT OF 3 WORDS??????????????????????????????????
-
 
 	string actorFirst,actorLast;
 	dataStream >> actorFirst;
@@ -83,8 +86,7 @@ void Classic::setData(string data){
 	actor = actorFirst + " " + actorLast;
 	dataStream >> month;
 	dataStream >> year;
-//	cout << year << endl;
-
+	cout << month << " " << year << endl;
 
 
 }

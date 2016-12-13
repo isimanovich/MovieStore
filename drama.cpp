@@ -16,6 +16,12 @@ Drama::Drama(){
 
 }
 
+
+Drama::Drama(string director, string title){
+	this->director = director;
+	this->title = title;
+}
+
 Drama::~Drama(){
 
 }
@@ -31,6 +37,7 @@ void Drama::setData(string data){
 	string temp;
 	dataStream >> temp;
 
+	//reading director
 	for (;;) {
 			//no comma case, adding words to title
 			if (temp.find(',') == -1) {

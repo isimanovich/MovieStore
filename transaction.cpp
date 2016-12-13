@@ -8,7 +8,7 @@ Transaction::~Transaction(){
 
 }
 
-void Transaction::setData(BinTree& tree, string data){
+void Transaction::setData(BinTree& tree, string data, char movieType){
 
 }
 

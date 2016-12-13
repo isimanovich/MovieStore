@@ -12,23 +12,21 @@ Borrow::~Borrow() {
 
 }
 
-void Borrow::setData(BinTree& tree, string data) {
+void Borrow::setData(BinTree& tree, string data, char movieType) {
 
-	char mediaType = 'z';
-	char movieType = 'z';
+//	char mediaType = 'z';
+//		char movieType = 'z';
 	string title = "", temp = "";
-	int year = 0, month = 0;
-	string dirFirstName = "", dirLastName = "";
-	string actorFirst = "", actorLast = "";
+	string director = "";
 
 	istringstream dataStream(data);		//opening stream
 
-	dataStream >> mediaType;
-	dataStream >> movieType;
+//	dataStream >> mediaType;
+//	dataStream >> movieType;
 
 	switch (movieType) {
-	case 'F':
-	{
+	case 'F': {
+		int year;
 		//reading title
 		dataStream >> temp;
 		for (;;) {
@@ -48,29 +46,40 @@ void Borrow::setData(BinTree& tree, string data) {
 		}
 		dataStream >> year;
 
-
-
-
 		Movie* result = NULL;
 		Movie* target = new Comedy(title, year);
-		if(tree.retrieve(*target, result)) {
-			if(result->borrow() == false){
+		if (tree.retrieve(*target, result)) {
+			if (result->borrow() == false) {
 				cout << "ERROR: THIS MOVIE IS OUT OF STOCK" << endl;
 			}
 
 		} else {
-			cout << "ERROR: MOVIE IS NOT IN THE STORE" << endl;
+			cout << "ERROR: MOVIE IS NOT FOUND IN COLLECTION OF COMEDIES" << endl;
 		}
 
 		//DON"T FORGET TO DESTROY TEMPORARY OBJECTS
 
 		break;
 	}
-	case 'D':
+	case 'D': {
+		//reading director
+		for (;;) {
+			//no comma case, adding words to title
+			if (temp.find(',') == -1) {
+				director += temp;
+				director += " ";
+				dataStream >> temp;
+			}
 
-		dataStream >> dirFirstName;			//reading first name
-		dataStream >> dirLastName;			//reading last name
-		dirLastName = dirLastName.substr(0, dirLastName.size() - 1);//removing comma after last name
+			//comma case, removing comma and adding to title then break
+			else {
+
+				temp = temp.substr(0, temp.size() - 1);
+				director += temp;
+				break;
+
+			}
+		}
 
 		//reading title
 		dataStream >> temp;
@@ -92,13 +101,43 @@ void Borrow::setData(BinTree& tree, string data) {
 			}
 		}
 
+		Movie* result = NULL;
+		Movie* target = new Drama(director, title);
+
+		if (tree.retrieve(*target, result)) {
+			if (result->borrow() == false) {
+				cout << "ERROR: THIS MOVIE IS OUT OF STOCK" << endl;
+			}
+		} else {
+			cout << "ERROR: MOVIE IS NOT FOUND IN COLLECTION OF DRAMAS" << endl;
+		}
+
+		//DON"T FORGET TO DESTROY TEMPORARY OBJECTS
+
 		break;
-	case 'C':
+	}
+	case 'C': {
+		string actor, first, last;
+		int year, month;
 		dataStream >> month;
 		dataStream >> year;
-		dataStream >> actorFirst;
-		dataStream >> actorLast;
+		dataStream >> first;
+		dataStream >> last;
+		actor = first + " " + last;
+
+		Movie* result = NULL;
+		Movie* target = new Classic(month, year, actor);
+
+		if (tree.retrieve(*target, result)) {
+			if (result->borrow() == false) {
+				cout << "ERROR: THIS MOVIE IS OUT OF STOCK" << endl;
+			}
+		} else {
+			cout << "ERROR: MOVIE IS NOT FOUND IN COLLECTION OF CLASSICS" << endl;
+		}
+
 		break;
+	}
 	default:
 		cout << "invalid type of movie, can't borrow" << endl;
 		break;
