@@ -14,14 +14,12 @@ Borrow::~Borrow() {
 
 void Borrow::setData(BinTree& tree, string data, char movieType) {
 
-	string title = "", temp = "";
-	string director;
-
 	istringstream dataStream(data);		//opening stream
 
 	switch (movieType) {
 	case 'F': {
 		int year;
+		string title, temp;
 		//reading title
 		dataStream >> temp;
 		for (;;) {
@@ -39,6 +37,7 @@ void Borrow::setData(BinTree& tree, string data, char movieType) {
 				break;
 			}
 		}
+		//reading year
 		dataStream >> year;
 
 		Movie* result = NULL;
@@ -57,6 +56,8 @@ void Borrow::setData(BinTree& tree, string data, char movieType) {
 		break;
 	}
 	case 'D': {
+		string title, temp;
+		string director;
 		//reading director
 		dataStream >> temp;
 		for (;;) {
@@ -129,7 +130,7 @@ void Borrow::setData(BinTree& tree, string data, char movieType) {
 		} else {
 			cout << "ERROR: MOVIE IS NOT FOUND IN COLLECTION OF CLASSICS" << endl;
 		}
-
+		//DON"T FORGET TO DESTROY TEMPORARY OBJECTS
 		break;
 	}
 	default:

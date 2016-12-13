@@ -150,6 +150,12 @@ void Business::processTransactions(ifstream& transactionsFile) {
 		case 'R':
 			tran = new Return();
 
+
+			/*
+			 * NEED TO CHECK IF CUSTOMER BORROWED THIS MOVIE,
+			 * IF NOT HE CAN"T RETURN IT!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+			 */
+
 			switch (movieType) {
 			case 'F':
 				tran->setData(*allComedies, restOfLine, movieType);
