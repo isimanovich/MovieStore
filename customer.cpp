@@ -1,9 +1,26 @@
-/*
- * customer.cpp
- *
- *  Created on: Dec 1, 2016
- *      Author: jasonkozodoy
- */
+#include "customer.h"
+using namespace std;
+
+Customer::Customer(){
+
+
+}
+
+Customer::~Customer(){
+
+}
+
+int Customer::getID() const {
+	return id;
+}
+
+void setCustomer(string first, string last){
+
+
+}
+
+
+
 
 
 
