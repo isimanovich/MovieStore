@@ -17,6 +17,7 @@ class Comedy: public Movie{
 
 public:
 	Comedy();
+	Comedy(string, int);
 	virtual ~Comedy();
 	bool operator<(const Comedy&) const;
 	bool operator>(const Comedy&) const;

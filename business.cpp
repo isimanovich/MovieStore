@@ -100,8 +100,6 @@ void Business::processTransactions(ifstream& transactionsFile) {
 	char type = 'z';
 	string restOfLine;
 
-
-
 	while (!transactionsFile.eof()) {
 		Transaction* tran = NULL;
 		transactionsFile >> type;
@@ -113,7 +111,7 @@ void Business::processTransactions(ifstream& transactionsFile) {
 			transactionsFile >> custID;
 			getline(transactionsFile, restOfLine);
 			tran = new Borrow();
-			tran->setData(restOfLine);
+			tran->setData(allComedies, restOfLine);
 
 			break;
 //		case 'R':

@@ -3,9 +3,9 @@
 #include <iostream>
 #include "movie.h"
 #include "bintree.h"
-//#include "business.h"
+#include "business.h"
 using namespace std;
-class Business;
+
 class Transaction{
 
 public:
@@ -13,7 +13,7 @@ public:
 	Transaction();
 	Transaction(const Transaction&);
 	virtual ~Transaction();
-	virtual void setData(string);
+	virtual void setData(BinTree&, string);
 	virtual void display() const;
 //	virtual Transaction* create();
 

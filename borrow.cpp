@@ -1,5 +1,6 @@
 #include "borrow.h"
 #include <sstream>
+#include "movie.h"
 
 using namespace std;
 
@@ -11,7 +12,7 @@ Borrow::~Borrow() {
 
 }
 
-void Borrow::setData(string data) {
+void Borrow::setData(BinTree& tree, string data) {
 
 	char mediaType = 'z';
 	char movieType = 'z';
@@ -19,7 +20,6 @@ void Borrow::setData(string data) {
 	int year = 0, month = 0;
 	string dirFirstName = "", dirLastName = "";
 	string actorFirst = "", actorLast = "";
-
 
 	istringstream dataStream(data);		//opening stream
 
@@ -48,12 +48,15 @@ void Borrow::setData(string data) {
 		}
 		dataStream >> year;
 
-//		if(tree.retrieve()){
-//			//update stock
-//		}else{
-//			//not found
-//		}
+		Comedy* result = NULL;
+		Movie* target = new Comedy(title, year);
+		if(tree.retrieve(*target, result)) {
+			//update stock
+		} else {
+			//not found
+		}
 
+		//DON"T FORGET TO DESTROY TEMPORARY OBJECTS
 
 		break;
 	case 'D':

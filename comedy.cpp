@@ -16,6 +16,11 @@ Comedy::Comedy(){
 
 }
 
+Comedy::Comedy(string title, int year){
+	this->title = title;
+	this->year = year;
+}
+
 Comedy::~Comedy(){
 
 }

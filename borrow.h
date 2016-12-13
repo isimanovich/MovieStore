@@ -11,9 +11,8 @@ public:
    Borrow();
 //   Borrow(const Borrow&);
    ~Borrow();
-//   virtual bool setData(string, Movie*, Customer*);
-   virtual void setData(string);
-   virtual void display() const;
+   void setData(BinTree&, string);
+   void display() const;
 //   virtual Transaction* create();
 };
 #endif

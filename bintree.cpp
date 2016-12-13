@@ -84,12 +84,12 @@ bool BinTree::retrieve(Movie & target, Movie* &result) {
 bool BinTree::retrieveHelper(Movie& target, Movie* &result,
 		Node* &curr) {
 	//if found object - put it in target and return true
-	if (target.getTitle() == curr->data->getTitle()) {
+	if (target == *curr->data) {
 		result = curr->data;
 		return true;
-	} else if (target.getTitle() < curr->data->getTitle() && curr->left != NULL) {//left recursive call
+	} else if (target < *curr->data && curr->left != NULL) {//left recursive call
 		return retrieveHelper(target, result, curr->left);
-	} else if (target.getTitle() > curr->data->getTitle() && curr->right != NULL) {//right recursive call
+	} else if (target > *curr->data && curr->right != NULL) {//right recursive call
 		return retrieveHelper(target, result, curr->right);
 	}
 	return false;	//if object not found
