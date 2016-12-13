@@ -3,6 +3,7 @@
 #ifndef HASHTABLE_H_
 #define HASHTABLE_H_
 
+class Business;
 class HashTable {
 public:
 
@@ -14,7 +15,7 @@ public:
 private:
 	struct Customer {
 		int id;
-
+		Customer* aCustomer;
 	};
 
 };
