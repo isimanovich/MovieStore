@@ -14,8 +14,6 @@
 #include "transaction.h"
 #include "borrow.h"
 #include "return.h"
-#include "history.h"
-//need to add inventory.h
 #include "movie.h"
 #include "comedy.h"
 #include "classic.h"
