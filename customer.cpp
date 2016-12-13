@@ -14,9 +14,10 @@ int Customer::getID() const {
 	return id;
 }
 
-void setCustomer(string first, string last){
-
-
+void Customer::setCustomer(string first, string last, int customerId){
+ firstName = first;
+ lastName = last;
+ id = customerId;
 }
 
 

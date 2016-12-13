@@ -11,7 +11,7 @@ public:
 	Customer();
 	~Customer();
 	int getID() const;
-	void setCustomer(string firstName, string lastName);
+	void setCustomer(string firstName, string lastName, int customerId);
 
 
 

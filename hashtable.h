@@ -8,6 +8,7 @@ public:
 
 	HashTable();
 	~HashTable();
+	void insert();
 
 
 private:
