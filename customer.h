@@ -1,6 +1,6 @@
 
 #include <string>
-#include <queue>
+#include <stack>
 #include "transaction.h"
 using namespace std;
 
@@ -19,7 +19,7 @@ private:
 	string firstName;
 	string lastName;
 	int id;
-	queue<Transaction> transactionHistory;
+	stack<Transaction> transactionHistory;
 
 };
 
