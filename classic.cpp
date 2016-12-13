@@ -72,6 +72,11 @@ void Classic::setData(string data){
 	}
 //	this->data = title;			//setting data to title name, so node can be stored in the tree
 	//getting a year of the movie
+
+
+	//WHAT IF ACTOR NAME IS OUT OF 3 WORDS??????????????????????????????????
+
+
 	string actorFirst,actorLast;
 	dataStream >> actorFirst;
 	dataStream >> actorLast;

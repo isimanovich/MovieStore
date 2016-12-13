@@ -48,10 +48,13 @@ void Borrow::setData(BinTree& tree, string data) {
 		}
 		dataStream >> year;
 
+
+
+
 		Movie* result = NULL;
 		Movie* target = new Comedy(title, year);
 		if(tree.retrieve(*target, result)) {
-			if(!result->borrow()){
+			if(result->borrow() == false){
 				cout << "ERROR: THIS MOVIE IS OUT OF STOCK" << endl;
 			}
 
