@@ -3,6 +3,8 @@
 #ifndef HASHTABLE_H_
 #define HASHTABLE_H_
 
+#include <iostream>
+using namespace std;
 class Business;
 class HashTable {
 public:
@@ -15,8 +17,11 @@ public:
 private:
 	struct Customer {
 		int id;
-		Customer* aCustomer;
+		Customer* aCustomer = NULL;
 	};
+	int size = 1001;
+
+	Customer* array;
 
 };
 
