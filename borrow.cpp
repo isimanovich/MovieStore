@@ -127,12 +127,13 @@ void Borrow::setData(BinTree& tree, string data, char movieType) {
 
 		Movie* result = NULL;
 		Movie* target = new Classic(month, year, actor);
-
+		cerr << "result before: " << result << endl;
 		if (tree.retrieve(*target, result)) {
 			if (result->borrow() == false) {
 				cout << "ERROR: THIS MOVIE IS OUT OF STOCK" << endl;
 			}
 		} else {
+			cerr<< "result after: " << result << endl;
 			cout << "ERROR: MOVIE IS NOT FOUND IN COLLECTION OF CLASSICS" << endl;
 		}
 
