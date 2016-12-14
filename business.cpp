@@ -134,7 +134,7 @@ void Business::processTransactions(ifstream& transactionsFile) {
 				tran->setData(*allClassics, restOfLine, movieType);
 				break;
 			default:
-				cout << "INVALID MOVIE TYPE, CAN'T BORROW" << endl;
+				cout << "INVALID MOVIE GENRE, CAN'T BORROW" << endl;
 				break;
 
 			}
@@ -172,7 +172,7 @@ void Business::processTransactions(ifstream& transactionsFile) {
 				tran->setData(*allClassics, restOfLine, movieType);
 				break;
 			default:
-				cout << "INVALID MOVIE TYPE, CAN'T RETURN" << endl;
+				cout << "INVALID MOVIE GENRE, CAN'T RETURN" << endl;
 				break;
 
 			}
@@ -188,45 +188,23 @@ void Business::processTransactions(ifstream& transactionsFile) {
 		}
 		case 'I': {
 			getline(transactionsFile, toGetNewLine);
-			/*
-			 * 1. output allComedies
-			 * 		- sorting criteria
-			 * 		- inorder traversal
-			 * 		-call display function on each object in the tree
-			 * 2. output allDramas
-			 * 		- sorting criteria
-			 * 		- inorder traversal
-			 * 		- call display function on each object in the tree
-			 * 3. output allClassics
-			 * 		- sorting criteria
-			 * 		- inorder traversal
-			 * 		- call display function on each object in the tree
-			 */
-			cout << "ALL COMEDIES IN STORE: " << endl;
+			cout << "INVENTORY OF THE STORE: " << endl;
 			allComedies->printData();
 			cout << endl;
-			cout << "ALL DRAMAS IN STORE: " << endl;
 			allDramas->printData();
 			cout << endl;
-			cout << "ALL CLASSICS IN STORE: " << endl;
 			allClassics->printData();
 			break;
 		}
-
-		/*
-		 * should probably use that in HISTORY
-		 * getline(transactionsFile, toGetNewLine);
-		 *
-		 */
-
 		case 'H':{
 		/*
 		 * 1. read ID
 		 * 2. go to HashTable and find customer
 		 * 3. customer->printHisotry();
-		 *
-		 *
 		 */
+			transactionsFile >> custID;
+//			getline(transactionsFile, toGetNewLine);
+			cout << "HISTORY OF CUSTOMER: " << custID << endl;
 			break;
 		}
 		default:
