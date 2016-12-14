@@ -1,17 +1,20 @@
 #include "hash.h"
 
+//default constructor initializes the array
 Hash::Hash() {
 	initArray(size);
 
 }
 
+//deletes the customerList by calling makeEmpty function
 Hash::~Hash() {
 
-	//should delete customerList to avoid memory leak
 	this->makeEmpty();
 	delete [] customerList;
 }
 
+//create customerlist array and initilize id's and customer
+//to default values.
 void Hash::initArray(int size) {
 	customerList = new Cust[size];
 	for (int i = 0; i < size; i++) {
@@ -20,6 +23,8 @@ void Hash::initArray(int size) {
 	}
 }
 
+//makes the hashtable empty. Deletes the customer objects
+//stored in the hashtable sets ids back to zero
 void Hash::makeEmpty() {
 	for (int i = 0; i < size; i++) {
 		customerList[i].id = 0;
@@ -35,6 +40,8 @@ void Hash::makeEmpty() {
 
 }
 
+//adds a new customer to the hashtable
+//hashtable holds customer objects with ids
 void Hash::add(int id, Customer* newCustomer) {
 	int hash = id % size;
 
@@ -50,6 +57,7 @@ void Hash::add(int id, Customer* newCustomer) {
 	}
 }
 
+//finds a customer in hashtable given an id
 Customer* Hash::find(int key) {
 	int index = key % size;
 	//match found, return customer
