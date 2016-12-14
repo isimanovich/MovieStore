@@ -57,58 +57,58 @@ bool Movie::operator==(const Movie& rhs) const {
 //consider passing line and decompose inside or full file,
 //but that probably should be in business
 void Movie::setData(string data) {
-//
-//	string dirFirstName, dirLastName;
-//	istringstream dataStream(data);		//opening stream
-//	dataStream.ignore(256, ' ');		//ignoring first comma
-//	dataStream >> instock;				//getting quantity in stock
-////	cout << instock << endl;
-//	dataStream.ignore(256, ',');		//ignoring comma after number
-//	//reading director
-//	string temp;
-//	dataStream >> temp;
-//
-//	for (;;) {
-//			//no comma case, adding words to title
-//			if (temp.find(',') == -1) {
-//				director += temp;
-//				director += " ";
-//				dataStream >> temp;
-//			}
-//
-//			//comma case, removing comma and adding to title then break
-//			else {
-//
-//				temp = temp.substr(0, temp.size() - 1);
-//				director += temp;
-//				break;
-//
-//			}
-//		}
-//
-//	//reading title
-//	dataStream >> temp;
-//	for (;;) {
-//		//no comma case, adding words to title
-//		if (temp.find(',') == -1) {
-//			title += temp;
-//			title += " ";
-//			dataStream >> temp;
-//		}
-//
-//		//comma case, removing comma and adding to title then break
-//		else {
-//
-//			temp = temp.substr(0, temp.size() - 1);
-//			title += temp;
-//			break;
-//
-//		}
-//	}
-////	this->data = title;		//setting data to title name, so node can be stored in the tree
-//	//getting a year of the movie
-//	dataStream >> year;
-////	cout << year << endl;
+
+	string dirFirstName, dirLastName;
+	istringstream dataStream(data);		//opening stream
+	dataStream.ignore(256, ' ');		//ignoring first comma
+	dataStream >> instock;				//getting quantity in stock
+//	cout << instock << endl;
+	dataStream.ignore(256, ',');		//ignoring comma after number
+	//reading director
+	string temp;
+	dataStream >> temp;
+
+	for (;;) {
+			//no comma case, adding words to title
+			if (temp.find(',') == -1) {
+				director += temp;
+				director += " ";
+				dataStream >> temp;
+			}
+
+			//comma case, removing comma and adding to title then break
+			else {
+
+				temp = temp.substr(0, temp.size() - 1);
+				director += temp;
+				break;
+
+			}
+		}
+
+	//reading title
+	dataStream >> temp;
+	for (;;) {
+		//no comma case, adding words to title
+		if (temp.find(',') == -1) {
+			title += temp;
+			title += " ";
+			dataStream >> temp;
+		}
+
+		//comma case, removing comma and adding to title then break
+		else {
+
+			temp = temp.substr(0, temp.size() - 1);
+			title += temp;
+			break;
+
+		}
+	}
+//	this->data = title;		//setting data to title name, so node can be stored in the tree
+	//getting a year of the movie
+	dataStream >> year;
+//	cout << year << endl;
 }
 
 

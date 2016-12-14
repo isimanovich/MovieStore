@@ -4,9 +4,9 @@
 #define HASHTABLE_H_
 
 #include <iostream>
+#include "customer.h"
+
 using namespace std;
-class Business;
-class Customer;
 
 class HashTable {
 public:
@@ -18,7 +18,7 @@ public:
 
 private:
 	struct Customer {
-		int id;
+		int ID;
 		Customer* aCustomer = NULL;
 	};
 	int size = 1001;

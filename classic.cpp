@@ -12,6 +12,7 @@ using namespace std;
 
 Classic::Classic() {
 	month = 0;
+	actor = "";
 }
 
 Classic::Classic(int month, int year, string actor) {
