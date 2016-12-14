@@ -19,6 +19,7 @@
 #include "classic.h"
 #include "drama.h"
 #include "customer.h"
+#include "hash.h"
 
 
 //DON'T FORGET TO ADD BORROW RETURN ETC .h FILES
@@ -43,7 +44,7 @@ private:
 
 	//Stack* history;
 
-	//HashTable* allCustomers;
+	Hash* allCustomers;
 //	Transaction* currentTransaction;
 
 };

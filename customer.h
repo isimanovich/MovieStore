@@ -1,3 +1,6 @@
+#ifndef CUSTOMER_H_
+#define CUSTOMER_H_
+
 #include <string>
 #include <stack>
 #include "transaction.h"
@@ -25,3 +28,4 @@ private:
 
 };
 
+#endif /* CUSTOMER_H_ */

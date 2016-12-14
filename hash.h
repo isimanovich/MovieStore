@@ -11,7 +11,7 @@ public:
 
 	Hash();
 	~Hash();
-	void add(int, Customer&);
+	void add(int, Customer*);
 	void initArray(int);
 
 private:

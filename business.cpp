@@ -15,6 +15,7 @@ Business::Business() {
 	allComedies = new BinTree();
 	allDramas = new BinTree();
 	allClassics = new BinTree();
+	allCustomers = new Hash();
 
 	//not sure about this one
 //	currentTransaction = NULL;
@@ -94,6 +95,7 @@ void Business::buildCustomers(ifstream& customerFile) {
 		customerFile >> last;
 		getline(customerFile, temp);
 		Customer* customer = new Customer(first, last, ID);
+		allCustomers->add(ID, customer);
 
 		/*
 		 *  - create new customer object
