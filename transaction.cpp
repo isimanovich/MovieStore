@@ -9,6 +9,7 @@ Transaction::Transaction() {
 	success = true;
 }
 
+//defualt desctrutor
 Transaction::~Transaction() {
 
 }
