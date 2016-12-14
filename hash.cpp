@@ -2,6 +2,7 @@
 
 Hash::Hash() {
 	initArray(size);
+
 }
 
 Hash::~Hash() {
@@ -31,6 +32,12 @@ void Hash::add(int id, Customer* newCustomer) {
 			customerList[hash].aCustomer = newCustomer;
 		}
 	}
+}
+
+Customer& Hash::find(int id){
+	int index = id % size;
+
+
 }
 
 
