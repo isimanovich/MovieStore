@@ -98,6 +98,12 @@ void Business::buildCustomers(ifstream& customerFile) {
 		cout << firstName << " ";
 		cout << lastName << endl;
 		Customer* customer = NULL;
+
+		/*
+		 *  - create new customer object
+		 *  - store it in hashtable
+		 */
+
 	}
 }
 
@@ -142,6 +148,9 @@ void Business::processTransactions(ifstream& transactionsFile) {
 
 			}
 
+
+			//store transaction in the STACK of CUSTOMER by ID
+
 			/*
 			 *
 			 * INSERT TRANSACTION POINTER INTO THE STORAGE!
@@ -159,9 +168,15 @@ void Business::processTransactions(ifstream& transactionsFile) {
 
 			tran = new Return();
 
+
 			/*
 			 * NEED TO CHECK IF CUSTOMER BORROWED THIS MOVIE,
 			 * IF NOT HE CAN"T RETURN IT!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+			 *
+			 *
+			 * - create new transaction object
+			 * - search for it in customer
+			 *
 			 */
 
 			switch (movieType) {
@@ -182,6 +197,8 @@ void Business::processTransactions(ifstream& transactionsFile) {
 				break;
 
 			}
+
+			//store transaction in the STACK of CUSTOMER by ID
 
 			/*
 			 *
