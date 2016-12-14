@@ -5,7 +5,7 @@
 using namespace std;
 
 Return::Return() {
-
+	type = 'R';
 }
 
 Return::~Return() {

@@ -13,5 +13,6 @@ public:
 	void setData(BinTree&, string, char);
 	void display() const;
 //	virtual Transaction* create();
+
 };
 #endif

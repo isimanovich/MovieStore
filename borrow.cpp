@@ -5,10 +5,15 @@
 using namespace std;
 
 Borrow::Borrow() {
-
+	type = 'B';
 }
 
 Borrow::~Borrow() {
+
+}
+
+
+void Borrow::doTransaction(){
 
 }
 

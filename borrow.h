@@ -13,6 +13,7 @@ public:
    ~Borrow();
    void setData(BinTree&, string, char);
    void display() const;
+   void doTransaction();
 //   virtual Transaction* create();
 };
 #endif

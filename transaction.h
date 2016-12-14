@@ -19,6 +19,7 @@ public:
 	virtual ~Transaction();
 	virtual void setData(BinTree&, string, char);
 	virtual void display() const;
+	virtual void doTransaction();
 //	virtual Transaction* create();
 
 //	string getMediaTye();
@@ -26,8 +27,8 @@ public:
 //	Movie* getItem() const;
 
 protected:
-//	string transactiontype;
-//	string mediaType;
-//	Movie* item;
+	char type;
+	string title;
+	int year;
 };
 #endif
