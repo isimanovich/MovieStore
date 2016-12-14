@@ -6,12 +6,14 @@
 #include <iostream>
 using namespace std;
 class Business;
+class Customer;
+
 class HashTable {
 public:
 
 	HashTable();
 	~HashTable();
-	void insert();
+	bool add(int id, Customer &newCustomer);
 
 
 private:
