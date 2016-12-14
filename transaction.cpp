@@ -1,6 +1,7 @@
 #include "transaction.h"
 #include <sstream>
 
+//defualt constructor sets default values
 Transaction::Transaction() {
 	type = 'T';
 	year = 0;
@@ -20,6 +21,8 @@ bool Transaction::isSuccess(){
 	return success;
 }
 
+//sets the type, year, and month for a movie depending
+//on the type of movie
 void Transaction::setData(string data, char movieType) {
 	istringstream dataStream(data);		//opening stream
 	type = 'B';
@@ -102,26 +105,32 @@ void Transaction::display() const {
 
 }
 
+//returns the transaction type
 char Transaction::getTransType(){
 	return type;
 }
 
+//returns the title
 string Transaction::getTitle(){
 	return title;
 }
 
+//returns the year
 int Transaction::getYear(){
 	return year;
 }
 
+//returns the month
 int Transaction::getMonth(){
 	return month;
 }
 
+//returns the director
 string Transaction::getDirector(){
 	return director;
 }
 
+//returns the actor
 string Transaction::getActor(){
 	return actor;
 }
