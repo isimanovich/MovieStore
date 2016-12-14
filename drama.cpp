@@ -83,9 +83,8 @@ void Drama::setData(string data){
 
 void Drama::display()const{
 
-	cout << "Movie genre: Drama; Title: " << title << "; Release year: " <<  year
-			<< "; Director: " << director << "; Qty in stock: " << instock
-			<< "; Qty borrowed: "<< borrowedCount <<  endl;
+	cout << "D, Stock: " << instock << ", Borrowed: "<< borrowedCount
+			 << ", " << director << ", "  << title << ", " <<  year <<  endl;
 
 }
 

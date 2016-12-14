@@ -92,9 +92,9 @@ void Classic::setData(string data) {
 
 void Classic::display() const {
 
-	cout << "Movie genre: Classic; Title: " << title << "; Release date: " << month << " "
-			<<  year << "; Director: " << director << "; Major actor: " << actor
-			<< "; Qty in stock: " << instock << "; Qty borrowed: "<< borrowedCount <<  endl;
+	cout << "C, Stock: " << instock << ", Borrowed: "<< borrowedCount
+			<< ", " << director << ", "  << title << ", " << actor
+			<< ", " << month << " " <<  year <<  endl;
 
 }
 

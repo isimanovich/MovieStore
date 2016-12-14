@@ -157,7 +157,3 @@ void Return::setData(string data, char movieType) {
 	}
 
 }
-
-void Return::display() const {
-
-}

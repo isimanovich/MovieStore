@@ -16,11 +16,12 @@ public:
 
 	Transaction();
 	virtual ~Transaction();
+
+	//business logic functions
 	virtual void setData(string, char);
 	virtual void doTransaction(BinTree&, char);
-	virtual void display() const;
 
-
+	//getters functions
 	char getTransType();
 	string getTitle();
 	int getYear();

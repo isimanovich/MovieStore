@@ -12,7 +12,6 @@ public:
 	~Return();
 	void setData(string, char);
 	void doTransaction(BinTree&, char);
-	void display() const;
 	bool isSuccess();
 //	virtual Transaction* create();
 

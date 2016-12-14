@@ -62,7 +62,7 @@ void Business::buildMovies(ifstream& movFile) {
 			allClassics->insert(movie);
 			break;
 		default:
-			cout << "invalid movie type" << endl;
+			cout << "Invalid Movie Type: " << type  << endl;
 			break;
 		}
 		movFile >> type;
@@ -225,12 +225,14 @@ void Business::processTransactions(ifstream& transactionsFile) {
 		}
 		case 'I': {
 			getline(transactionsFile, toGetNewLine);
+			cout << endl;
 			cout << "INVENTORY OF THE STORE: " << endl;
 			allComedies->printData();
 			cout << endl;
 			allDramas->printData();
 			cout << endl;
 			allClassics->printData();
+			cout << endl;
 			break;
 		}
 		case 'H': {
@@ -256,6 +258,7 @@ void Business::processTransactions(ifstream& transactionsFile) {
 			} else {
 				cerr << "CAN'T SHOW HISTORY, CUST NOT FOUND!!!" << endl;
 			}
+
 //			getline(transactionsFile, toGetNewLine);
 			break;
 		}

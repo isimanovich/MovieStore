@@ -165,7 +165,3 @@ void Borrow::setData(string data, char movieType) {
 	}
 
 }
-
-void Borrow::display() const {
-
-}

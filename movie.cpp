@@ -109,10 +109,6 @@ void Movie::increaseStock(int value) {
 
 void Movie::display() const {
 
-	cout << "Movie genre: General Movie; Title: " << title << "; Release year: "
-			<< year << "; Director: " << director << "; Qty in stock: "
-			<< instock << "; Qty borrowed: " << borrowedCount << endl;
-
 }
 
 string Movie::getTitle() {

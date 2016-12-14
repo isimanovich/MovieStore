@@ -27,9 +27,8 @@ Comedy::~Comedy(){
 
 void Comedy::display()const{
 
-	cout << "Movie genre: Comedy; Title: " << title << "; Release year: " <<  year
-				<< "; Director: " << director << "; Qty in stock: " << instock
-				<< "; Qty borrowed: "<< borrowedCount <<  endl;
+	cout << "F, Stock: " << instock << ", Borrowed: "<< borrowedCount
+		 << ", " << director << ", "  << title << ", " <<  year <<  endl;
 
 }
 

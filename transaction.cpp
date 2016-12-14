@@ -98,10 +98,6 @@ void Transaction::setData(string data, char movieType) {
 
 }
 
-void Transaction::display() const {
-
-}
-
 char Transaction::getTransType(){
 	return type;
 }
