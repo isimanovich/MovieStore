@@ -246,6 +246,7 @@ void Business::processTransactions(ifstream& transactionsFile) {
 			break;
 		}
 		default:
+			getline(transactionsFile, restOfLine);
 			cout << "ERROR: INVALID TRANSACTION TYPE" << endl;
 			break;
 		}
