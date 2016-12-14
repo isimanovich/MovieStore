@@ -126,16 +126,22 @@ bool Classic::operator<(const Classic &rhs) const {
 bool Classic::operator==(const Movie& rhs) const {
 	const Classic& rhS = static_cast<const Classic&>(rhs);
 
-	if (month == rhS.month && year == rhS.year && actor == rhS.actor)
-		return true;
-	else
-		return false;
+	if (month == rhS.month && year == rhS.year){
+		if(actor == rhS.actor)
+			return true;
+		else if (title == rhS.title)
+			return true;
+	}
+	return false;
 }
 
 bool Classic::operator==(const Classic& rhs) const {
-	if (month == rhs.month && year == rhs.year && actor == rhs.actor)
-		return true;
-	else
+	if (month == rhs.month && year == rhs.year){
+			if(actor == rhs.actor)
+				return true;
+			else if (title == rhs.title)
+				return true;
+		}
 		return false;
 }
 

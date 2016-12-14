@@ -64,11 +64,7 @@ void BinTree::inOrder(ostream& out, Node* curr) const {
 	}
 }
 
-
-
-
-
-void BinTree::printData()const{
+void BinTree::printData() const {
 	//calling private helper function to traverse the tree recursively
 	printDataHelper(this->root);
 }
@@ -76,14 +72,11 @@ void BinTree::printData()const{
 void BinTree::printDataHelper(Node* curr) const {
 	//if pointer is not pointing at NULL, execute following
 	if (curr != NULL) {
-		printDataHelper(curr->left);		//recursive call to traverse to the left
+		printDataHelper(curr->left);	//recursive call to traverse to the left
 		curr->data->display();		//add data to the ostream
-		printDataHelper(curr->right);	//recursive call to traverse to the right
+		printDataHelper(curr->right);//recursive call to traverse to the right
 	}
 }
-
-
-
 
 // -------------------------------------------------- retrieve ------------------------------------------------------
 // Description: function to get the Movie* of a given object in the tree (via pass-by-reference
@@ -109,7 +102,7 @@ bool BinTree::retrieveHelper(Movie& target, Movie* &result, Node* &curr) {
 		return true;
 	} else if (target < *curr->data && curr->left != NULL)//left recursive call
 		return retrieveHelper(target, result, curr->left);
-	else if(curr->right != NULL)	//right recursive call
+	else if (curr->right != NULL)	//right recursive call
 		return retrieveHelper(target, result, curr->right);
 	return false;	//if object not found
 }
@@ -211,17 +204,19 @@ bool BinTree::insert(Movie* data, Node* &curr) {
 
 
 	 */
-//	if(data == curr->data){
-//		curr->data->increaseStock(data->getAmountIn());
-////		data->~Movie();
-//		return true;
-//	}
+
 	//if root == NULL, so insert and set result to true
 	if (curr == NULL) {
 		curr = new Node();
 		curr->data = data;
 		curr->left = NULL;
 		curr->right = NULL;
+		return true;
+	}
+	if (*data == *curr->data) {
+		curr->data->increaseStock(data->getAmountIn());
+		delete data;
+		data = NULL;
 		return true;
 	} else if (data < curr->data) {		//go to left recursively
 		return insert(data, curr->left);

@@ -8,7 +8,6 @@ using namespace std;
 
 class Hash {
 public:
-
 	Hash();
 	~Hash();
 	void add(int, Customer*);
@@ -23,7 +22,6 @@ private:
 	};
 	int size = 1001;
 	Cust* customerList = NULL;
-
 };
 
 #endif /* HASH_H_ */

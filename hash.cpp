@@ -3,12 +3,10 @@
 //default constructor initializes the array
 Hash::Hash() {
 	initArray(size);
-
 }
 
 //deletes the customerList by calling makeEmpty function
 Hash::~Hash() {
-
 	this->makeEmpty();
 	delete [] customerList;
 }
@@ -32,12 +30,8 @@ void Hash::makeEmpty() {
 			customerList[i].aCustomer->makeEmpty();
 			delete customerList[i].aCustomer;
 			customerList[i].aCustomer = NULL;
-//			delete customerList[i].aCustomer;
 		}
-
-//			delete customerList[i].aCustomer;
 	}
-
 }
 
 //adds a new customer to the hashtable
@@ -68,15 +62,12 @@ Customer* Hash::find(int key) {
 	else {
 		while (customerList[index].id != key) {
 			index = (index + 1) % size;
-			if (customerList[index].id == key) {
+			if (customerList[index].id == key)
 				return customerList[index].aCustomer;
-			}
 			if (customerList[index].id == 0)
 				break;
-//			cerr << customerList[index].id << endl;
 		}
 		return NULL;
 	}
-
 }
 
