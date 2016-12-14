@@ -11,9 +11,9 @@ public:
    Borrow();
 //   Borrow(const Borrow&);
    ~Borrow();
-   void setData(BinTree&, string, char);
+   void setData(string, char);
    void display() const;
-   void doTransaction();
+   void doTransaction(BinTree&, char);
 //   virtual Transaction* create();
 };
 #endif

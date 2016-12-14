@@ -15,13 +15,12 @@ class Transaction{
 public:
 
 	Transaction();
-//	Transaction(const Transaction&);
 	virtual ~Transaction();
-	virtual void setData(BinTree&, string, char);
+	virtual void setData(string, char);
+	virtual void doTransaction(BinTree&, char);
 	virtual void display() const;
-	virtual void doTransaction();
-//	virtual Transaction* create();
 
+//	virtual Transaction* create();
 //	string getMediaTye();
 //	string getTransType();
 //	Movie* getItem() const;
@@ -30,5 +29,9 @@ protected:
 	char type;		//tran
 	string title;	//tran
 	int year;		//tran
+	int month;		//tran
+	string director; //tran
+	string actor;	//tran
+
 };
 #endif

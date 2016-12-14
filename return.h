@@ -10,7 +10,8 @@ public:
 	Return();
 //	Return(const Return&);
 	~Return();
-	void setData(BinTree&, string, char);
+	void setData(string, char);
+	void doTransaction(BinTree&, char);
 	void display() const;
 //	virtual Transaction* create();
 

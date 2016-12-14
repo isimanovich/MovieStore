@@ -41,7 +41,6 @@ public:
 	int getYear();
 	string getDirector();
 
-
 	void increaseStock(int);
 
 protected:

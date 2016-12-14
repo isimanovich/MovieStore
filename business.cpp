@@ -125,13 +125,16 @@ void Business::processTransactions(ifstream& transactionsFile) {
 
 			switch (movieType) {
 			case 'F':
-				tran->setData(*allComedies, restOfLine, movieType);
+				tran->setData(restOfLine, movieType);
+				tran->doTransaction(*allComedies, movieType);
 				break;
 			case 'D':
-				tran->setData(*allDramas, restOfLine, movieType);
+				tran->setData(restOfLine, movieType);
+				tran->doTransaction(*allDramas, movieType);
 				break;
 			case 'C':
-				tran->setData(*allClassics, restOfLine, movieType);
+				tran->setData(restOfLine, movieType);
+				tran->doTransaction(*allClassics, movieType);
 				break;
 			default:
 				cout << "INVALID MOVIE GENRE, CAN'T BORROW" << endl;
@@ -163,13 +166,16 @@ void Business::processTransactions(ifstream& transactionsFile) {
 
 			switch (movieType) {
 			case 'F':
-				tran->setData(*allComedies, restOfLine, movieType);
+				tran->setData(restOfLine, movieType);
+				tran->doTransaction(*allComedies, movieType);
 				break;
 			case 'D':
-				tran->setData(*allDramas, restOfLine, movieType);
+				tran->setData(restOfLine, movieType);
+				tran->doTransaction(*allDramas, movieType);
 				break;
 			case 'C':
-				tran->setData(*allClassics, restOfLine, movieType);
+				tran->setData(restOfLine, movieType);
+				tran->doTransaction(*allClassics, movieType);
 				break;
 			default:
 				cout << "INVALID MOVIE GENRE, CAN'T RETURN" << endl;
@@ -196,12 +202,12 @@ void Business::processTransactions(ifstream& transactionsFile) {
 			allClassics->printData();
 			break;
 		}
-		case 'H':{
-		/*
-		 * 1. read ID
-		 * 2. go to HashTable and find customer
-		 * 3. customer->printHisotry();
-		 */
+		case 'H': {
+			/*
+			 * 1. read ID
+			 * 2. go to HashTable and find customer
+			 * 3. customer->printHisotry();
+			 */
 			transactionsFile >> custID;
 //			getline(transactionsFile, toGetNewLine);
 			cout << "HISTORY OF CUSTOMER: " << custID << endl;
@@ -211,8 +217,6 @@ void Business::processTransactions(ifstream& transactionsFile) {
 			cout << "ERROR: INVALID TRANSACTION TYPE" << endl;
 			break;
 		}
-
-
 
 	}
 
