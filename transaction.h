@@ -27,8 +27,8 @@ public:
 //	Movie* getItem() const;
 
 protected:
-	char type;
-	string title;
-	int year;
+	char type;		//tran
+	string title;	//tran
+	int year;		//tran
 };
 #endif

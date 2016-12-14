@@ -23,8 +23,8 @@ void Borrow::setData(BinTree& tree, string data, char movieType) {
 
 	switch (movieType) {
 	case 'F': {
-		int year;
-		string title, temp;
+//		int year;
+		string temp;
 		//reading title
 		dataStream >> temp;
 		for (;;) {

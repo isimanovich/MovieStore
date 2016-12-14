@@ -20,6 +20,7 @@ private:
 	};
 	int size = 1001;
 //	Cust* array;
+
 };
 
 
