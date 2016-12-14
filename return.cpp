@@ -18,10 +18,9 @@ void Return::doTransaction(BinTree& tree, char movieType){
 	case 'F': {
 		Movie* result = NULL;
 		Comedy* target = new Comedy(title, year);
-		if (tree.retrieve(*target, result)) {
+		if (tree.retrieve(*target, result))
 			result->returN();
-			cout << "NOTE: COMEDY MOVIE HAS BEEN RETURNED SUCCESSFULLY" << endl;
-		} else {
+		else {
 			cout << "ERROR: MOVIE IS NOT FOUND IN COLLECTION OF COMEDIES"
 					<< endl;
 		}
@@ -33,10 +32,9 @@ void Return::doTransaction(BinTree& tree, char movieType){
 		Movie* result = NULL;
 		Drama* target = new Drama(director, title);
 
-		if (tree.retrieve(*target, result)) {
+		if (tree.retrieve(*target, result))
 			result->returN();
-			cout << "NOTE: DRAMA MOVIE HAS BEEN RETURNED SUCCESSFULLY" << endl;
-		} else {
+		else {
 			cout << "ERROR: MOVIE IS NOT FOUND IN COLLECTION OF DRAMAS" << endl;
 		}
 
@@ -47,10 +45,9 @@ void Return::doTransaction(BinTree& tree, char movieType){
 	case 'C': {
 		Movie* result = NULL;
 		Classic* target = new Classic(month, year, actor);
-		if (tree.retrieve(*target, result)) {
+		if (tree.retrieve(*target, result))
 			result->returN();
-			cout << "NOTE: DRAMA MOVIE HAS BEEN RETURNED SUCCESSFULLY" << endl;
-		} else {
+		else {
 			cout << "ERROR: MOVIE IS NOT FOUND IN COLLECTION OF CLASSICS"
 					<< endl;
 		}

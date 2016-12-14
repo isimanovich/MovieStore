@@ -15,6 +15,8 @@ Business::Business() {
 	allComedies = new BinTree();
 	allDramas = new BinTree();
 	allClassics = new BinTree();
+
+	//storage for customers
 	allCustomers = new Hash();
 
 	//not sure about this one
@@ -29,6 +31,14 @@ Business::~Business() {
 	delete allDramas;			//deleting pointer SET TO NULL? MAYBE NOT NEEDED
 	allClassics->makeEmpty();	//making tree empty
 	delete allClassics;			//deleting pointer SET TO NULL? MAYBE NOT NEEDED
+
+
+	/*
+	 *
+	 * NEED TO DELETE HASHTABLE
+	 *
+	 */
+
 
 	//need to delete current transaction, just deleting pointer???
 	//SHOULD TRANSACTION HAVE STORAGE FOR ALL TRANSACTIONS???
@@ -67,18 +77,6 @@ void Business::buildMovies(ifstream& movFile) {
 			break;
 		}
 	}
-
-	//testing what's inside of trees
-//
-//	cout << "comedies: " << endl;
-//	cout << *allComedies << endl;
-//	cout << endl;
-//	cout << "dramas: " << endl;
-//	cout << *allDramas << endl;
-//	cout << endl;
-//	cout << "classics: " << endl;
-//	cout << *allClassics << endl;
-
 }
 
 void Business::buildCustomers(ifstream& customerFile) {
@@ -94,18 +92,16 @@ void Business::buildCustomers(ifstream& customerFile) {
 		customerFile >> first;
 		customerFile >> last;
 		getline(customerFile, temp);
-		Customer* customer = new Customer(first, last, ID);
-		allCustomers->add(ID, customer);
 
 		/*
 		 *  - create new customer object
 		 *  - store it in hashtable
 		 */
-
+		Customer* customer = new Customer(first, last, ID);
+		allCustomers->add(ID, customer);
 	}
 }
 
-//SHOULD ACCEPT INFILE, FIX THAT
 void Business::processTransactions(ifstream& transactionsFile) {
 	//logic for reading file and adding stuff to the tree
 	char type = 'z';
@@ -146,15 +142,11 @@ void Business::processTransactions(ifstream& transactionsFile) {
 
 			}
 
-
 			//store transaction in the STACK of CUSTOMER by ID
 
-			/*
-			 *
-			 * INSERT TRANSACTION POINTER INTO THE STORAGE!
-			 *
-			 *
-			 */
+//			Customer* cust = NULL;
+////			cust = allCustomers->getCustomer(custID);
+//			cust->storeTransaction(tran);
 
 			break;
 		}
@@ -196,14 +188,13 @@ void Business::processTransactions(ifstream& transactionsFile) {
 
 			}
 
-			//store transaction in the STACK of CUSTOMER by ID
 
-			/*
-			 *
-			 * INSERT TRANSACTION POINTER INTO THE STORAGE!
-			 *
-			 *
-			 */
+//			Customer* cust = NULL;
+////			cust = allCustomers->getCustomer(custID);
+//			cust->storeTransaction(tran);
+
+
+			//store transaction in the STACK of CUSTOMER by ID
 
 			break;
 		}
@@ -220,12 +211,23 @@ void Business::processTransactions(ifstream& transactionsFile) {
 		case 'H': {
 			/*
 			 * 1. read ID
+			 *
+			 *
+			 *
+			 *
 			 * 2. go to HashTable and find customer
+			 *
+			 *
+			 *
+			 *
 			 * 3. customer->printHisotry();
 			 */
 			transactionsFile >> custID;
+//			Customer* cust = NULL;
 //			getline(transactionsFile, toGetNewLine);
+//			cust = allCustomers->getCustomer(custID);
 			cout << "HISTORY OF CUSTOMER: " << custID << endl;
+//			cust->getHistory();
 			break;
 		}
 		default:
