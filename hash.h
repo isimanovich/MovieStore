@@ -11,7 +11,8 @@ public:
 
 	Hash();
 	~Hash();
-	bool test(int, Customer&);
+	void add(int, Customer&);
+	void initArray(int);
 
 private:
 	struct Cust {
@@ -19,10 +20,8 @@ private:
 		Customer* aCustomer = NULL;
 	};
 	int size = 1001;
-//	Cust* array;
+	Cust* customerList = NULL;
 
 };
-
-
 
 #endif /* HASH_H_ */
