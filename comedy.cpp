@@ -39,7 +39,6 @@ void Comedy::setData(string data){
 	istringstream dataStream(data);		//opening stream
 	dataStream.ignore(256, ' ');		//ignoring first comma
 	dataStream >> instock;				//getting quantity in stock
-//	cout << instock << endl;
 	dataStream.ignore(256, ',');		//ignoring comma after number
 	//reading director
 	string temp;

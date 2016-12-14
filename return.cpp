@@ -12,6 +12,10 @@ Return::~Return() {
 
 }
 
+bool Return::isSuccess(){
+	return success;
+}
+
 void Return::doTransaction(BinTree& tree, char movieType) {
 
 	Movie* result = NULL;
@@ -25,9 +29,9 @@ void Return::doTransaction(BinTree& tree, char movieType) {
 		else {
 			cout << "ERROR: MOVIE IS NOT FOUND IN COLLECTION OF COMEDIES"
 					<< endl;
+			success = false;
 		}
-
-		//DON"T FORGET TO DESTROY TEMPORARY OBJECTS
+		delete target;
 		break;
 	}
 	case 'D': {
@@ -37,10 +41,9 @@ void Return::doTransaction(BinTree& tree, char movieType) {
 			result->returN();
 		else {
 			cout << "ERROR: MOVIE IS NOT FOUND IN COLLECTION OF DRAMAS" << endl;
+			success = false;
 		}
-
-		//DON"T FORGET TO DESTROY TEMPORARY OBJECTS
-
+		delete target;
 		break;
 	}
 	case 'C': {
@@ -50,12 +53,14 @@ void Return::doTransaction(BinTree& tree, char movieType) {
 		else {
 			cout << "ERROR: MOVIE IS NOT FOUND IN COLLECTION OF CLASSICS"
 					<< endl;
+			success = false;
 		}
-		//DON"T FORGET TO DESTROY TEMPORARY OBJECTS
+		delete target;
 		break;
 	}
 	default:
 		cout << "invalid type of movie, can't return" << endl;
+		success = false;
 		break;
 	}
 

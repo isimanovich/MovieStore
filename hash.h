@@ -14,6 +14,7 @@ public:
 	void add(int, Customer*);
 	void initArray(int);
 	Customer* find(int key);
+	void makeEmpty();
 
 private:
 	struct Cust {

@@ -14,6 +14,7 @@ public:
    void setData(string, char);
    void display() const;
    void doTransaction(BinTree&, char);
+   bool isSuccess();
 //   virtual Transaction* create();
 };
 #endif

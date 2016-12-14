@@ -18,15 +18,11 @@ using namespace std;
 class Movie{
 public:
     Movie();				//default constructor
-//    Movie(const Movie&);
     virtual ~Movie();
 
     virtual bool operator<(const Movie &) const;
     virtual bool operator==(const Movie &) const;
 
-
-	//consider passing line and decompose inside or full file,
-	//but that probably should be in business
 	virtual void setData(string);
     virtual void display() const;
 

@@ -8,10 +8,24 @@ Customer::Customer(string first, string last, int customerId) {
 
 Customer::~Customer() {
 
+//	while (!history.empty()) {
+//		Transaction* del = history.top();
+//		history.pop();
+//		delete del;
+//	}
+	this->makeEmpty();
 }
 
 int Customer::getID() const {
 	return id;
+}
+
+void Customer::makeEmpty() {
+	while (!history.empty()) {
+		Transaction* del = history.top();
+		history.pop();
+		delete del;
+	}
 }
 
 void Customer::setCustomer(string first, string last, int customerId) {

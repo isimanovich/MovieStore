@@ -21,32 +21,22 @@
 #include "customer.h"
 #include "hash.h"
 
-
-//DON'T FORGET TO ADD BORROW RETURN ETC .h FILES
-
-
-
 using namespace std;
 
 class Business{
 public:
 	Business();						//constructor
 	~Business();					//destructor
-	void buildMovies(ifstream&);				//add infile
-	void buildCustomers();			//add infile
-	void buildCustomers(ifstream&);			//add infile
-	void processTransactions(ifstream&);		//add infile
+	void buildMovies(ifstream&);
+	void buildCustomers();
+	void buildCustomers(ifstream&);
+	void processTransactions(ifstream&);
 
 private:
 	BinTree* allComedies;
 	BinTree* allDramas;
 	BinTree* allClassics;
-
-	//Stack* history;
-
 	Hash* allCustomers;
-//	Transaction* currentTransaction;
-
 };
 
 

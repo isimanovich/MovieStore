@@ -12,6 +12,10 @@ Borrow::~Borrow() {
 
 }
 
+bool Borrow::isSuccess(){
+	return success;
+}
+
 void Borrow::doTransaction(BinTree& tree, char movieType) {
 
 	Movie* result = NULL;
@@ -23,14 +27,15 @@ void Borrow::doTransaction(BinTree& tree, char movieType) {
 		if (tree.retrieve(*target, result)) {
 			if (result->borrow() == false) {
 				cout << "ERROR: THIS MOVIE IS OUT OF STOCK" << endl;
+				success = false;
 			}
 
 		} else {
 			cout << "ERROR: MOVIE IS NOT FOUND IN COLLECTION OF COMEDIES"
 					<< endl;
+			success = false;
 		}
-
-		//DON"T FORGET TO DESTROY TEMPORARY OBJECTS
+		delete target;
 		break;
 	}
 	case 'D': {
@@ -39,13 +44,13 @@ void Borrow::doTransaction(BinTree& tree, char movieType) {
 		if (tree.retrieve(*target, result)) {
 			if (result->borrow() == false) {
 				cout << "ERROR: THIS MOVIE IS OUT OF STOCK" << endl;
+				success = false;
 			}
 		} else {
 			cout << "ERROR: MOVIE IS NOT FOUND IN COLLECTION OF DRAMAS" << endl;
+			success = false;
 		}
-
-		//DON"T FORGET TO DESTROY TEMPORARY OBJECTS
-
+		delete target;
 		break;
 	}
 	case 'C': {
@@ -53,24 +58,26 @@ void Borrow::doTransaction(BinTree& tree, char movieType) {
 		if (tree.retrieve(*target, result)) {
 			if (result->borrow() == false) {
 				cout << "ERROR: THIS MOVIE IS OUT OF STOCK" << endl;
+				success = false;
 			}
 		} else {
 			cout << "ERROR: MOVIE IS NOT FOUND IN COLLECTION OF CLASSICS"
 					<< endl;
+			success = false;
 		}
-		//DON"T FORGET TO DESTROY TEMPORARY OBJECTS
+		delete target;
 		break;
 	}
 	default:
 		cout << "invalid type of movie, can't borrow" << endl;
+		success = false;
 		break;
 	}
 	//reset data based on performed transaction
-	if(result != NULL){
+	if (result != NULL) {
 		title = result->getTitle();
 		year = result->getYear();
 	}
-
 
 }
 
@@ -122,7 +129,6 @@ void Borrow::setData(string data, char movieType) {
 				temp = temp.substr(0, temp.size() - 1);
 				director += temp;
 				break;
-
 			}
 		}
 		//reading title
@@ -137,11 +143,9 @@ void Borrow::setData(string data, char movieType) {
 
 			//comma case, removing comma and adding to title then break
 			else {
-
 				temp = temp.substr(0, temp.size() - 1);
 				title += temp;
 				break;
-
 			}
 		}
 		break;

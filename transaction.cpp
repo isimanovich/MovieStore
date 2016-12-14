@@ -5,6 +5,7 @@ Transaction::Transaction() {
 	type = 'T';
 	year = 0;
 	month = 0;
+	success = true;
 }
 
 Transaction::~Transaction() {
@@ -15,6 +16,9 @@ void Transaction::doTransaction(BinTree& tree, char movieType) {
 
 }
 
+bool Transaction::isSuccess(){
+	return success;
+}
 
 void Transaction::setData(string data, char movieType) {
 	istringstream dataStream(data);		//opening stream

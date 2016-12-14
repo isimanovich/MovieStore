@@ -8,14 +8,31 @@ Hash::Hash() {
 Hash::~Hash() {
 
 	//should delete customerList to avoid memory leak
-
+	this->makeEmpty();
+	delete [] customerList;
 }
 
 void Hash::initArray(int size) {
 	customerList = new Cust[size];
 	for (int i = 0; i < size; i++) {
 		customerList[i].id = 0;
+		customerList[i].aCustomer = NULL;
 	}
+}
+
+void Hash::makeEmpty() {
+	for (int i = 0; i < size; i++) {
+		customerList[i].id = 0;
+		if (customerList[i].aCustomer != NULL){
+			customerList[i].aCustomer->makeEmpty();
+			delete customerList[i].aCustomer;
+			customerList[i].aCustomer = NULL;
+//			delete customerList[i].aCustomer;
+		}
+
+//			delete customerList[i].aCustomer;
+	}
+
 }
 
 void Hash::add(int id, Customer* newCustomer) {
@@ -46,7 +63,7 @@ Customer* Hash::find(int key) {
 			if (customerList[index].id == key) {
 				return customerList[index].aCustomer;
 			}
-			if(customerList[index].id == 0)
+			if (customerList[index].id == 0)
 				break;
 //			cerr << customerList[index].id << endl;
 		}

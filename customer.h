@@ -18,6 +18,7 @@ public:
 	void storeTransaction(Transaction*);
 	void getLatestTransaction() const;
 	void getHistory();
+	void makeEmpty();
 
 private:
 	string firstName;

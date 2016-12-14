@@ -32,6 +32,8 @@ Business::~Business() {
 	allClassics->makeEmpty();	//making tree empty
 	delete allClassics;			//deleting pointer SET TO NULL? MAYBE NOT NEEDED
 
+	allCustomers->makeEmpty();
+	delete allCustomers;
 	/*
 	 *
 	 * NEED TO DELETE HASHTABLE
@@ -124,7 +126,7 @@ void Business::processTransactions(ifstream& transactionsFile) {
 			transactionsFile >> movieType;
 			getline(transactionsFile, restOfLine);
 			Customer* cust = allCustomers->find(custID);
-			if(cust == NULL)
+			if (cust == NULL)
 				break;
 
 			/*
@@ -133,32 +135,37 @@ void Business::processTransactions(ifstream& transactionsFile) {
 			 * VERIFY CUSTOME ID BEFORE DOING TRANSACTIONS
 			 */
 
-			tran = new Borrow();
-
 			switch (movieType) {
 			case 'F':
+				tran = new Borrow();
 				tran->setData(restOfLine, movieType);
 				tran->doTransaction(*allComedies, movieType);
 				break;
 			case 'D':
+				tran = new Borrow();
 				tran->setData(restOfLine, movieType);
 				tran->doTransaction(*allDramas, movieType);
 				break;
 			case 'C':
+				tran = new Borrow();
 				tran->setData(restOfLine, movieType);
 				tran->doTransaction(*allClassics, movieType);
 				break;
 			default:
-				cout << movieType << " - INVALID MOVIE GENRE, CAN'T BORROW" << endl;
+//				delete tran;
+				cout << movieType << " - INVALID MOVIE GENRE, CAN'T BORROW"
+						<< endl;
 				break;
 
 			}
 
-			if(tran == NULL)
+			if (tran == NULL)
 				break;
+			if (!tran->isSuccess()) {
+				delete tran;
+				break;
+			}
 			//store transaction in the STACK of CUSTOMER by ID
-
-
 
 			if (cust != NULL) {
 				cust->storeTransaction(tran);
@@ -173,8 +180,9 @@ void Business::processTransactions(ifstream& transactionsFile) {
 			transactionsFile >> mediaType;
 			transactionsFile >> movieType;
 			getline(transactionsFile, restOfLine);
-
-			tran = new Return();
+			Customer* cust = allCustomers->find(custID);
+			if (cust == NULL)
+				break;
 
 			/*
 			 * NEED TO CHECK IF CUSTOMER BORROWED THIS MOVIE,
@@ -188,26 +196,35 @@ void Business::processTransactions(ifstream& transactionsFile) {
 
 			switch (movieType) {
 			case 'F':
+				tran = new Return();
 				tran->setData(restOfLine, movieType);
 				tran->doTransaction(*allComedies, movieType);
 				break;
 			case 'D':
+				tran = new Return();
 				tran->setData(restOfLine, movieType);
 				tran->doTransaction(*allDramas, movieType);
 				break;
 			case 'C':
+				tran = new Return();
 				tran->setData(restOfLine, movieType);
 				tran->doTransaction(*allClassics, movieType);
 				break;
 			default:
-				cout << movieType << " - INVALID MOVIE GENRE, CAN'T RETURN" << endl;
+				cout << movieType << " - INVALID MOVIE GENRE, CAN'T RETURN"
+						<< endl;
 				break;
 
 			}
 
-			//store transaction in the STACK of CUSTOMER by ID
+			if (tran == NULL)
+				break;
+			if (!tran->isSuccess()) {
+				delete tran;
+				break;
+			}
 
-			Customer* cust = allCustomers->find(custID);
+			//store transaction in the STACK of CUSTOMER by ID
 
 			if (cust != NULL) {
 				cust->storeTransaction(tran);

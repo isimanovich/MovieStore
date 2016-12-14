@@ -27,6 +27,7 @@ public:
 	int getMonth();
 	string getDirector();
 	string getActor();
+	bool isSuccess();
 
 protected:
 	char type;		//tran
@@ -35,6 +36,7 @@ protected:
 	int month;		//tran
 	string director; //tran
 	string actor;	//tran
+	bool success;
 
 };
 #endif
