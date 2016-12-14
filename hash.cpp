@@ -9,7 +9,6 @@ Hash::~Hash() {
 
 	//should delete customerList to avoid memory leak
 
-
 }
 
 void Hash::initArray(int size) {
@@ -26,7 +25,7 @@ void Hash::add(int id, Customer* newCustomer) {
 		customerList[hash].id = newCustomer->getID();
 		customerList[hash].aCustomer = newCustomer;
 	} else {
-		while(customerList[hash].id != 0){
+		while (customerList[hash].id != 0) {
 			hash = (hash + 1) % size;
 			customerList[hash].id = newCustomer->getID();
 			customerList[hash].aCustomer = newCustomer;
@@ -34,12 +33,22 @@ void Hash::add(int id, Customer* newCustomer) {
 	}
 }
 
-Customer& Hash::find(int id){
-	int index = id % size;
+Customer& Hash::find(int key) {
+	int index = key % size;
+	//match found, return customer
+	if (customerList[index].id == key)
+		return customerList[index].aCustomer;
 
+	//no match, keep hashing until found, or no more possibilities to find
+	else {
+		while (customerList[index].id != key || customerList[index].id != 0) {
+			index = (index + 1) % size;
+			if (customerList[index].id == key) {
+				return customerList[index].aCustomer;
+			}
+		}
+		return NULL;
+	}
 
 }
-
-
-
 
