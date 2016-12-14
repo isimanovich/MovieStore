@@ -26,6 +26,29 @@ int main() {
 		return 1;
 	}
 
+
+//
+//	ifstream movieFile("data4movies.txt");
+//		if (!movieFile) {
+//			cout << "Movie file could not be opened." << endl;
+//			return 1;
+//		}
+//
+//		ifstream custFile("data4customers.txt");
+//		if (!custFile) {
+//			cout << "Customers file could not be opened." << endl;
+//			return 1;
+//		}
+//
+//		ifstream comFile("data4commands.txt");
+//		if (!comFile) {
+//			cout << "Commands file could not be opened." << endl;
+//			return 1;
+//		}
+
+
+
+
 	Business store;
 
 	store.buildMovies(movieFile);

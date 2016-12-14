@@ -4,7 +4,14 @@ What if actor has 3 words in name
 
 What if duplicate movies? don't forget to increment stock
 
-xtra line in customers file
+xtra line in customers file??????????
  
+ 1. destructors
+ 2. duplicate movies
+ 3. comments
+ 4. memory leaks, after destructors are implemented
+ 5. testing
+ 6. check for ERRORS: and if they are valid
+ 7. run on Linux with valgrind
  
  

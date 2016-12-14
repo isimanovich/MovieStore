@@ -41,11 +41,14 @@ Customer* Hash::find(int key) {
 
 	//no match, keep hashing until found, or no more possibilities to find
 	else {
-		while (customerList[index].id != key || customerList[index].id != 0) {
+		while (customerList[index].id != key) {
 			index = (index + 1) % size;
 			if (customerList[index].id == key) {
 				return customerList[index].aCustomer;
 			}
+			if(customerList[index].id == 0)
+				break;
+//			cerr << customerList[index].id << endl;
 		}
 		return NULL;
 	}

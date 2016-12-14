@@ -123,6 +123,15 @@ void Business::processTransactions(ifstream& transactionsFile) {
 			transactionsFile >> mediaType;
 			transactionsFile >> movieType;
 			getline(transactionsFile, restOfLine);
+			Customer* cust = allCustomers->find(custID);
+			if(cust == NULL)
+				break;
+
+			/*
+			 *
+			 *
+			 * VERIFY CUSTOME ID BEFORE DOING TRANSACTIONS
+			 */
 
 			tran = new Borrow();
 
@@ -149,7 +158,7 @@ void Business::processTransactions(ifstream& transactionsFile) {
 				break;
 			//store transaction in the STACK of CUSTOMER by ID
 
-			Customer* cust = allCustomers->find(custID);
+
 
 			if (cust != NULL) {
 				cust->storeTransaction(tran);

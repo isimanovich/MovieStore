@@ -66,8 +66,11 @@ void Borrow::doTransaction(BinTree& tree, char movieType) {
 		break;
 	}
 	//reset data based on performed transaction
-	title = result->getTitle();
-	year = result->getYear();
+	if(result != NULL){
+		title = result->getTitle();
+		year = result->getYear();
+	}
+
 
 }
 
