@@ -57,7 +57,7 @@ void Customer::getHistory() {
 		Transaction* tran = NULL;
 		tran = history.top();
 		history.pop();
-		cout << "Latest transaction for " << id << " customer ID" << endl;
+//		cout << "Latest transaction for " << id << " customer ID" << endl;
 		cout << "Movie: " << tran->getTitle() << " " << tran->getYear()
 				<< "; Transaction type: " << tran->getTransType() << endl;
 		getHistory();

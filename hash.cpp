@@ -33,7 +33,7 @@ void Hash::add(int id, Customer* newCustomer) {
 	}
 }
 
-Customer& Hash::find(int key) {
+Customer* Hash::find(int key) {
 	int index = key % size;
 	//match found, return customer
 	if (customerList[index].id == key)

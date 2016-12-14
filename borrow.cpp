@@ -12,58 +12,62 @@ Borrow::~Borrow() {
 
 }
 
+void Borrow::doTransaction(BinTree& tree, char movieType) {
 
-void Borrow::doTransaction(BinTree& tree, char movieType){
+	Movie* result = NULL;
 
 	switch (movieType) {
-		case 'F': {
-			Movie* result = NULL;
-			Comedy* target = new Comedy(title, year);
-			if (tree.retrieve(*target, result)) {
-				if (result->borrow() == false) {
-					cout << "ERROR: THIS MOVIE IS OUT OF STOCK" << endl;
-				}
+	case 'F': {
 
-			} else {
-				cout << "ERROR: MOVIE IS NOT FOUND IN COLLECTION OF COMEDIES" << endl;
+		Comedy* target = new Comedy(title, year);
+		if (tree.retrieve(*target, result)) {
+			if (result->borrow() == false) {
+				cout << "ERROR: THIS MOVIE IS OUT OF STOCK" << endl;
 			}
 
-			//DON"T FORGET TO DESTROY TEMPORARY OBJECTS
-			break;
+		} else {
+			cout << "ERROR: MOVIE IS NOT FOUND IN COLLECTION OF COMEDIES"
+					<< endl;
 		}
-		case 'D': {
-			Movie* result = NULL;
-			Drama* target = new Drama(director, title);
 
-			if (tree.retrieve(*target, result)) {
-				if (result->borrow() == false) {
-					cout << "ERROR: THIS MOVIE IS OUT OF STOCK" << endl;
-				}
-			} else {
-				cout << "ERROR: MOVIE IS NOT FOUND IN COLLECTION OF DRAMAS" << endl;
+		//DON"T FORGET TO DESTROY TEMPORARY OBJECTS
+		break;
+	}
+	case 'D': {
+		Drama* target = new Drama(director, title);
+
+		if (tree.retrieve(*target, result)) {
+			if (result->borrow() == false) {
+				cout << "ERROR: THIS MOVIE IS OUT OF STOCK" << endl;
 			}
-
-			//DON"T FORGET TO DESTROY TEMPORARY OBJECTS
-
-			break;
+		} else {
+			cout << "ERROR: MOVIE IS NOT FOUND IN COLLECTION OF DRAMAS" << endl;
 		}
-		case 'C': {
-			Movie* result = NULL;
-			Classic* target = new Classic(month, year, actor);
-			if (tree.retrieve(*target, result)) {
-				if (result->borrow() == false) {
-					cout << "ERROR: THIS MOVIE IS OUT OF STOCK" << endl;
-				}
-			} else {
-				cout << "ERROR: MOVIE IS NOT FOUND IN COLLECTION OF CLASSICS" << endl;
+
+		//DON"T FORGET TO DESTROY TEMPORARY OBJECTS
+
+		break;
+	}
+	case 'C': {
+		Classic* target = new Classic(month, year, actor);
+		if (tree.retrieve(*target, result)) {
+			if (result->borrow() == false) {
+				cout << "ERROR: THIS MOVIE IS OUT OF STOCK" << endl;
 			}
-			//DON"T FORGET TO DESTROY TEMPORARY OBJECTS
-			break;
+		} else {
+			cout << "ERROR: MOVIE IS NOT FOUND IN COLLECTION OF CLASSICS"
+					<< endl;
 		}
-		default:
-			cout << "invalid type of movie, can't borrow" << endl;
-			break;
-		}
+		//DON"T FORGET TO DESTROY TEMPORARY OBJECTS
+		break;
+	}
+	default:
+		cout << "invalid type of movie, can't borrow" << endl;
+		break;
+	}
+	//reset data based on performed transaction
+	title = result->getTitle();
+	year = result->getYear();
 
 }
 
@@ -97,7 +101,6 @@ void Borrow::setData(string data, char movieType) {
 		break;
 	}
 	case 'D': {
-
 
 		string temp;
 		//reading director

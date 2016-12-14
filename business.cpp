@@ -32,19 +32,16 @@ Business::~Business() {
 	allClassics->makeEmpty();	//making tree empty
 	delete allClassics;			//deleting pointer SET TO NULL? MAYBE NOT NEEDED
 
-
 	/*
 	 *
 	 * NEED TO DELETE HASHTABLE
 	 *
 	 */
 
-
 	//need to delete current transaction, just deleting pointer???
 	//SHOULD TRANSACTION HAVE STORAGE FOR ALL TRANSACTIONS???
 	//THEN NEED TO DELETE THAT DATA
 	//delete currentTransaction;
-
 }
 
 void Business::buildMovies(ifstream& movFile) {
@@ -99,6 +96,12 @@ void Business::buildCustomers(ifstream& customerFile) {
 		 */
 		Customer* customer = new Customer(first, last, ID);
 		allCustomers->add(ID, customer);
+
+		/*
+		 * MIGHT NEED TO CHECK FOR BLANK LINE AT THE END OF THE FILE
+		 *
+		 */
+
 	}
 }
 
@@ -144,10 +147,14 @@ void Business::processTransactions(ifstream& transactionsFile) {
 
 			//store transaction in the STACK of CUSTOMER by ID
 
-//			Customer* cust = NULL;
-////			cust = allCustomers->getCustomer(custID);
-//			cust->storeTransaction(tran);
+			Customer* cust = allCustomers->find(custID);
 
+			if (cust != NULL) {
+				cust->storeTransaction(tran);
+				cerr << "BORROW SUCCESS!!!" << endl;
+			} else {
+				cerr << "CAN'T STORE BORROW TRAN CUST NOT FOUND!!!" << endl;
+			}
 			break;
 		}
 		case 'R': {
@@ -157,7 +164,6 @@ void Business::processTransactions(ifstream& transactionsFile) {
 			getline(transactionsFile, restOfLine);
 
 			tran = new Return();
-
 
 			/*
 			 * NEED TO CHECK IF CUSTOMER BORROWED THIS MOVIE,
@@ -188,13 +194,16 @@ void Business::processTransactions(ifstream& transactionsFile) {
 
 			}
 
-
-//			Customer* cust = NULL;
-////			cust = allCustomers->getCustomer(custID);
-//			cust->storeTransaction(tran);
-
-
 			//store transaction in the STACK of CUSTOMER by ID
+
+			Customer* cust = allCustomers->find(custID);
+
+			if (cust != NULL) {
+				cust->storeTransaction(tran);
+				cerr << "RETURN SUCCESS!!!" << endl;
+			} else {
+				cerr << "CAN'T STORE RETURN TRAN CUST NOT FOUND!!!" << endl;
+			}
 
 			break;
 		}
@@ -223,11 +232,15 @@ void Business::processTransactions(ifstream& transactionsFile) {
 			 * 3. customer->printHisotry();
 			 */
 			transactionsFile >> custID;
-//			Customer* cust = NULL;
-//			getline(transactionsFile, toGetNewLine);
-//			cust = allCustomers->getCustomer(custID);
 			cout << "HISTORY OF CUSTOMER: " << custID << endl;
-//			cust->getHistory();
+			Customer* cust = allCustomers->find(custID);
+
+			if (cust != NULL) {
+				cust->getHistory();
+			} else {
+				cerr << "CAN'T SHOW HISTORY, CUST NOT FOUND!!!" << endl;
+			}
+//			getline(transactionsFile, toGetNewLine);
 			break;
 		}
 		default:

@@ -12,11 +12,13 @@ Return::~Return() {
 
 }
 
-void Return::doTransaction(BinTree& tree, char movieType){
+void Return::doTransaction(BinTree& tree, char movieType) {
+
+	Movie* result = NULL;
 
 	switch (movieType) {
 	case 'F': {
-		Movie* result = NULL;
+
 		Comedy* target = new Comedy(title, year);
 		if (tree.retrieve(*target, result))
 			result->returN();
@@ -29,7 +31,6 @@ void Return::doTransaction(BinTree& tree, char movieType){
 		break;
 	}
 	case 'D': {
-		Movie* result = NULL;
 		Drama* target = new Drama(director, title);
 
 		if (tree.retrieve(*target, result))
@@ -43,7 +44,6 @@ void Return::doTransaction(BinTree& tree, char movieType){
 		break;
 	}
 	case 'C': {
-		Movie* result = NULL;
 		Classic* target = new Classic(month, year, actor);
 		if (tree.retrieve(*target, result))
 			result->returN();
@@ -58,6 +58,10 @@ void Return::doTransaction(BinTree& tree, char movieType){
 		cout << "invalid type of movie, can't return" << endl;
 		break;
 	}
+
+	//reset data based on performed transaction
+	title = result->getTitle();
+	year = result->getYear();
 
 }
 

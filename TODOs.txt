@@ -3,6 +3,8 @@ Make sure that borrow and return uses correct objects to adjust stock
 What if actor has 3 words in name
 
 What if duplicate movies? don't forget to increment stock
+
+xtra line in customers file
  
  
  

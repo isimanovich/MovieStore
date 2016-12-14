@@ -13,7 +13,7 @@ public:
 	~Hash();
 	void add(int, Customer*);
 	void initArray(int);
-	Customer& find(int key);
+	Customer* find(int key);
 
 private:
 	struct Cust {
