@@ -20,10 +20,13 @@ public:
 	virtual void doTransaction(BinTree&, char);
 	virtual void display() const;
 
-//	virtual Transaction* create();
-//	string getMediaTye();
-//	string getTransType();
-//	Movie* getItem() const;
+
+	char getTransType();
+	string getTitle();
+	int getYear();
+	int getMonth();
+	string getDirector();
+	string getActor();
 
 protected:
 	char type;		//tran

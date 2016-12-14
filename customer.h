@@ -14,16 +14,14 @@ public:
 	void setCustomer(string, string, int);
 	void storeTransaction(Transaction*);
 	void getLatestTransaction() const;
-
-	//possibly won't be able to keep CONST
-	//cuz will have to pop() recursively
-	bool getHistory() const;
+	void getHistory();
 
 private:
 	string firstName;
 	string lastName;
 	int id;
-	stack<Transaction> history;
+	stack<Transaction*> history;
+//	void historyHelper();
 
 };
 

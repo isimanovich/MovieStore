@@ -98,4 +98,26 @@ void Transaction::display() const {
 
 }
 
+char Transaction::getTransType(){
+	return type;
+}
 
+string Transaction::getTitle(){
+	return title;
+}
+
+int Transaction::getYear(){
+	return year;
+}
+
+int Transaction::getMonth(){
+	return month;
+}
+
+string Transaction::getDirector(){
+	return director;
+}
+
+string Transaction::getActor(){
+	return actor;
+}
