@@ -82,22 +82,18 @@ void Business::buildMovies(ifstream& movFile) {
 
 void Business::buildCustomers(ifstream& customerFile) {
 	//logic for reading file and adding stuff to the tree
-	int customerId;
-	string fullName;
-	string firstName;
-	string lastName;
+	int ID;
+	string first;
+	string last;
 	string temp;
 
 	while (!customerFile.eof()) {
-		customerFile >> customerId;
+		customerFile >> ID;
 
-		customerFile >> firstName;
-		customerFile >> lastName;
+		customerFile >> first;
+		customerFile >> last;
 		getline(customerFile, temp);
-		cout << customerId << endl;
-		cout << firstName << " ";
-		cout << lastName << endl;
-		Customer* customer = NULL;
+		Customer* customer = new Customer(first, last, ID);
 
 		/*
 		 *  - create new customer object

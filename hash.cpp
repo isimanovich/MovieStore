@@ -6,6 +6,9 @@ Hash::Hash() {
 
 Hash::~Hash() {
 
+	//should delete customerList to avoid memory leak
+
+
 }
 
 void Hash::initArray(int size) {
@@ -19,12 +22,12 @@ void Hash::add(int id, Customer& newCustomer) {
 	int hash = id % size;
 
 	if (customerList[hash].id == 0) {
-		customerList[hash].id = newCustomer.id;
+		customerList[hash].id = newCustomer.getID();
 		customerList[hash].aCustomer = &newCustomer;
 	} else {
 		while(customerList[hash].id != 0){
 			hash = (hash + 1) % size;
-			customerList[hash].id = newCustomer.id;
+			customerList[hash].id = newCustomer.getID();
 			customerList[hash].aCustomer = &newCustomer;
 		}
 	}
