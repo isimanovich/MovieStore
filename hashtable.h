@@ -13,6 +13,7 @@ public:
 
 	HashTable();
 	~HashTable();
+
 	bool add(int id, Customer &newCustomer);
 
 
