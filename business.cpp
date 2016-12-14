@@ -34,26 +34,16 @@ Business::~Business() {
 
 	allCustomers->makeEmpty();
 	delete allCustomers;
-	/*
-	 *
-	 * NEED TO DELETE HASHTABLE
-	 *
-	 */
-
-	//need to delete current transaction, just deleting pointer???
-	//SHOULD TRANSACTION HAVE STORAGE FOR ALL TRANSACTIONS???
-	//THEN NEED TO DELETE THAT DATA
-	//delete currentTransaction;
 }
 
 void Business::buildMovies(ifstream& movFile) {
 
 	char type = 'z';
-	string restOfLine, getNewLine;
-
+	string restOfLine;
+	movFile >> type;
 	while (!movFile.eof()) {
 		Movie* movie = NULL;
-		movFile >> type;
+
 		getline(movFile, restOfLine);
 		switch (type) {
 		case 'F':
@@ -75,6 +65,7 @@ void Business::buildMovies(ifstream& movFile) {
 			cout << "invalid movie type" << endl;
 			break;
 		}
+		movFile >> type;
 	}
 }
 
@@ -84,10 +75,8 @@ void Business::buildCustomers(ifstream& customerFile) {
 	string first;
 	string last;
 	string temp;
-
+	customerFile >> ID;
 	while (!customerFile.eof()) {
-		customerFile >> ID;
-
 		customerFile >> first;
 		customerFile >> last;
 		getline(customerFile, temp);
@@ -103,7 +92,7 @@ void Business::buildCustomers(ifstream& customerFile) {
 		 * MIGHT NEED TO CHECK FOR BLANK LINE AT THE END OF THE FILE
 		 *
 		 */
-
+		customerFile >> ID;
 	}
 }
 
@@ -114,10 +103,9 @@ void Business::processTransactions(ifstream& transactionsFile) {
 	char mediaType = 'z';
 	char movieType = 'z';
 	string restOfLine, toGetNewLine;
-
+	transactionsFile >> type;
 	while (!transactionsFile.eof()) {
 		Transaction* tran = NULL;
-		transactionsFile >> type;
 
 		switch (type) {
 		case 'B': {
@@ -276,7 +264,7 @@ void Business::processTransactions(ifstream& transactionsFile) {
 			cout << "ERROR: INVALID TRANSACTION TYPE" << endl;
 			break;
 		}
-
+		transactionsFile >> type;
 	}
 
 }

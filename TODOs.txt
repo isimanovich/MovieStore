@@ -4,6 +4,7 @@ xtra line in customers file??????????
  
  1. destructors			- done, but need to make sure
  2. duplicate movies	- done
+ IMPORTANT: check if customer borrowed, then can return
  3. comments
  4. memory leaks		- no leaks
  5. testing
