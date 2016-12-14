@@ -140,18 +140,20 @@ void Business::processTransactions(ifstream& transactionsFile) {
 				tran->doTransaction(*allClassics, movieType);
 				break;
 			default:
-				cout << "INVALID MOVIE GENRE, CAN'T BORROW" << endl;
+				cout << movieType << " - INVALID MOVIE GENRE, CAN'T BORROW" << endl;
 				break;
 
 			}
 
+			if(tran == NULL)
+				break;
 			//store transaction in the STACK of CUSTOMER by ID
 
 			Customer* cust = allCustomers->find(custID);
 
 			if (cust != NULL) {
 				cust->storeTransaction(tran);
-				cerr << "BORROW SUCCESS!!!" << endl;
+//				cerr << "BORROW SUCCESS!!!" << endl;
 			} else {
 				cerr << "CAN'T STORE BORROW TRAN CUST NOT FOUND!!!" << endl;
 			}
@@ -189,7 +191,7 @@ void Business::processTransactions(ifstream& transactionsFile) {
 				tran->doTransaction(*allClassics, movieType);
 				break;
 			default:
-				cout << "INVALID MOVIE GENRE, CAN'T RETURN" << endl;
+				cout << movieType << " - INVALID MOVIE GENRE, CAN'T RETURN" << endl;
 				break;
 
 			}
@@ -200,7 +202,7 @@ void Business::processTransactions(ifstream& transactionsFile) {
 
 			if (cust != NULL) {
 				cust->storeTransaction(tran);
-				cerr << "RETURN SUCCESS!!!" << endl;
+//				cerr << "RETURN SUCCESS!!!" << endl;
 			} else {
 				cerr << "CAN'T STORE RETURN TRAN CUST NOT FOUND!!!" << endl;
 			}

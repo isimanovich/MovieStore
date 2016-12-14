@@ -109,7 +109,7 @@ bool BinTree::retrieveHelper(Movie& target, Movie* &result, Node* &curr) {
 		return true;
 	} else if (target < *curr->data && curr->left != NULL)//left recursive call
 		return retrieveHelper(target, result, curr->left);
-	else	//right recursive call
+	else if(curr->right != NULL)	//right recursive call
 		return retrieveHelper(target, result, curr->right);
 	return false;	//if object not found
 }
@@ -225,7 +225,7 @@ bool BinTree::insert(Movie* data, Node* &curr) {
 		return true;
 	} else if (data < curr->data) {		//go to left recursively
 		return insert(data, curr->left);
-	} else if (data > curr->data) {		//go to right recursively
+	} else {		//go to right recursively
 		return insert(data, curr->right);
 	}
 	return false;	//if can't insert data because matching data in the tree
