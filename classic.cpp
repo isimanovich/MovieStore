@@ -25,6 +25,14 @@ Classic::~Classic() {
 
 }
 
+string Classic::getActor(){
+	return actor;
+}
+
+int Classic::getMonth(){
+	return month;
+}
+
 void Classic::setData(string data) {
 
 //	cout << "this is what i get for classic: " << endl;

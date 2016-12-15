@@ -26,6 +26,9 @@ public:
 	void setData(string);
 	void display() const;
 
+	string getActor();
+	int getMonth();
+
 protected:
 	string actor;
 	int month;

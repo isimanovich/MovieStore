@@ -88,6 +88,9 @@ void Drama::display()const{
 
 }
 
+//ASSUMPTION: since director is a variable to store both first and last
+//			  names, when sorting drama movies by director, it sorts
+//			  primarily by first name
 bool Drama::operator<(const Movie &rhs) const {
 
 	const Drama& rhS = static_cast<const Drama&>(rhs);
