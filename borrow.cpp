@@ -25,8 +25,12 @@ Borrow::~Borrow() {
 }
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 //returns if successful
 bool Borrow::isSuccess(){
+=======
+bool Borrow::isSuccess() {
+>>>>>>> origin/master
 =======
 bool Borrow::isSuccess() {
 >>>>>>> origin/master

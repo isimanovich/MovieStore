@@ -114,11 +114,14 @@ void Transaction::setData(string data, char movieType) {
 }
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 void Transaction::display() const {
 
 }
 
 //returns the transaction type
+=======
+>>>>>>> origin/master
 =======
 >>>>>>> origin/master
 char Transaction::getTransType(){

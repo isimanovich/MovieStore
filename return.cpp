@@ -15,8 +15,12 @@ Return::~Return() {
 }
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 //returns success if reutrn is successful
 bool Return::isSuccess(){
+=======
+bool Return::isSuccess() {
+>>>>>>> origin/master
 =======
 bool Return::isSuccess() {
 >>>>>>> origin/master
@@ -172,10 +176,13 @@ void Return::setData(string data, char movieType) {
 
 }
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 
 void Return::display() const {
 
 }
+=======
+>>>>>>> origin/master
 =======
 >>>>>>> origin/master

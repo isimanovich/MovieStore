@@ -23,8 +23,11 @@ Classic::~Classic() {
 }
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 //reads a line for classic movie and sets the data
 =======
+=======
+>>>>>>> origin/master
 string Classic::getActor(){
 	return actor;
 }
@@ -33,6 +36,9 @@ int Classic::getMonth(){
 	return month;
 }
 
+<<<<<<< HEAD
+>>>>>>> origin/master
+=======
 >>>>>>> origin/master
 void Classic::setData(string data) {
 

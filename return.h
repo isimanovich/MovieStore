@@ -28,6 +28,9 @@ public:
 =======
 	void setData(string, char);
 	void doTransaction(BinTree&, char);
+<<<<<<< HEAD
+>>>>>>> origin/master
+=======
 >>>>>>> origin/master
 	bool isSuccess();
 
