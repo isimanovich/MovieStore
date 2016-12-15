@@ -4,12 +4,6 @@
 // Creation Date: 10/17/2016
 // Last Modification: 10/22/2016
 // ------------------------------------------------------------------------------------------------------------------
-// Purpose: is to create a binary search tree class called BinTree.
-// ------------------------------------------------------------------------------------------------------------------
-// Notes:
-// - remove function is not required.
-// - duplicate elements are not being inserted in the BinTree.
-// ------------------------------------------------------------------------------------------------------------------
 #ifndef BINTREE_H_
 #define BINTREE_H_
 

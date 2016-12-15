@@ -4,10 +4,6 @@
 // Creation Date: 12/01/2016
 // Last Modification: 12/14/2016
 // ------------------------------------------------------------------------------------------------------------------
-// Purpose:
-// ------------------------------------------------------------------------------------------------------------------
-// Notes:
-// ------------------------------------------------------------------------------------------------------------------
 #include "borrow.h"
 #include <sstream>
 #include "movie.h"
@@ -24,7 +20,7 @@ Borrow::~Borrow() {
 
 }
 
-//returns if successful
+//returns if borrow transaction successful
 bool Borrow::isSuccess(){
 	return success;
 }
@@ -190,5 +186,4 @@ void Borrow::setData(string data, char movieType) {
 		cout << "invalid type of movie, can't set data" << endl;
 		break;
 	}
-
 }

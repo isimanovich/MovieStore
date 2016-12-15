@@ -1,16 +1,15 @@
-/*
- * movie.h
- *
- *  Created on: Nov 30, 2016
- *      Author: MacBook
- */
+// --------------------------------------------------- movie.h ------------------------------------------------------
+// Name: Ihar Simanovich & Jason Kozodoy
+// Course: CSS343 A
+// Creation Date: 12/01/2016
+// Last Modification: 12/14/2016
+// ------------------------------------------------------------------------------------------------------------------
 
 #ifndef MOVIE_H_
 #define MOVIE_H_
 
 #include <iostream>
 #include <string>
-
 
 using namespace std;
 

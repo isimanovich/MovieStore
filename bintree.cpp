@@ -2,20 +2,12 @@
 // Name: Ihar Simanovich
 // Course: CSS343 A
 // Creation Date: 10/17/2016
-// Last Modification: 10/22/2016
-// ------------------------------------------------------------------------------------------------------------------
-// Purpose: is to create a binary search tree class called BinTree.
-// ------------------------------------------------------------------------------------------------------------------
-// Notes:
-// - remove function is not required.
-// - duplicate elements are not being inserted in the BinTree.
+// Last Modification: 12/14/2016
 // ------------------------------------------------------------------------------------------------------------------
 
 #include "bintree.h"		//including BinTree class header file
 
 // ----------------------------------------------- constructor ------------------------------------------------------
-// Description: Creates empty BinTree with its root pointing to NULL
-// ------------------------------------------------------------------------------------------------------------------
 BinTree::BinTree() {
 	root = NULL;
 }
@@ -27,11 +19,13 @@ BinTree::~BinTree() {
 		makeEmpty();
 }
 
+// ------------------------------------------------ printData ------------------------------------------------------
 void BinTree::printData() const {
 	//calling private helper function to traverse the tree recursively
 	printDataHelper(this->root);
 }
 
+// --------------------------------------------- printDataHelper ---------------------------------------------------
 void BinTree::printDataHelper(Node* curr) const {
 	//if pointer is not pointing at NULL, execute following
 	if (curr != NULL) {
@@ -42,22 +36,11 @@ void BinTree::printDataHelper(Node* curr) const {
 }
 
 // -------------------------------------------------- retrieve ------------------------------------------------------
-// Description: function to get the Movie* of a given object in the tree (via pass-by-reference
-// parameter) and to report whether the object is found (tree or false).
-// Parameters are Movie and Movie pointer objects target and result
-// Returning boolean to show whether retrieval was successful
-// Note: The 2nd parameter in the function signature may initially be garbage. Then if the object is found, it
-// will point to the actual object in the tree.
-// ------------------------------------------------------------------------------------------------------------------
 bool BinTree::retrieve(Movie & target, Movie* &result) {
 	return retrieveHelper(target, result, root);
 }
 
 // ------------------------------------------ retrieveHelper function -----------------------------------------------
-// Description: Recursively traverses the BinTree object in order to find target Movie object
-// Parameters are Movie, Movie pointer and Node pointer objects
-// Private function
-// ------------------------------------------------------------------------------------------------------------------
 bool BinTree::retrieveHelper(Movie& target, Movie* &result, Node* &curr) {
 	//if found object - put it in target and return true
 	if (target == *curr->data) {
@@ -72,16 +55,11 @@ bool BinTree::retrieveHelper(Movie& target, Movie* &result, Node* &curr) {
 
 
 // -------------------------------------------------- isEmpty ------------------------------------------------------
-// Description: function that checks whether tree is empty or not
-// Returns boolean
-// ------------------------------------------------------------------------------------------------------------------
 bool BinTree::isEmpty() const {
 	return root == NULL;
 }
 
 // -------------------------------------------------- makeEmpty -----------------------------------------------------
-// Description: Function to make BinTree empty
-// ------------------------------------------------------------------------------------------------------------------
 void BinTree::makeEmpty() {
 	//if tree empty, exit function
 	if (isEmpty())
@@ -90,11 +68,7 @@ void BinTree::makeEmpty() {
 	makeEmpty(root);
 }
 
-// --------------------------------------------- toTree function ----------------------------------------------------
-// Description: Recursively traverses the BinTree and deletes nodes
-// Parameters are pointer to the tree
-// Private function
-// ------------------------------------------------------------------------------------------------------------------
+// --------------------------------------------- makeEmpty helper ---------------------------------------------------
 void BinTree::makeEmpty(Node* &curr) {
 	//if pointer is not NULL execute following
 	if (curr != NULL) {
@@ -108,21 +82,12 @@ void BinTree::makeEmpty(Node* &curr) {
 	}
 }
 
-// ------------------------------------------------ arrayToBSTree ---------------------------------------------------
-// Description: Function that inserts given object into the tree
-// Parameter is pointer to Movie object
-// Returns boolean whether insert was successful
-// Note: matching data is being discarded
-// ------------------------------------------------------------------------------------------------------------------
+// --------------------------------------------------- insert -------------------------------------------------------
 bool BinTree::insert(Movie* data) {
 	return insert(data, root);	//calling helper function
 }
 
-// --------------------------------------------- insert function ----------------------------------------------------
-// Description: Recursively traverses the BinTree in order to insert data
-// Parameters are pointer to the tree
-// Private function
-// ------------------------------------------------------------------------------------------------------------------
+// ----------------------------------------------- insert helper ----------------------------------------------------
 bool BinTree::insert(Movie* data, Node* &curr) {
 
 	//if root == NULL, so insert and set result to true

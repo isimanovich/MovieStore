@@ -1,4 +1,9 @@
-
+// -------------------------------------------------- drama.h -------------------------------------------------------
+// Name: Ihar Simanovich & Jason Kozodoy
+// Course: CSS343 A
+// Creation Date: 12/01/2016
+// Last Modification: 12/14/2016
+// ------------------------------------------------------------------------------------------------------------------
 #ifndef DRAMA_H_
 #define DRAMA_H_
 
@@ -10,7 +15,6 @@ using namespace std;
 class Drama: public Movie{
 
 public:
-
 	Drama();
 	virtual ~Drama();
 	Drama(string, string);
@@ -21,11 +25,6 @@ public:
 
 	void setData(string); //sets data for drama movie
 	void display() const; //displays drama movie info
-
-private:
-
 };
-
-
 
 #endif /* DRAMA_H_ */

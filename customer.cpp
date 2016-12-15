@@ -1,3 +1,9 @@
+// ------------------------------------------------ customer.cpp ----------------------------------------------------
+// Name: Ihar Simanovich & Jason Kozodoy
+// Course: CSS343 A
+// Creation Date: 12/01/2016
+// Last Modification: 12/14/2016
+// ------------------------------------------------------------------------------------------------------------------
 #include "customer.h"
 
 //constructor inializes the customer data members

@@ -1,3 +1,9 @@
+// -------------------------------------------------- return.cpp ----------------------------------------------------
+// Name: Ihar Simanovich & Jason Kozodoy
+// Course: CSS343 A
+// Creation Date: 12/01/2016
+// Last Modification: 12/14/2016
+// ------------------------------------------------------------------------------------------------------------------
 #include "return.h"
 #include "movie.h"
 #include <sstream>
@@ -165,5 +171,4 @@ void Return::setData(string data, char movieType) {
 		cout << "invalid type of movie, can't set data" << endl;
 		break;
 	}
-
 }

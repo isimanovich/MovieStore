@@ -4,10 +4,6 @@
 // Creation Date: 12/01/2016
 // Last Modification: 12/14/2016
 // ------------------------------------------------------------------------------------------------------------------
-// Purpose:
-// ------------------------------------------------------------------------------------------------------------------
-// Notes:
-// ------------------------------------------------------------------------------------------------------------------
 #ifndef TRANSACTION_H
 #define TRANSACTION_H
 #include <iostream>
@@ -42,12 +38,12 @@ public:
 	bool isSuccess();
 
 protected:
-	char type;		//tran
-	string title;	//tran
-	int year;		//tran
-	int month;		//tran
-	string director; //tran
-	string actor;	//tran
+	char type;
+	string title;
+	int year;
+	int month;
+	string director;
+	string actor;
 	bool success;
 
 };

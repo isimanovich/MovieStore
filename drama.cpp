@@ -1,10 +1,9 @@
-/*
- * drama.cpp
- *
- *  Created on: Dec 1, 2016
- *      Author: MacBook
- */
-
+// -------------------------------------------------- drama.cpp -----------------------------------------------------
+// Name: Ihar Simanovich & Jason Kozodoy
+// Course: CSS343 A
+// Creation Date: 12/01/2016
+// Last Modification: 12/14/2016
+// ------------------------------------------------------------------------------------------------------------------
 #include <sstream>
 #include <iostream>
 #include <string>
@@ -31,9 +30,7 @@ void Drama::setData(string data){
 	istringstream dataStream(data);		//opening stream
 	dataStream.ignore(256, ' ');		//ignoring first comma
 	dataStream >> instock;				//getting quantity in stock
-//	cout << instock << endl;
 	dataStream.ignore(256, ',');		//ignoring comma after number
-	//reading director
 	string temp;
 	dataStream >> temp;
 
@@ -45,14 +42,11 @@ void Drama::setData(string data){
 				director += " ";
 				dataStream >> temp;
 			}
-
 			//comma case, removing comma and adding to title then break
 			else {
-
 				temp = temp.substr(0, temp.size() - 1);
 				director += temp;
 				break;
-
 			}
 		}
 
@@ -65,20 +59,15 @@ void Drama::setData(string data){
 			title += " ";
 			dataStream >> temp;
 		}
-
 		//comma case, removing comma and adding to title then break
 		else {
-
 			temp = temp.substr(0, temp.size() - 1);
 			title += temp;
 			break;
-
 		}
 	}
-
 	//getting a year of the movie
 	dataStream >> year;
-//	cout << year << endl;
 }
 
 void Drama::display()const{
@@ -129,4 +118,3 @@ bool Drama::operator==(const Drama& rhs) const {
 	else
 		return false;
 }
-
