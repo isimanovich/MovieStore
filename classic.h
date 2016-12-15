@@ -33,9 +33,6 @@ public:
 	string getActor();
 	int getMonth();
 
-	string getActor();
-	int getMonth();
-
 protected:
 	string actor;
 	int month;

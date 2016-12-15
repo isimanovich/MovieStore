@@ -21,19 +21,7 @@ public:
    Borrow();
    ~Borrow();
    void setData(string, char);
-<<<<<<< HEAD
-<<<<<<< HEAD
-   void display() const;
    void doTransaction(BinTree&, char); //do transaction
    bool isSuccess(); //borrow is successful
-
-=======
-   void doTransaction(BinTree&, char);
-   bool isSuccess();
->>>>>>> origin/master
-=======
-   void doTransaction(BinTree&, char);
-   bool isSuccess();
->>>>>>> origin/master
 };
 #endif

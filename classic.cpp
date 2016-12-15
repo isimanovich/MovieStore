@@ -22,12 +22,7 @@ Classic::~Classic() {
 
 }
 
-<<<<<<< HEAD
-<<<<<<< HEAD
 //reads a line for classic movie and sets the data
-=======
-=======
->>>>>>> origin/master
 string Classic::getActor(){
 	return actor;
 }
@@ -36,20 +31,11 @@ int Classic::getMonth(){
 	return month;
 }
 
-<<<<<<< HEAD
->>>>>>> origin/master
-=======
->>>>>>> origin/master
 void Classic::setData(string data) {
-
-//	cout << "this is what i get for classic: " << endl;
-//	cout << data << endl;
-
 	string dirFirstName, dirLastName;
 	istringstream dataStream(data);		//opening stream
 	dataStream.ignore(256, ' ');		//ignoring first comma
 	dataStream >> instock;				//getting quantity in stock
-//	cout << instock << endl;
 	dataStream.ignore(256, ',');		//ignoring comma after number
 
 	//reading director
@@ -93,8 +79,6 @@ void Classic::setData(string data) {
 
 		}
 	}
-
-
 	string actorFirst, actorLast;
 	dataStream >> actorFirst;
 	dataStream >> actorLast;
