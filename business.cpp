@@ -1,16 +1,19 @@
-/*
- * business.cpp
- *
- *  Created on: Dec 1, 2016
- *      Author: MacBook
- */
+// ----------------------------------------------- business.cpp ------------------------------------------------------
+// Name: Ihar Simanovich & Jason Kozodoy
+// Course: CSS343 A
+// Creation Date: 12/01/2016
+// Last Modification: 12/14/2016
+// ------------------------------------------------------------------------------------------------------------------
+// Purpose:
+// ------------------------------------------------------------------------------------------------------------------
+// Notes:
+// ------------------------------------------------------------------------------------------------------------------
 
 #include "business.h"
 #include <string.h>
 
 //constructor
 Business::Business() {
-
 	//creating pointers for every type of movies
 	allComedies = new BinTree();
 	allDramas = new BinTree();
@@ -23,11 +26,11 @@ Business::Business() {
 //destructor
 Business::~Business() {
 	allComedies->makeEmpty();	//making tree empty
-	delete allComedies;			//deleting pointer SET TO NULL? MAYBE NOT NEEDED
+	delete allComedies;			//deleting pointer
 	allDramas->makeEmpty();		//making tree empty
-	delete allDramas;			//deleting pointer SET TO NULL? MAYBE NOT NEEDED
+	delete allDramas;			//deleting pointer
 	allClassics->makeEmpty();	//making tree empty
-	delete allClassics;			//deleting pointer SET TO NULL? MAYBE NOT NEEDED
+	delete allClassics;			//deleting pointer
 	allCustomers->makeEmpty();
 	delete allCustomers;
 }

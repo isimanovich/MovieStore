@@ -4,7 +4,7 @@ xtra line in customers file??????????
  
  1. destructors			- done, but need to make sure
  2. duplicate movies	- done
- IMPORTANT: check if customer borrowed, then can return
+ IMPORTANT: check if customer borrowed, then can return	- DON"T HAVE TIME FOR THIS
  IMPORTANT: fix sorting order (have to use * when comparing probably) - done
  3. comments
  4. memory leaks		- no leaks
