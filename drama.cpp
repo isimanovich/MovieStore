@@ -83,12 +83,14 @@ void Drama::setData(string data){
 
 void Drama::display()const{
 
-	cout << "Movie genre: Drama; Title: " << title << "; Release year: " <<  year
-			<< "; Director: " << director << "; Qty in stock: " << instock
-			<< "; Qty borrowed: "<< borrowedCount <<  endl;
+	cout << "D, Stock: " << instock << ", Borrowed: "<< borrowedCount
+			 << ", " << director << ", "  << title << ", " <<  year <<  endl;
 
 }
 
+//ASSUMPTION: since director is a variable to store both first and last
+//			  names, when sorting drama movies by director, it sorts
+//			  primarily by first name
 bool Drama::operator<(const Movie &rhs) const {
 
 	const Drama& rhS = static_cast<const Drama&>(rhs);

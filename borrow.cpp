@@ -1,21 +1,39 @@
+// ------------------------------------------------ borrow.cpp ------------------------------------------------------
+// Name: Ihar Simanovich & Jason Kozodoy
+// Course: CSS343 A
+// Creation Date: 12/01/2016
+// Last Modification: 12/14/2016
+// ------------------------------------------------------------------------------------------------------------------
+// Purpose:
+// ------------------------------------------------------------------------------------------------------------------
+// Notes:
+// ------------------------------------------------------------------------------------------------------------------
 #include "borrow.h"
 #include <sstream>
 #include "movie.h"
 
 using namespace std;
 
+//constructor
 Borrow::Borrow() {
 	type = 'B';
 }
 
+//destructor
 Borrow::~Borrow() {
 
 }
 
+<<<<<<< HEAD
+//returns if successful
 bool Borrow::isSuccess(){
+=======
+bool Borrow::isSuccess() {
+>>>>>>> origin/master
 	return success;
 }
 
+//does a transaction for borrow
 void Borrow::doTransaction(BinTree& tree, char movieType) {
 
 	Movie* result = NULL;
@@ -26,13 +44,16 @@ void Borrow::doTransaction(BinTree& tree, char movieType) {
 		Comedy* target = new Comedy(title, year);
 		if (tree.retrieve(*target, result)) {
 			if (result->borrow() == false) {
-				cout << "ERROR: THIS MOVIE IS OUT OF STOCK" << endl;
+				cout << "OUT OF STOCK: F, " << target->getTitle() << ", "
+						<< target->getYear() << endl;
+				cout << endl;
 				success = false;
 			}
 
 		} else {
-			cout << "ERROR: MOVIE IS NOT FOUND IN COLLECTION OF COMEDIES"
-					<< endl;
+			cout << "ERROR - Invalid Movie: F, " << target->getTitle() << ", "
+					<< target->getYear() << endl;
+			cout << endl;
 			success = false;
 		}
 		delete target;
@@ -43,11 +64,15 @@ void Borrow::doTransaction(BinTree& tree, char movieType) {
 
 		if (tree.retrieve(*target, result)) {
 			if (result->borrow() == false) {
-				cout << "ERROR: THIS MOVIE IS OUT OF STOCK" << endl;
+				cout << "OUT OF STOCK: D, " << target->getDirector() << ", "
+						<< target->getTitle() << endl;
+				cout << endl;
 				success = false;
 			}
 		} else {
-			cout << "ERROR: MOVIE IS NOT FOUND IN COLLECTION OF DRAMAS" << endl;
+			cout << "ERROR - Invalid Movie: D, " << target->getDirector()
+					<< ", " << target->getTitle() << endl;
+			cout << endl;
 			success = false;
 		}
 		delete target;
@@ -57,19 +82,24 @@ void Borrow::doTransaction(BinTree& tree, char movieType) {
 		Classic* target = new Classic(month, year, actor);
 		if (tree.retrieve(*target, result)) {
 			if (result->borrow() == false) {
-				cout << "ERROR: THIS MOVIE IS OUT OF STOCK" << endl;
+				cout << "OUT OF STOCK: C, " << target->getActor() << ", "
+						<< target->getMonth() << " " << target->getYear()
+						<< endl;
+				cout << endl;
 				success = false;
 			}
 		} else {
-			cout << "ERROR: MOVIE IS NOT FOUND IN COLLECTION OF CLASSICS"
-					<< endl;
+			cout << "ERROR - Invalid Movie: C, " << target->getActor() << ", "
+					<< target->getMonth() << " " << target->getYear() << endl;
+			cout << endl;
 			success = false;
 		}
 		delete target;
 		break;
 	}
 	default:
-		cout << "invalid type of movie, can't borrow" << endl;
+		cout << movieType << " - Invalid Movie Type, Can't Borrow" << endl;
+		cout << endl;
 		success = false;
 		break;
 	}
@@ -81,6 +111,7 @@ void Borrow::doTransaction(BinTree& tree, char movieType) {
 
 }
 
+//sets the data for a movie that is borrowed
 void Borrow::setData(string data, char movieType) {
 
 	istringstream dataStream(data);		//opening stream
@@ -163,9 +194,5 @@ void Borrow::setData(string data, char movieType) {
 		cout << "invalid type of movie, can't set data" << endl;
 		break;
 	}
-
-}
-
-void Borrow::display() const {
 
 }

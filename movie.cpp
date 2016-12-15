@@ -16,10 +16,13 @@ Movie::Movie() {
 	year = 0;
 }
 
+//default destructor
 Movie::~Movie() {
 
 }
 
+//decrements stock and increments borrowedCount
+//when a movie is borrowed
 bool Movie::borrow() {
 	if (instock > 0) {
 		instock--;
@@ -31,11 +34,14 @@ bool Movie::borrow() {
 
 }
 
+//a movie is returned
 void Movie::returN() {
 	instock++;
 	borrowedCount--;
 }
 
+//compares movies based on titles
+//returns true if current object title is less
 bool Movie::operator<(const Movie &rhs) const {
 	if (this->title < rhs.title)
 		return true;
@@ -43,6 +49,7 @@ bool Movie::operator<(const Movie &rhs) const {
 		return false;
 }
 
+//checks to see if two movies are equal by titles
 bool Movie::operator==(const Movie& rhs) const {
 	if (this->title == rhs.title)
 		return true;
@@ -50,8 +57,7 @@ bool Movie::operator==(const Movie& rhs) const {
 		return false;
 }
 
-//consider passing line and decompose inside or full file,
-//but that probably should be in business
+//sets the data for a movie
 void Movie::setData(string data) {
 
 	string dirFirstName, dirLastName;
@@ -103,30 +109,32 @@ void Movie::setData(string data) {
 	dataStream >> year;
 }
 
+//increment the stock
 void Movie::increaseStock(int value) {
 	instock += value;
 }
 
+//display the info of the movie
 void Movie::display() const {
-
-	cout << "Movie genre: General Movie; Title: " << title << "; Release year: "
-			<< year << "; Director: " << director << "; Qty in stock: "
-			<< instock << "; Qty borrowed: " << borrowedCount << endl;
 
 }
 
+//returns the title
 string Movie::getTitle() {
 	return title;
 }
 
+//returns the year
 int Movie::getYear() {
 	return year;
 }
 
+//returns the director
 string Movie::getDirector() {
 	return director;
 }
 
+//returns the amount in stock
 int Movie::getAmountIn() {
 	return instock;
 }

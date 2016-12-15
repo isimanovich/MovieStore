@@ -1,30 +1,39 @@
-/*
- * classic.cpp
- *
- *  Created on: Dec 1, 2016
- *      Author: MacBook
- */
 
 #include "classic.h"
 #include <sstream>
 
 using namespace std;
 
+//default construtor sets month and actor to default values
 Classic::Classic() {
 	month = 0;
 	actor = "";
 }
 
+//constructor sets actor, month, and year
 Classic::Classic(int month, int year, string actor) {
 	this->actor = actor;
 	this->month = month;
 	this->year = year;
 }
 
+//default constructor
 Classic::~Classic() {
 
 }
 
+<<<<<<< HEAD
+//reads a line for classic movie and sets the data
+=======
+string Classic::getActor(){
+	return actor;
+}
+
+int Classic::getMonth(){
+	return month;
+}
+
+>>>>>>> origin/master
 void Classic::setData(string data) {
 
 //	cout << "this is what i get for classic: " << endl;
@@ -79,7 +88,6 @@ void Classic::setData(string data) {
 		}
 	}
 
-	//WHAT IF ACTOR NAME IS OUT OF 3 WORDS??????????????????????????????????
 
 	string actorFirst, actorLast;
 	dataStream >> actorFirst;
@@ -90,14 +98,16 @@ void Classic::setData(string data) {
 
 }
 
+//displays a classic movie
 void Classic::display() const {
 
-	cout << "Movie genre: Classic; Title: " << title << "; Release date: " << month << " "
-			<<  year << "; Director: " << director << "; Major actor: " << actor
-			<< "; Qty in stock: " << instock << "; Qty borrowed: "<< borrowedCount <<  endl;
+	cout << "C, Stock: " << instock << ", Borrowed: "<< borrowedCount
+			<< ", " << director << ", "  << title << ", " << actor
+			<< ", " << month << " " <<  year <<  endl;
 
 }
 
+//checks if current classic movie is less than rhs
 bool Classic::operator<(const Movie &rhs) const {
 
 	const Classic& rhS = static_cast<const Classic&>(rhs);
@@ -112,6 +122,7 @@ bool Classic::operator<(const Movie &rhs) const {
 		return false;
 }
 
+//checks if current classic movie is less than rhs
 bool Classic::operator<(const Classic &rhs) const {
 	if (year < rhs.year)
 		return true;
@@ -123,19 +134,27 @@ bool Classic::operator<(const Classic &rhs) const {
 		return false;
 }
 
+//checks if classic movies are equal
 bool Classic::operator==(const Movie& rhs) const {
 	const Classic& rhS = static_cast<const Classic&>(rhs);
 
-	if (month == rhS.month && year == rhS.year && actor == rhS.actor)
-		return true;
-	else
-		return false;
+	if (month == rhS.month && year == rhS.year){
+		if(actor == rhS.actor)
+			return true;
+		else if (title == rhS.title)
+			return true;
+	}
+	return false;
 }
 
+//checks if classic movies are equal
 bool Classic::operator==(const Classic& rhs) const {
-	if (month == rhs.month && year == rhs.year && actor == rhs.actor)
-		return true;
-	else
+	if (month == rhs.month && year == rhs.year){
+			if(actor == rhs.actor)
+				return true;
+			else if (title == rhs.title)
+				return true;
+		}
 		return false;
 }
 

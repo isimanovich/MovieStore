@@ -1,11 +1,13 @@
 #include "customer.h"
 
+//constructor inializes the customer data members
 Customer::Customer(string first, string last, int customerId) {
 	firstName = first;
 	lastName = last;
 	id = customerId;
 }
 
+//destrucotr calls make empty
 Customer::~Customer() {
 
 //	while (!history.empty()) {
@@ -16,10 +18,12 @@ Customer::~Customer() {
 	this->makeEmpty();
 }
 
+//returns the id
 int Customer::getID() const {
 	return id;
 }
 
+//deletes the transaction history
 void Customer::makeEmpty() {
 	while (!history.empty()) {
 		Transaction* del = history.top();
@@ -28,17 +32,20 @@ void Customer::makeEmpty() {
 	}
 }
 
+//sets the data members of a customer
 void Customer::setCustomer(string first, string last, int customerId) {
 	firstName = first;
 	lastName = last;
 	id = customerId;
 }
 
+//stores a transaction pointer in the history stack
 void Customer::storeTransaction(Transaction* tran) {
 	history.push(tran);
 
 }
 
+//gets a customers latest transaction
 void Customer::getLatestTransaction() const {
 	if (history.empty()) {
 		cout << "NO TRANSACTIONS FOR " << id << " CUSTOMER ID" << endl;
@@ -58,6 +65,7 @@ void Customer::getLatestTransaction() const {
 	}
 }
 
+//gets a customers history
 void Customer::getHistory() {
 	if (history.empty()) {
 //		cout << "NO TRANSACTIONS FOR " << id << " CUSTOMER ID" << endl;
@@ -77,7 +85,6 @@ void Customer::getHistory() {
 		getHistory();
 		history.push(tran);
 
-		//maybe not needed
 		tran = NULL;
 		delete tran;
 

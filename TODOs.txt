@@ -1,17 +1,16 @@
-Make sure that borrow and return uses correct objects to adjust stock
- 
 What if actor has 3 words in name
-
-What if duplicate movies? don't forget to increment stock
 
 xtra line in customers file??????????
  
- 1. destructors
- 2. duplicate movies
+ 1. destructors			- done, but need to make sure
+ 2. duplicate movies	- done
+ IMPORTANT: check if customer borrowed, then can return	- DON"T HAVE TIME FOR THIS
+ IMPORTANT: fix sorting order (have to use * when comparing probably) - done
  3. comments
- 4. memory leaks, after destructors are implemented
+ 4. memory leaks		- no leaks
  5. testing
- 6. check for ERRORS: and if they are valid
- 7. run on Linux with valgrind
- 
+ 6. check for ERRORS: and if they are valid		- done, verified with Sam and Tiana output
+ 7. get real data files from canvas cuz old might be modified - done
+ 8. clean up
+ 9. read blank line at the end of file - done
  

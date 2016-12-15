@@ -1,9 +1,3 @@
-/*
- * comedy.h
- *
- *  Created on: Nov 30, 2016
- *      Author: MacBook
- */
 
 #ifndef COMEDY_H_
 #define COMEDY_H_
@@ -12,7 +6,8 @@
 using namespace std;
 
 
-
+//Comedy Movie class that inherits from Movie
+//Comedy is just one of the genres in our store
 class Comedy: public Movie{
 
 public:
@@ -24,8 +19,8 @@ public:
 	bool operator==(const Movie&) const;
 	bool operator==(const Comedy&) const;
 
-	void setData(string);
-	void display() const;
+	void setData(string); //sets the comedy movie data
+	void display() const; //displays comedy movie info
 
 private:
 

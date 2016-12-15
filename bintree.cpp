@@ -20,14 +20,6 @@ BinTree::BinTree() {
 	root = NULL;
 }
 
-// --------------------------------------------- copy constructor ---------------------------------------------------
-// Description: Creates deep copy of passed in object by calling assignment operator
-// Parameter is another BinTree object that must not be modified
-// ------------------------------------------------------------------------------------------------------------------
-BinTree::BinTree(const BinTree& original) {
-	*this = original;
-}
-
 // ------------------------------------------------ destructor ------------------------------------------------------
 BinTree::~BinTree() {
 	//make empty, if object is not empty
@@ -35,40 +27,7 @@ BinTree::~BinTree() {
 		makeEmpty();
 }
 
-// -------------------------------------------- output operator -----------------------------------------------------
-// Description: Output operator outputs BinTree data using inorder traversal
-// Parameters are ostream and BinTree(must not be modified) objects
-// Friend function
-//
-// Note:
-// - Movie class is responsible for displaying its own data
-// ------------------------------------------------------------------------------------------------------------------
-ostream &operator<<(ostream& out, const BinTree& tree) {
-	//calling private helper function to traverse the tree recursively
-	tree.inOrder(out, tree.root);
-//	out << endl;		//add end of line to the output
-	return out;			//return ostream object
-}
-
-// ------------------------------------------ inOrder helper function -----------------------------------------------
-// Description: Recursively traverses the BinTree object and adds data to ostream object
-// Parameters are ostream and Node pointer objects
-// Private function
-// ------------------------------------------------------------------------------------------------------------------
-void BinTree::inOrder(ostream& out, Node* curr) const {
-	//if pointer is not pointing at NULL, execute following
-	if (curr != NULL) {
-		inOrder(out, curr->left);		//recursive call to traverse to the left
-		out << curr->data->getTitle() << endl;		//add data to the ostream
-		inOrder(out, curr->right);	//recursive call to traverse to the right
-	}
-}
-
-
-
-
-
-void BinTree::printData()const{
+void BinTree::printData() const {
 	//calling private helper function to traverse the tree recursively
 	printDataHelper(this->root);
 }
@@ -76,14 +35,11 @@ void BinTree::printData()const{
 void BinTree::printDataHelper(Node* curr) const {
 	//if pointer is not pointing at NULL, execute following
 	if (curr != NULL) {
-		printDataHelper(curr->left);		//recursive call to traverse to the left
+		printDataHelper(curr->left);	//recursive call to traverse to the left
 		curr->data->display();		//add data to the ostream
-		printDataHelper(curr->right);	//recursive call to traverse to the right
+		printDataHelper(curr->right);//recursive call to traverse to the right
 	}
 }
-
-
-
 
 // -------------------------------------------------- retrieve ------------------------------------------------------
 // Description: function to get the Movie* of a given object in the tree (via pass-by-reference
@@ -109,47 +65,11 @@ bool BinTree::retrieveHelper(Movie& target, Movie* &result, Node* &curr) {
 		return true;
 	} else if (target < *curr->data && curr->left != NULL)//left recursive call
 		return retrieveHelper(target, result, curr->left);
-	else if(curr->right != NULL)	//right recursive call
+	else if (curr->right != NULL)	//right recursive call
 		return retrieveHelper(target, result, curr->right);
 	return false;	//if object not found
 }
 
-// ------------------------------------------------ = operator ------------------------------------------------------
-// Description: Operator that assigns one BinTree object to another
-// Parameter is BinTree object(must not modify)
-// ------------------------------------------------------------------------------------------------------------------
-BinTree& BinTree::operator =(const BinTree& rhs) {
-	//if rhs and lhs same object, return lhs
-	if (this->root == rhs.root) {
-		return *this;
-	}
-	//if lhs is not empty, make it to be empty
-	if (!isEmpty()) {
-		makeEmpty();
-		root = NULL;
-	}
-	//if rhs is not empty, copy data from it
-	if (rhs.root != NULL) {
-		//calling helper function to traverse rhs tree
-		traverseToCopy(rhs.root);
-	}
-	return *this;	//returning result
-}
-
-// ------------------------------------- traverseToCopy helper function ---------------------------------------------
-// Description: Recursively traverses the BinTree object and inserts rhs' data into lhs tree
-// Parameter Node pointer
-// Private function
-// ------------------------------------------------------------------------------------------------------------------
-void BinTree::traverseToCopy(const Node* rhs) {
-	//if pointer is not pointing at NULL, execute following
-	if (rhs != NULL) {
-		Movie* ndata = new Movie(*rhs->data);//creating new Movie object with value from rhs tree
-		insert(ndata);					//inserting Movie object in lhs tree
-		traverseToCopy(rhs->left);					//traverse to left
-		traverseToCopy(rhs->right);					//traverse to right
-	}
-}
 
 // -------------------------------------------------- isEmpty ------------------------------------------------------
 // Description: function that checks whether tree is empty or not
@@ -205,17 +125,6 @@ bool BinTree::insert(Movie* data) {
 // ------------------------------------------------------------------------------------------------------------------
 bool BinTree::insert(Movie* data, Node* &curr) {
 
-	/*
-
-	 POSSIBLE MEMORY LEAK!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-
-
-	 */
-//	if(data == curr->data){
-//		curr->data->increaseStock(data->getAmountIn());
-////		data->~Movie();
-//		return true;
-//	}
 	//if root == NULL, so insert and set result to true
 	if (curr == NULL) {
 		curr = new Node();
@@ -223,7 +132,14 @@ bool BinTree::insert(Movie* data, Node* &curr) {
 		curr->left = NULL;
 		curr->right = NULL;
 		return true;
-	} else if (data < curr->data) {		//go to left recursively
+	}
+	//if duplicate found, increment stock and destroy duplicate object
+	if (*data == *curr->data) {
+		curr->data->increaseStock(data->getAmountIn());
+		delete data;
+		data = NULL;
+		return true;
+	} else if (*data < *curr->data) {		//go to left recursively
 		return insert(data, curr->left);
 	} else {		//go to right recursively
 		return insert(data, curr->right);

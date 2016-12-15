@@ -1,3 +1,13 @@
+// ---------------------------------------------- transaction.cpp ---------------------------------------------------
+// Name: Ihar Simanovich & Jason Kozodoy
+// Course: CSS343 A
+// Creation Date: 12/01/2016
+// Last Modification: 12/14/2016
+// ------------------------------------------------------------------------------------------------------------------
+// Purpose:
+// ------------------------------------------------------------------------------------------------------------------
+// Notes:
+// ------------------------------------------------------------------------------------------------------------------
 #include "transaction.h"
 #include <sstream>
 
@@ -18,6 +28,7 @@ void Transaction::doTransaction(BinTree& tree, char movieType) {
 
 }
 
+//transaction has been successful
 bool Transaction::isSuccess(){
 	return success;
 }
@@ -102,11 +113,14 @@ void Transaction::setData(string data, char movieType) {
 
 }
 
+<<<<<<< HEAD
 void Transaction::display() const {
 
 }
 
 //returns the transaction type
+=======
+>>>>>>> origin/master
 char Transaction::getTransType(){
 	return type;
 }

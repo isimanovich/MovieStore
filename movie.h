@@ -14,7 +14,8 @@
 
 using namespace std;
 
-
+//Movie class
+//Represents a movie in the store
 class Movie{
 public:
     Movie();				//default constructor
@@ -23,11 +24,11 @@ public:
     virtual bool operator<(const Movie &) const;
     virtual bool operator==(const Movie &) const;
 
-	virtual void setData(string);
-    virtual void display() const;
+	virtual void setData(string); //sets the movie data
+    virtual void display() const; //displays info about movie
 
-	bool borrow();
-	void returN();
+	bool borrow(); //a movie is borrowed
+	void returN(); //a movie is returned
 
 
 	int getAmountIn();
@@ -37,7 +38,7 @@ public:
 	int getYear();
 	string getDirector();
 
-	void increaseStock(int);
+	void increaseStock(int); //increase movie stock
 
 protected:
 	string director;

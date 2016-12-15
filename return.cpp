@@ -4,18 +4,26 @@
 
 using namespace std;
 
+//sets the return type
 Return::Return() {
 	type = 'R';
 }
 
+//default destructor
 Return::~Return() {
 
 }
 
+<<<<<<< HEAD
+//returns success if reutrn is successful
 bool Return::isSuccess(){
+=======
+bool Return::isSuccess() {
+>>>>>>> origin/master
 	return success;
 }
 
+//does return transaction for customer
 void Return::doTransaction(BinTree& tree, char movieType) {
 
 	Movie* result = NULL;
@@ -27,8 +35,9 @@ void Return::doTransaction(BinTree& tree, char movieType) {
 		if (tree.retrieve(*target, result))
 			result->returN();
 		else {
-			cout << "ERROR: MOVIE IS NOT FOUND IN COLLECTION OF COMEDIES"
-					<< endl;
+			cout << "ERROR - Invalid Movie: F, " << target->getTitle() << ", "
+					<< target->getYear() << endl;
+			cout << endl;
 			success = false;
 		}
 		delete target;
@@ -40,7 +49,9 @@ void Return::doTransaction(BinTree& tree, char movieType) {
 		if (tree.retrieve(*target, result))
 			result->returN();
 		else {
-			cout << "ERROR: MOVIE IS NOT FOUND IN COLLECTION OF DRAMAS" << endl;
+			cout << "ERROR - Invalid Movie: D, " << target->getDirector()
+					<< ", " << target->getTitle() << endl;
+			cout << endl;
 			success = false;
 		}
 		delete target;
@@ -51,15 +62,17 @@ void Return::doTransaction(BinTree& tree, char movieType) {
 		if (tree.retrieve(*target, result))
 			result->returN();
 		else {
-			cout << "ERROR: MOVIE IS NOT FOUND IN COLLECTION OF CLASSICS"
-					<< endl;
+			cout << "ERROR - Invalid Movie: C, " << target->getActor() << ", "
+					<< target->getMonth() << " " << target->getYear() << endl;
+			cout << endl;
 			success = false;
 		}
 		delete target;
 		break;
 	}
 	default:
-		cout << "invalid type of movie, can't return" << endl;
+		cout << movieType << " - Invalid Movie Type, Can't Return" << endl;
+		cout << endl;
 		success = false;
 		break;
 	}
@@ -72,6 +85,7 @@ void Return::doTransaction(BinTree& tree, char movieType) {
 
 }
 
+//sets the data after reading the movie
 void Return::setData(string data, char movieType) {
 
 	istringstream dataStream(data);		//opening stream
@@ -157,7 +171,11 @@ void Return::setData(string data, char movieType) {
 	}
 
 }
+<<<<<<< HEAD
+
 
 void Return::display() const {
 
 }
+=======
+>>>>>>> origin/master

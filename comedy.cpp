@@ -1,9 +1,3 @@
-/*
- * comedy.cpp
- *
- *  Created on: Dec 1, 2016
- *      Author: MacBook
- */
 
 #include "comedy.h"
 #include <sstream>
@@ -12,27 +6,31 @@
 
 using namespace std;
 
+//default constructor
 Comedy::Comedy(){
 
 }
 
+//sets title and year
 Comedy::Comedy(string title, int year){
 	this->title = title;
 	this->year = year;
 }
 
+//default destructor
 Comedy::~Comedy(){
 
 }
 
+//displays a comedy movie
 void Comedy::display()const{
 
-	cout << "Movie genre: Comedy; Title: " << title << "; Release year: " <<  year
-				<< "; Director: " << director << "; Qty in stock: " << instock
-				<< "; Qty borrowed: "<< borrowedCount <<  endl;
+	cout << "F, Stock: " << instock << ", Borrowed: "<< borrowedCount
+		 << ", " << director << ", "  << title << ", " <<  year <<  endl;
 
 }
 
+//reads a line for comedy movie and sets the data
 void Comedy::setData(string data){
 
 	string dirFirstName, dirLastName;
@@ -87,6 +85,7 @@ void Comedy::setData(string data){
 //	cout << year << endl;
 }
 
+//checks if current classic movie is less than rhs
 bool Comedy::operator<(const Movie &rhs) const {
 	const Comedy& rhS = static_cast<const Comedy&>(rhs);
 
@@ -98,6 +97,7 @@ bool Comedy::operator<(const Movie &rhs) const {
 		return false;
 }
 
+//checks if current comedy movie is less than rhs
 bool Comedy::operator<(const Comedy &rhs) const {
 	if (title < rhs.title)
 		return true;
@@ -107,7 +107,7 @@ bool Comedy::operator<(const Comedy &rhs) const {
 		return false;
 }
 
-
+//checks if comedy movies are equal
 bool Comedy::operator==(const Movie& rhs) const {
 	const Comedy& rhS = static_cast<const Comedy&>(rhs);
 	if (title == rhS.title && year == rhS.year)
@@ -116,6 +116,7 @@ bool Comedy::operator==(const Movie& rhs) const {
 		return false;
 }
 
+//checks if comedy movies are equal
 bool Comedy::operator==(const Comedy& rhs) const {
 	if (title == rhs.title && year == rhs.year)
 		return true;

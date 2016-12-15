@@ -1,9 +1,13 @@
-/*
- * Business.h
- *
- *  Created on: Nov 30, 2016
- *      Author: MacBook
- */
+// ------------------------------------------------- business.h -----------------------------------------------------
+// Name: Ihar Simanovich & Jason Kozodoy
+// Course: CSS343 A
+// Creation Date: 12/01/2016
+// Last Modification: 12/14/2016
+// ------------------------------------------------------------------------------------------------------------------
+// Purpose:
+// ------------------------------------------------------------------------------------------------------------------
+// Notes:
+// ------------------------------------------------------------------------------------------------------------------
 
 #ifndef BUSINESS_H_
 #define BUSINESS_H_
@@ -23,20 +27,22 @@
 
 using namespace std;
 
+//represents our business
+//that deals with movies
 class Business{
 public:
 	Business();						//constructor
 	~Business();					//destructor
-	void buildMovies(ifstream&);
-	void buildCustomers();
-	void buildCustomers(ifstream&);
-	void processTransactions(ifstream&);
+	void buildMovies(ifstream&); //build our movies
+	void buildCustomers();   //build customers
+	void buildCustomers(ifstream&); //build customers
+	void processTransactions(ifstream&); //process transactions
 
 private:
-	BinTree* allComedies;
-	BinTree* allDramas;
-	BinTree* allClassics;
-	Hash* allCustomers;
+	BinTree* allComedies; //comedy movies
+	BinTree* allDramas; //drama movies
+	BinTree* allClassics; //classic movies
+	Hash* allCustomers; //customers
 };
 
 

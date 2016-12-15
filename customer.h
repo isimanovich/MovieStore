@@ -7,17 +7,18 @@
 
 using namespace std;
 
+//Represents a customer
 class Customer {
 
 public:
 
 	Customer(string, string, int);
 	~Customer();
-	int getID() const;
-	void setCustomer(string, string, int);
-	void storeTransaction(Transaction*);
-	void getLatestTransaction() const;
-	void getHistory();
+	int getID() const; //gets id from current customer
+	void setCustomer(string, string, int); //sets a new customer
+	void storeTransaction(Transaction*); //stores trasaction
+	void getLatestTransaction() const; //gets the latest transaction
+	void getHistory(); //gets the history of the customer
 	void makeEmpty();
 
 private:

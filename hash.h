@@ -6,15 +6,15 @@
 
 using namespace std;
 
+//Hash class that repersents a hash table
 class Hash {
 public:
-
 	Hash();
 	~Hash();
-	void add(int, Customer*);
-	void initArray(int);
-	Customer* find(int key);
-	void makeEmpty();
+	void add(int, Customer*); //adds customer to hashtable
+	void initArray(int); //initalizes array to default
+	Customer* find(int key); //finds customer based on id
+	void makeEmpty(); //deletes hashtable
 
 private:
 	struct Cust {
@@ -23,7 +23,6 @@ private:
 	};
 	int size = 1001;
 	Cust* customerList = NULL;
-
 };
 
 #endif /* HASH_H_ */
