@@ -1,0 +1,118 @@
+Invalid Movie Type: Z
+Invalid Movie Type: Z
+
+INVENTORY OF THE STORE: 
+F, Stock: 10, Borrowed: 0, Woody Allen, Annie Hall, 1977
+F, Stock: 10, Borrowed: 0, Joel Coen, Fargo, 1996
+F, Stock: 10, Borrowed: 0, John Landis, National Lampoon's Animal House, 1978
+F, Stock: 10, Borrowed: 0, Gore Verbinski, Pirates of the Caribbean, 2003
+F, Stock: 10, Borrowed: 0, Nora Ephron, Sleepless in Seattle, 1993
+F, Stock: 10, Borrowed: 0, Rob Reiner, When Harry Met Sally, 1989
+F, Stock: 10, Borrowed: 0, Nora Ephron, You've Got Mail, 1998
+
+D, Stock: 10, Borrowed: 0, Barry Levinson, Good Morning Vietnam, 1988
+D, Stock: 10, Borrowed: 0, Clint Eastwood, Unforgiven, 1992
+D, Stock: 10, Borrowed: 0, Gus Van Sant, Good Will Hunting, 2000
+D, Stock: 10, Borrowed: 0, Jonathan Demme, Silence of the Lambs, 1991
+D, Stock: 10, Borrowed: 0, Nancy Savoca, Dogfight, 1991
+D, Stock: 10, Borrowed: 0, Phillippe De Broca, King of Hearts, 1967
+D, Stock: 10, Borrowed: 0, Steven Spielberg, Schindler's List, 1993
+
+C, Stock: 20, Borrowed: 0, George Cukor, Holiday, Katherine Hepburn, 9 1938
+C, Stock: 20, Borrowed: 0, Victor Fleming, Gone With the Wind, Vivien Leigh, 2 1939
+C, Stock: 10, Borrowed: 0, Victor Fleming, The Wizard of Oz, Judy Garland, 7 1939
+C, Stock: 20, Borrowed: 0, George Cukor, The Philadelphia Story, Katherine Hepburn, 5 1940
+C, Stock: 10, Borrowed: 0, John Huston, The Maltese Falcon, Humphrey Bogart, 10 1941
+C, Stock: 20, Borrowed: 0, Michael Curtiz, Casablanca, Ingrid Bergman, 8 1942
+C, Stock: 20, Borrowed: 0, Frank Capra, It's a Wonderful Life, James Steward, 11 1946
+C, Stock: 10, Borrowed: 0, Stanley Kubrick, A Clockwork Orange, Malcolm McDowell, 2 1971
+C, Stock: 10, Borrowed: 0, Hal Ashby, Harold and Maude, Ruth Gordon, 3 1971
+
+HISTORY OF CUSTOMER: 1000
+
+HISTORY OF CUSTOMER: 5000
+
+HISTORY OF CUSTOMER: 8000
+
+Z - Invalid Movie Type, Can't Borrow
+
+ERROR - Invalid Movie: C, Cary Grant, 5 1940
+
+Invalid Transaction Type: X
+
+ERROR - Invalid Movie: C, Cary Grant, 9 1938
+
+Invalid Transaction Type: Z
+
+ERROR - Invalid Movie: F, Bogus Title, 2001
+
+OUT OF STOCK: C, Ruth Gordon, 3 1971
+
+OUT OF STOCK: C, Ruth Gordon, 3 1971
+
+OUT OF STOCK: C, Ruth Gordon, 3 1971
+
+ERROR - Invalid Movie: D, Steven Spielberg, Bogus Title
+
+
+INVENTORY OF THE STORE: 
+F, Stock: 9, Borrowed: 1, Woody Allen, Annie Hall, 1977
+F, Stock: 8, Borrowed: 2, Joel Coen, Fargo, 1996
+F, Stock: 9, Borrowed: 1, John Landis, National Lampoon's Animal House, 1978
+F, Stock: 10, Borrowed: 0, Gore Verbinski, Pirates of the Caribbean, 2003
+F, Stock: 9, Borrowed: 1, Nora Ephron, Sleepless in Seattle, 1993
+F, Stock: 9, Borrowed: 1, Rob Reiner, When Harry Met Sally, 1989
+F, Stock: 9, Borrowed: 1, Nora Ephron, You've Got Mail, 1998
+
+D, Stock: 9, Borrowed: 1, Barry Levinson, Good Morning Vietnam, 1988
+D, Stock: 9, Borrowed: 1, Clint Eastwood, Unforgiven, 1992
+D, Stock: 9, Borrowed: 1, Gus Van Sant, Good Will Hunting, 2000
+D, Stock: 9, Borrowed: 1, Jonathan Demme, Silence of the Lambs, 1991
+D, Stock: 8, Borrowed: 2, Nancy Savoca, Dogfight, 1991
+D, Stock: 9, Borrowed: 1, Phillippe De Broca, King of Hearts, 1967
+D, Stock: 9, Borrowed: 1, Steven Spielberg, Schindler's List, 1993
+
+C, Stock: 20, Borrowed: 0, George Cukor, Holiday, Katherine Hepburn, 9 1938
+C, Stock: 20, Borrowed: 0, Victor Fleming, Gone With the Wind, Vivien Leigh, 2 1939
+C, Stock: 10, Borrowed: 0, Victor Fleming, The Wizard of Oz, Judy Garland, 7 1939
+C, Stock: 19, Borrowed: 1, George Cukor, The Philadelphia Story, Katherine Hepburn, 5 1940
+C, Stock: 9, Borrowed: 1, John Huston, The Maltese Falcon, Humphrey Bogart, 10 1941
+C, Stock: 20, Borrowed: 0, Michael Curtiz, Casablanca, Ingrid Bergman, 8 1942
+C, Stock: 20, Borrowed: 0, Frank Capra, It's a Wonderful Life, James Steward, 11 1946
+C, Stock: 9, Borrowed: 1, Stanley Kubrick, A Clockwork Orange, Malcolm McDowell, 2 1971
+C, Stock: 0, Borrowed: 10, Hal Ashby, Harold and Maude, Ruth Gordon, 3 1971
+
+HISTORY OF CUSTOMER: 1000
+Movie: Fargo 1996; Transaction type: B
+Movie: Harold and Maude 1971; Transaction type: B
+Movie: Good Will Hunting 2000; Transaction type: B
+Movie: The Philadelphia Story 1940; Transaction type: B
+Movie: Good Morning Vietnam 1988; Transaction type: B
+
+HISTORY OF CUSTOMER: 1111
+Movie: The Maltese Falcon 1941; Transaction type: B
+Movie: Harold and Maude 1971; Transaction type: B
+Movie: A Clockwork Orange 1971; Transaction type: B
+
+HISTORY OF CUSTOMER: 5000
+Movie: Harold and Maude 1971; Transaction type: B
+Movie: Harold and Maude 1971; Transaction type: R
+Movie: Harold and Maude 1971; Transaction type: B
+Movie: Harold and Maude 1971; Transaction type: R
+Movie: Harold and Maude 1971; Transaction type: B
+Movie: Harold and Maude 1971; Transaction type: R
+Movie: Harold and Maude 1971; Transaction type: B
+
+HISTORY OF CUSTOMER: 8000
+Movie: National Lampoon's Animal House 1978; Transaction type: B
+Movie: Harold and Maude 1971; Transaction type: B
+Movie: Harold and Maude 1971; Transaction type: B
+Movie: You've Got Mail 1998; Transaction type: R
+Movie: You've Got Mail 1998; Transaction type: B
+
+HISTORY OF CUSTOMER: 8888
+Movie: Harold and Maude 1971; Transaction type: B
+Movie: Dogfight 1991; Transaction type: B
+Movie: Silence of the Lambs 1991; Transaction type: B
+Movie: When Harry Met Sally 1989; Transaction type: B
+Movie: Annie Hall 1977; Transaction type: B
